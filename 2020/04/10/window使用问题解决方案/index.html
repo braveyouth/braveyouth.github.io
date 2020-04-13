@@ -79,7 +79,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">524</span>
+            <span class="post-count">777</span>
         </span>
     </span>
 
@@ -88,7 +88,7 @@ var _hmt = _hmt || [];
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">1 分钟</span>
+            <span class="post-count">2 分钟</span>
         </span>
     </span>
 </div>
@@ -113,15 +113,16 @@ var _hmt = _hmt || [];
       
 
       
-      <h3 id="护眼模式的开启和关闭"><a href="#护眼模式的开启和关闭" class="headerlink" title="护眼模式的开启和关闭"></a>护眼模式的开启和关闭</h3><p>﻿1.使用 <strong>Win + R</strong> 组合快捷键，打开“运行”，然后键入打开注册表命令<strong>regedit</strong>，按回车键确认打开。<a id="more"></a></p>
+      <h3 id="一、护眼模式的开启和关闭"><a href="#一、护眼模式的开启和关闭" class="headerlink" title="一、护眼模式的开启和关闭"></a>一、护眼模式的开启和关闭</h3><p>﻿1.使用 <strong>Win + R</strong> 组合快捷键，打开“运行”，然后键入打开注册表命令<strong>regedit</strong>，按回车键确认打开。<a id="more"></a></p>
 <p>2.打开Win10注册表之后，依次在左侧树状菜单中展开：<code>HKEY_CURRENT_USER\Control Panel\Colors</code>，然后再右侧找到Windows值，并双击打开。</p>
 <p>3.双击Windows，打开编辑字符串窗口，将的<strong>255 255 255</strong>(默认是白色背景)三组颜色数值改成<strong>202 234 206</strong>(淡绿色)，完成后，点击下方的“确定”保存。</p>
-<p>4.继续找到注册表的路径：<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\DefaultColors\Standard</code>。</p>
+<p>4.继续找到注册表的路径：<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\</code></p>
+<p><code>CurrentVersion\Themes\DefaultColors\Standard</code>。</p>
 <p>5.同样再在右侧找到Windows双击打开，将默认的数据值 <strong>ffffff</strong> 改成 <strong>caeace</strong> 完成后，点击下方的确定保存。之后重启就会变成淡绿色的护眼状态。</p>
 <blockquote>
 <p>备注：想要恢复怎么办呢。其实很简单。将你修改的202 234 206变为255 255 255。然后将caeace 改为ffffff。重启一下，就可以变成原来的白色背景了。</p>
 </blockquote>
-<h3 id="端口被占用"><a href="#端口被占用" class="headerlink" title="端口被占用"></a>端口被占用</h3><p>1.开始–&gt;运行–&gt;cmd；或者是window+R组合键，调出命令窗口 </p>
+<h3 id="二、端口被占用"><a href="#二、端口被占用" class="headerlink" title="二、端口被占用"></a>二、端口被占用</h3><p>1.开始–&gt;运行–&gt;cmd；或者是window+R组合键，调出命令窗口 </p>
 <p>2.输入命令：netstat -ano， 列出所有端口已占用的情况</p>
 <p>3.输入命令：netstat -aon|findstr “1001”，查看被占用端口1001对应的PID4</p>
 <p>4.输入命令：tasklist|findstr “4”，回车，查看是哪个进程或者程序占用了1001端口，结果是：svchost.exe ；或者打开任务管理器，切换到进程选项卡，在PID一列查看4对应的进程</p>
@@ -129,10 +130,44 @@ var _hmt = _hmt || [];
 <p>如果看不到PID这一列，右键点击选择列，勾选pid，点击确定</p>
 </blockquote>
 <p>5.输入命令： taskkill /f /t /im tasklist.exe ；或者在任务管理器结束pid为4的进程</p>
-<h3 id="删除文件提示正在被另一程序占用"><a href="#删除文件提示正在被另一程序占用" class="headerlink" title="删除文件提示正在被另一程序占用"></a>删除文件提示正在被另一程序占用</h3><p>1.打开任务管理器，切换到性能选项卡，点击“打开资源监视器”</p>
+<h3 id="三、删除文件提示正在被另一程序占用"><a href="#三、删除文件提示正在被另一程序占用" class="headerlink" title="三、删除文件提示正在被另一程序占用"></a>三、删除文件提示正在被另一程序占用</h3><p>1.打开任务管理器，切换到性能选项卡，点击“打开资源监视器”</p>
 <p>2.在cpu选项卡下找到关联的句柄搜索框</p>
 <p>3.输入要删除文件的文件名，看到新出现的程序，右键点击”结束进程”</p>
 <p>4.重新删除文件</p>
+<h3 id="四、生成文件夹树目录"><a href="#四、生成文件夹树目录" class="headerlink" title="四、生成文件夹树目录"></a>四、生成文件夹树目录</h3><ul>
+<li><p>命令窗口模式</p>
+<ul>
+<li><p>进入文件夹，打开命令窗口</p>
+</li>
+<li><p>输入命令： tree  /f &gt;tree.txt 生成包含当前文件夹及子文件夹目录的文件tree.txt</p>
+<blockquote>
+<p>“.txt”也可以写成”.docx”,”.doc”,”.xlsx”,”.xls”,”.md”结尾生成对应的文件</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>bat脚本模式</p>
+<ul>
+<li>新建文本文档，输入tree  /f &gt;tree.txt </li>
+<li>修改后缀名为.bat</li>
+<li>将修改后的文件拖入需要生成目录的文件夹下，双击运行脚本</li>
+</ul>
+</li>
+</ul>
+<h3 id="五、命令行窗口打开方式"><a href="#五、命令行窗口打开方式" class="headerlink" title="五、命令行窗口打开方式"></a>五、命令行窗口打开方式</h3><ul>
+<li>全局<ul>
+<li><code>Win</code> + <code>R</code>打开运行，输入<code>cmd</code>，然后按下回车键即可。</li>
+<li><code>Win</code> + <code>R</code>打开运行，输入<code>powershell</code>，然后按下回车键即可。</li>
+<li><code>Win</code> + <code>X</code>或开始菜单按钮右键打开 <code>Windows PowerShell</code></li>
+</ul>
+</li>
+<li>指定目录<ul>
+<li>通过 <code>cd</code> 命令进入指定目录。</li>
+<li>资源管理器打开目录，在地址栏输入 <code>cmd</code> 回车键即可</li>
+<li>按下 <code>Shift</code> 键的同时鼠标右键该目录空白处可选择打开 <code>Windows PowerShell</code></li>
+</ul>
+</li>
+</ul>
 
       
       <!-- reward -->
