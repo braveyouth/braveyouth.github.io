@@ -50,99 +50,6 @@
       </tags>
   </entry>
   <entry>
-    <title>故宫博物馆</title>
-    <url>/2020/04/11/%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%A6%86/</url>
-    <content><![CDATA[<p>一款线上的故宫博物馆全景。<a id="more"></a></p>
-<p><a href=" http://t.cn/RXnGc1e " target="_blank">传送门</a></p>
-]]></content>
-      <categories>
-        <category>博物馆</category>
-      </categories>
-      <tags>
-        <tag>虚拟体验</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>电脑博物馆</title>
-    <url>/2020/04/11/%E7%94%B5%E8%84%91%E5%8D%9A%E7%89%A9%E9%A6%86/</url>
-    <content><![CDATA[<p>当你用着最新的电脑，有没有想着感受一下上古时代的电脑，去体验一下那即将改变人类生活方式的10101000古董级电脑。<a id="more"></a></p>
-<p>现在推荐的一个网站是配合知乎专栏,古董电脑室建设的在线电脑模拟器网站，希望能够以一种更直观的方式展示历史上著名的电脑平台的特性。针对中文读者还加入了许多中国市场上独有的硬件和软件平台，包括 UCDOS、文曲星电子词典、小霸王学习机、中华学习机等。</p>
-<p>快去体验一下吧。</p>
-<p><a href="http://www.dnbwg.com/" target="_blank">传送门</a></p>
-]]></content>
-      <categories>
-        <category>博物馆</category>
-      </categories>
-      <tags>
-        <tag>有趣的</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>自由钢琴</title>
-    <url>/2020/04/11/%E8%87%AA%E7%94%B1%E9%92%A2%E7%90%B4/</url>
-    <content><![CDATA[<p>浏览互联网的过程中，往往都是思维肆意飘荡的时刻，此时某处微小的声音也会激起你内心深处音乐细胞的复苏，相信拥有非凡音乐灵感的你一定想将此情感表达出来。<a id="more"></a></p>
-<p>巧合的是你目前并没有乐器在手，不用慌乱，进入这款在线音乐网站，可能就会帮助到你实现你的情感表达。</p>
-<p><a href=" https://www.autopiano.cn/ "  target="_blank">传送门</a></p>
-]]></content>
-      <categories>
-        <category>音乐</category>
-      </categories>
-      <tags>
-        <tag>有趣的</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>电子书</title>
-    <url>/2020/04/11/%E7%94%B5%E5%AD%90%E4%B9%A6/</url>
-    <content><![CDATA[<p>书中自有黄金屋，书中自有颜如玉。</p>
-<a id="more"></a>
-
-<p>电子书籍的兴起一定程度上推动了文化的大范围普及，如此同时对于电子书的需求更加迫切，现在有一款电子书网站，能够相对解决这个问题。</p>
-<p><a href=" https://sobooks.cc/" target="_blank">传送门</a></p>
-]]></content>
-      <categories>
-        <category>阅读</category>
-      </categories>
-      <tags>
-        <tag>电子书</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>编程到底难在哪里</title>
-    <url>/2020/04/10/%E7%BC%96%E7%A8%8B%E5%88%B0%E5%BA%95%E9%9A%BE%E5%9C%A8%E5%93%AA%E9%87%8C/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>知乎上有个问题：编程到底难在哪里？知乎网友 DJ Hitori 的回答获赞无数。<a id="more"></a></p>
-<p>这篇回答并不是讲述在生活中程序员如何买苹果，而是以买苹果为例说明程序员如何解决问题。程序员需要对问题进行透彻的分析，理清其涉及的所有细节，预测可能发生的所有意外与非意外的情况，列出解决方案的所有步骤，以及对解决方案进行尽量全面的测试。而这些正是编程难的地方。任何一点遗漏都会成为 bug，轻则导致挨骂，重则导致经济损失甚至危害安全。</p>
-<h3 id="高赞回答"><a href="#高赞回答" class="headerlink" title="高赞回答"></a>高赞回答</h3><p><strong>普通人：</strong></p>
-<p>我今天要买一斤苹果。</p>
-<p><strong>程序员：</strong></p>
-<p>我今天要买一斤苹果。</p>
-<p>因为我只喜欢红富士苹果，所以我只买红富士苹果。</p>
-<p>我能接受的最高价格是 10 元 / 斤。</p>
-<p>正常情况下一斤苹果用一个袋子能装下，但是为防万一，我会带两个袋子。</p>
-<p>我知道附近的 3 家水果店，所以我会依次访问这 3 家水果店。</p>
-<p>根据上述条件，我设计出以下的买苹果的流程：</p>
-<p><img src="https://i.loli.net/2020/04/10/yTUwouKFQqsnYGc.jpg" alt="1.jpg"></p>
-<p>这个流程怎么样？我来设计一些测试样例，测试一下这个流程。</p>
-<p>测试发现一个问题：</p>
-<p>如果水果店 0 和水果店 1 都有红富士苹果并且价格都低于 10 元 / 斤，而且水果店 1 的价格比水果店 0 更低，那么我希望买水果店 1 的苹果，但我设计的流程会让我买水果店 0 的苹果。</p>
-<p>为了解决这个问题，我应该先询问所有水果店的价格，然后去价格最低的那一家买苹果。</p>
-<p>经过修改，我重新设计出以下的买苹果的流程：</p>
-<p><img src="https://i.loli.net/2020/04/10/DlUaVeLhJBAW5fv.jpg" alt="2.jpg"></p>
-<p>现在这个流程是不是完美了呢？不是，我还能发现很多问题。</p>
-<p>如果 3 家水果店都有红富士苹果但都不到一斤，但是三家店加起来能达到一斤，那么我不应该结束流程回家，而是应该把三家店的红富士苹果都买下来。</p>
-<p>如果我向水果店询问价格的时候这家店还有红富士苹果，但我询问完所有水果店的价格后这家店的红富士苹果卖完了，那么我的流程会让我试图处理不存在的红富士苹果。</p>
-<p>我走路的过程中可能会遇到突发事件，比如发现了新的水果店，比如袋子破掉了苹果掉一地，对于这些情况我的流程都无法进行处理。</p>
-<p>啊问题太多了我懒得再改流程了。我还是去 X 宝买吧。<br>那么接下来我要设计一个在 X 宝买红富士苹果的流程……</p>
-<p>文章来源：<a href="https://www.zhihu.com/answer/141334678" target="_blank">传送门</a></p>
-]]></content>
-      <categories>
-        <category>开发</category>
-      </categories>
-      <tags>
-        <tag>编程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>window使用问题解决方案</title>
     <url>/2020/04/10/window%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
     <content><![CDATA[<h3 id="一、护眼模式的开启和关闭"><a href="#一、护眼模式的开启和关闭" class="headerlink" title="一、护眼模式的开启和关闭"></a>一、护眼模式的开启和关闭</h3><p>﻿1.使用 <strong>Win + R</strong> 组合快捷键，打开“运行”，然后键入打开注册表命令<strong>regedit</strong>，按回车键确认打开。<a id="more"></a></p>
@@ -206,6 +113,99 @@
       </categories>
       <tags>
         <tag>开发环境</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>故宫博物馆</title>
+    <url>/2020/04/11/%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%A6%86/</url>
+    <content><![CDATA[<p>一款线上的故宫博物馆全景。<a id="more"></a></p>
+<p><a href=" http://t.cn/RXnGc1e " target="_blank">传送门</a></p>
+]]></content>
+      <categories>
+        <category>博物馆</category>
+      </categories>
+      <tags>
+        <tag>虚拟体验</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>电子书</title>
+    <url>/2020/04/11/%E7%94%B5%E5%AD%90%E4%B9%A6/</url>
+    <content><![CDATA[<p>书中自有黄金屋，书中自有颜如玉。</p>
+<a id="more"></a>
+
+<p>电子书籍的兴起一定程度上推动了文化的大范围普及，如此同时对于电子书的需求更加迫切，现在有一款电子书网站，能够相对解决这个问题。</p>
+<p><a href=" https://sobooks.cc/" target="_blank">传送门</a></p>
+]]></content>
+      <categories>
+        <category>阅读</category>
+      </categories>
+      <tags>
+        <tag>电子书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>编程到底难在哪里</title>
+    <url>/2020/04/10/%E7%BC%96%E7%A8%8B%E5%88%B0%E5%BA%95%E9%9A%BE%E5%9C%A8%E5%93%AA%E9%87%8C/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>知乎上有个问题：编程到底难在哪里？知乎网友 DJ Hitori 的回答获赞无数。<a id="more"></a></p>
+<p>这篇回答并不是讲述在生活中程序员如何买苹果，而是以买苹果为例说明程序员如何解决问题。程序员需要对问题进行透彻的分析，理清其涉及的所有细节，预测可能发生的所有意外与非意外的情况，列出解决方案的所有步骤，以及对解决方案进行尽量全面的测试。而这些正是编程难的地方。任何一点遗漏都会成为 bug，轻则导致挨骂，重则导致经济损失甚至危害安全。</p>
+<h3 id="高赞回答"><a href="#高赞回答" class="headerlink" title="高赞回答"></a>高赞回答</h3><p><strong>普通人：</strong></p>
+<p>我今天要买一斤苹果。</p>
+<p><strong>程序员：</strong></p>
+<p>我今天要买一斤苹果。</p>
+<p>因为我只喜欢红富士苹果，所以我只买红富士苹果。</p>
+<p>我能接受的最高价格是 10 元 / 斤。</p>
+<p>正常情况下一斤苹果用一个袋子能装下，但是为防万一，我会带两个袋子。</p>
+<p>我知道附近的 3 家水果店，所以我会依次访问这 3 家水果店。</p>
+<p>根据上述条件，我设计出以下的买苹果的流程：</p>
+<p><img src="https://i.loli.net/2020/04/10/yTUwouKFQqsnYGc.jpg" alt="1.jpg"></p>
+<p>这个流程怎么样？我来设计一些测试样例，测试一下这个流程。</p>
+<p>测试发现一个问题：</p>
+<p>如果水果店 0 和水果店 1 都有红富士苹果并且价格都低于 10 元 / 斤，而且水果店 1 的价格比水果店 0 更低，那么我希望买水果店 1 的苹果，但我设计的流程会让我买水果店 0 的苹果。</p>
+<p>为了解决这个问题，我应该先询问所有水果店的价格，然后去价格最低的那一家买苹果。</p>
+<p>经过修改，我重新设计出以下的买苹果的流程：</p>
+<p><img src="https://i.loli.net/2020/04/10/DlUaVeLhJBAW5fv.jpg" alt="2.jpg"></p>
+<p>现在这个流程是不是完美了呢？不是，我还能发现很多问题。</p>
+<p>如果 3 家水果店都有红富士苹果但都不到一斤，但是三家店加起来能达到一斤，那么我不应该结束流程回家，而是应该把三家店的红富士苹果都买下来。</p>
+<p>如果我向水果店询问价格的时候这家店还有红富士苹果，但我询问完所有水果店的价格后这家店的红富士苹果卖完了，那么我的流程会让我试图处理不存在的红富士苹果。</p>
+<p>我走路的过程中可能会遇到突发事件，比如发现了新的水果店，比如袋子破掉了苹果掉一地，对于这些情况我的流程都无法进行处理。</p>
+<p>啊问题太多了我懒得再改流程了。我还是去 X 宝买吧。<br>那么接下来我要设计一个在 X 宝买红富士苹果的流程……</p>
+<p>文章来源：<a href="https://www.zhihu.com/answer/141334678" target="_blank">传送门</a></p>
+]]></content>
+      <categories>
+        <category>开发</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自由钢琴</title>
+    <url>/2020/04/11/%E8%87%AA%E7%94%B1%E9%92%A2%E7%90%B4/</url>
+    <content><![CDATA[<p>浏览互联网的过程中，往往都是思维肆意飘荡的时刻，此时某处微小的声音也会激起你内心深处音乐细胞的复苏，相信拥有非凡音乐灵感的你一定想将此情感表达出来。<a id="more"></a></p>
+<p>巧合的是你目前并没有乐器在手，不用慌乱，进入这款在线音乐网站，可能就会帮助到你实现你的情感表达。</p>
+<p><a href=" https://www.autopiano.cn/ "  target="_blank">传送门</a></p>
+]]></content>
+      <categories>
+        <category>音乐</category>
+      </categories>
+      <tags>
+        <tag>有趣的</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>电脑博物馆</title>
+    <url>/2020/04/11/%E7%94%B5%E8%84%91%E5%8D%9A%E7%89%A9%E9%A6%86/</url>
+    <content><![CDATA[<p>当你用着最新的电脑，有没有想着感受一下上古时代的电脑，去体验一下那即将改变人类生活方式的10101000古董级电脑。<a id="more"></a></p>
+<p>现在推荐的一个网站是配合知乎专栏,古董电脑室建设的在线电脑模拟器网站，希望能够以一种更直观的方式展示历史上著名的电脑平台的特性。针对中文读者还加入了许多中国市场上独有的硬件和软件平台，包括 UCDOS、文曲星电子词典、小霸王学习机、中华学习机等。</p>
+<p>快去体验一下吧。</p>
+<p><a href="http://www.dnbwg.com/" target="_blank">传送门</a></p>
+]]></content>
+      <categories>
+        <category>博物馆</category>
+      </categories>
+      <tags>
+        <tag>有趣的</tag>
       </tags>
   </entry>
 </search>
