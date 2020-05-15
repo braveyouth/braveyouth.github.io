@@ -50,6 +50,44 @@
       </tags>
   </entry>
   <entry>
+    <title>studio 3T 两种破解教程</title>
+    <url>/2020/05/15/studio-3T-%E4%B8%A4%E7%A7%8D%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<h2 id="解决studio-3T时间到期的两种方法"><a href="#解决studio-3T时间到期的两种方法" class="headerlink" title="解决studio 3T时间到期的两种方法"></a>解决studio 3T时间到期的两种方法</h2><blockquote>
+<p>此教程并非真正破解，而是通过重置 studio 3t 的试用时间解决的。</p>
+</blockquote>
+<a id="more"></a>
+
+<h3 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h3><ol>
+<li>按住<code>win + r</code> 键输入 <code>regedit</code></li>
+<li>找到以下路径<br><code>HKEY_USERS\S-1-5-21-xxxxxxxxxxxxxx\SOFTWARE\JavaSoft\Prefs\3t\mongochef\enterprise</code></li>
+<li>将除了 <code>installation-date-2019.2.1</code>（这个是软件安装日期的时间戳）<strong>这个项以外的项数据修改为空</strong>，再次打开软件就又是 30 天试用了  </li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/17559159-1c9957280bfd8ab5.JPG" alt=""></p>
+<h3 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h3><ol>
+<li><p>创建一个文本文档</p>
+</li>
+<li><p>输入以下代码</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line">ECHO 重置Studio 3T的使用日期......</span><br><span class="line">FOR &#x2F;f &quot;tokens&#x3D;1,2,* &quot; %%i IN (&#39;reg query &quot;HKEY_CURRENT_USER\Software\JavaSoft\Prefs\3t\mongochef\enterprise&quot; ^| find &#x2F;V &quot;installation&quot; ^| find &#x2F;V &quot;HKEY&quot;&#39;) DO ECHO yes | reg add &quot;HKEY_CURRENT_USER\Software\JavaSoft\Prefs\3t\mongochef\enterprise&quot; &#x2F;v %%i &#x2F;t REG_SZ &#x2F;d &quot;&quot;</span><br><span class="line">ECHO 重置完成, 按任意键退出......</span><br><span class="line">pause&gt;nul</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>将文件命名为<code>studio3t.bat</code></p>
+</li>
+<li><p>将<code>studio3t.bat</code>文件添加到以下路径<br><code>C:\ProgramData\Microsoft\Windows\Start Menu\Programs</code></p>
+</li>
+<li><p>运行 studio 3T 即可延长使用期限</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>开发</category>
+      </categories>
+      <tags>
+        <tag>开发软件</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>观剧记录</title>
     <url>/2020/05/04/%E8%A7%82%E5%89%A7%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p> 一部剧一台戏，一台戏一种人生！ </p>
