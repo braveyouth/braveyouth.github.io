@@ -43,6 +43,25 @@ var _hmt = _hmt || [];
 <!-- 封面标闪烁 -->
 <link rel="stylesheet" href="/css/zhangy.css">
 
+<!--底部运行时间-->
+<script>
+function show_runtime() {
+    window.setTimeout("show_runtime()", 1000);
+    X = new Date("31/12/2019 00:00:00");
+    Y = new Date();
+    T = (Y.getTime() - X.getTime());
+    M = 24 * 60 * 60 * 1000;
+    a = T / M;
+    A = Math.floor(a);
+    b = (a - A) * 24;
+    B = Math.floor(b);
+    c = (b - B) * 60;
+    C = Math.floor((b - B) * 60);
+    D = Math.floor((c - C) * 60);
+    runtime_span.innerHTML = "小站在各种崩坏中坚持了: " + A + "天" + B + "小时" + C + "分" + D + "秒"
+}
+show_runtime();
+</script>
 </html>
 
 <body>
@@ -150,6 +169,10 @@ var _hmt = _hmt || [];
 </section>
       <footer class="footer">
   <div class="outer">
+	<!-- 运行天数 -->
+    <ul>
+        <li><span id="runtime_span"></span></li>
+    </ul>
     <ul class="list-inline">
       <li>
         &copy;
