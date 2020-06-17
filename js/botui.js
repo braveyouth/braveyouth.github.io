@@ -5,7 +5,7 @@ A=O.context;var S=!A._isMounted||!n.isRootInsert;if(!S||x||""===x){var T=S&&d?d:
 /*波推回复*/
 function bot_ui_ini(){
 	var botui=new BotUI("hello-mashiro");botui.message.add({delay:800,content:"Hi, there👋"})
-	.then(function(){botui.message.add({delay:1100,content:"这里是 XXXZhy"})
+	.then(function(){botui.message.add({delay:1100,content:"这里是奔跑的阳光的小屋"})
 	.then(function(){botui.message.add({delay:1100,content:"一个后来才知道努力的男孩子~"})
 	.then(function(){
 		botui.action.button({
@@ -13,13 +13,13 @@ function bot_ui_ini(){
 		{text:"然后呢？ 😃",value:"sure"},
 		{text:"少废话！ 🙄",value:"skip"}]})
 	.then(function(a){"sure"==a.value&&sure();"skip"==a.value&&end()})})})});var sure=function(){botui.message.add({delay:800,content:"竟然真对我感兴趣！ 🌹🌹🌹"})
-	.then(function(){secondpart()})},end=function(){botui.message.add({delay:800,content:"![...](https://cdn.jsdelivr.net/gh/XXXZhy/Blog_Image/images/黄狗白眼.webp)"})},secondpart=function(){botui.message.add({delay:1500,content:"现就读山东交通学院"})
+	.then(function(){secondpart()})},end=function(){botui.message.add({delay:800,content:"![...](https://cdn.jsdelivr.net/gh/XXXZhy/Blog_Image/images/黄狗白眼.webp)"})},secondpart=function(){botui.message.add({delay:1500,content:"现居住湖北武汉"})
 	.then(function(){botui.message.add({delay:1500,content:"是学计算机科学与技术专业的小萌新😬"})
 	.then(function(){botui.message.add({delay:1200,content:"喜欢瞎捣鼓，会因为学到一点儿小技巧高兴"})
 	.then(function(){botui.message.add({delay:1500,content:"主修 Java 和 Python,略知 linux,偶尔也搞 HTML/CSS/JavaScript"})
-	.then(function(){botui.action.button({delay:1100,action:[{text:"为什么叫XXXZhy呢？🤔",value:"why-mashiro"}]})
+	.then(function(){botui.action.button({delay:1100,action:[{text:"为什么叫zhangy呢？🤔",value:"why-mashiro"}]})
 	.then(function(a){thirdpart()})})})})})},thirdpart=function(){botui.message.add({delay:1e3,content:"因为喜欢XXXTentaction的歌"})
-	.then(function(){botui.message.add({delay:1500,content:"Zhy是自己的缩写，谐音是🐷🐵🐟"})
+	.then(function(){botui.message.add({delay:1500,content:"Zy是自己的缩写，谐音是🐷🐟"})
 	.then(function(){botui.action.button({delay:1500,action:[{text:"有什么爱好吗？👊",value:"why-cat"}]})
 	.then(function(a){fourthpart()})})})},fourthpart=function(){botui.message.add({delay:1e3,content:"闲暇之余主要看电影🎥、唱歌📼、学吉他🎸"})
 	.then(function(){botui.message.add({delay:1100,content:"当然也会大家都会玩的游戏🎮~"})
