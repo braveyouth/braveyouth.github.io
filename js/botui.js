@@ -19,7 +19,7 @@ function bot_ui_ini(){
 	.then(function(){botui.message.add({delay:1500,content:"主修 Java,略知 linux,偶尔也搞 HTML/CSS/JavaScript"})
 	.then(function(){botui.action.button({delay:1100,action:[{text:"为什么叫奔跑的阳光呢？🤔",value:"why-mashiro"}]})
 	.then(function(a){thirdpart()})})})})})},thirdpart=function(){botui.message.add({delay:1e3,content:"因为喜欢这样的感觉"})
-	.then(function(){botui.message.add({delay:1500,content:"Zy是自己的缩写，谐音是🐷🐟"})
+	/*.then(function(){botui.message.add({delay:1500,content:"Zhangy是自己的缩写，谐音是🐷🐟"})*/
 	.then(function(){botui.action.button({delay:1500,action:[{text:"有什么爱好吗？👊",value:"why-cat"}]})
 	.then(function(a){fourthpart()})})})},fourthpart=function(){botui.message.add({delay:1e3,content:"闲暇之余主要看电影🎥、听歌📼"})
 	.then(function(){botui.message.add({delay:1100,content:"当然也会大家都会玩的游戏🎮~"})
