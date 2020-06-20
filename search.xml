@@ -3,7 +3,7 @@
   <entry>
     <title>幸存者偏差</title>
     <url>/2020/04/09/%E5%B9%B8%E5%AD%98%E8%80%85%E5%81%8F%E5%B7%AE/</url>
-    <content><![CDATA[<h2 id="幸存者偏差"><a href="#幸存者偏差" class="headerlink" title="幸存者偏差"></a>幸存者偏差</h2><h3 id="一、-简单了解幸存者偏差概念"><a href="#一、-简单了解幸存者偏差概念" class="headerlink" title="一、 简单了解幸存者偏差概念"></a>一、 简单了解幸存者偏差概念</h3><p> 幸存者偏差（Survivor bias），另译为 “生存者偏差” 或 “存活者偏差”，是一种常见的逻辑谬误。指的是<strong>只能看到经过某种筛选而产生的结果，而没有意识到筛选的过程，因此忽略了被筛选掉的关键信息。</strong> <a id="more"></a></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="幸存者偏差"><a href="#幸存者偏差" class="headerlink" title="幸存者偏差"></a>幸存者偏差</h2><h3 id="一、-简单了解幸存者偏差概念"><a href="#一、-简单了解幸存者偏差概念" class="headerlink" title="一、 简单了解幸存者偏差概念"></a>一、 简单了解幸存者偏差概念</h3><p> 幸存者偏差（Survivor bias），另译为 “生存者偏差” 或 “存活者偏差”，是一种常见的逻辑谬误。指的是<strong>只能看到经过某种筛选而产生的结果，而没有意识到筛选的过程，因此忽略了被筛选掉的关键信息。</strong> <a id="more"></a></p>
 <p>是不是有点点懵逼，下面通过故事来理解一下这个概念。</p>
 <p><img src="https://i.loli.net/2020/04/10/uW64gLy7jDE31Xd.jpg" alt="640.jpg"></p>
 <p>幸存者偏差最早来源于第二次世界大战期间，美国哥伦比亚大学统计学亚伯拉罕·沃德教授接受美国海军要求，运用他在统计方面的专业知识给出关于“飞机应该如何加强防护，才能降低被炮火击落的几率”的建议。</p>
@@ -52,7 +52,7 @@
   <entry>
     <title>十大经典排序算法（动图演示）</title>
     <url>/2020/06/04/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%88%E5%8A%A8%E5%9B%BE%E6%BC%94%E7%A4%BA%EF%BC%89/</url>
-    <content><![CDATA[<h3 id="0、算法概述"><a href="#0、算法概述" class="headerlink" title="0、算法概述"></a>0、算法概述</h3><h4 id="0-1-算法分类"><a href="#0-1-算法分类" class="headerlink" title="0.1 算法分类"></a>0.1 算法分类</h4><p>十种常见排序算法可以分为两大类：</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="0、算法概述"><a href="#0、算法概述" class="headerlink" title="0、算法概述"></a>0、算法概述</h3><h4 id="0-1-算法分类"><a href="#0-1-算法分类" class="headerlink" title="0.1 算法分类"></a>0.1 算法分类</h4><p>十种常见排序算法可以分为两大类：</p>
 <ul>
 <li><strong>比较类排序</strong>：通过比较来决定元素间的相对次序，由于其时间复杂度不能突破 O(nlogn)，因此也称为非线性时间比较类排序。</li>
 <li><strong>非比较类排序</strong>：不通过比较来决定元素间的相对次序，它可以突破基于比较排序的时间下界，以线性时间运行，因此也称为线性时间非比较类排序。 <a id="more"></a></li>
@@ -72,7 +72,9 @@
 <li>针对所有的元素重复以上的步骤，除了最后一个；</li>
 <li>重复步骤 1~3，直到排序完成。</li>
 </ul>
-<h4 id="1-2-动图演示"><a href="#1-2-动图演示" class="headerlink" title="1.2 动图演示"></a>1.2 动图演示</h4><p><img src="../images/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt=""></p>
+<h4 id="1-2-动图演示"><a href="#1-2-动图演示" class="headerlink" title="1.2 动图演示"></a>1.2 动图演示</h4><p><img src="2020-06-04-%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%88%E5%8A%A8%E5%9B%BE%E6%BC%94%E7%A4%BA%EF%BC%89.assets/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt=""></p>
+
+
 <h4 id="1-3-代码实现"><a href="#1-3-代码实现" class="headerlink" title="1.3 代码实现"></a>1.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function bubbleSort(arr) &#123;</span><br><span class="line">    varlen &#x3D; arr.length;</span><br><span class="line">    for(vari &#x3D; 0; i &lt; len - 1; i++) &#123;</span><br><span class="line">        for(varj &#x3D; 0; j &lt; len - 1 - i; j++) &#123;</span><br><span class="line">            if(arr[j] &gt; arr[j+1]) &#123;       &#x2F;&#x2F; 相邻元素两两对比</span><br><span class="line">                vartemp &#x3D; arr[j+1];       &#x2F;&#x2F; 元素交换</span><br><span class="line">                arr[j+1] &#x3D; arr[j];</span><br><span class="line">                arr[j] &#x3D; temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="2、选择排序（Selection-Sort）"><a href="#2、选择排序（Selection-Sort）" class="headerlink" title="2、选择排序（Selection Sort）"></a>2、选择排序（Selection Sort）</h3><p>选择排序 (Selection-sort) 是一种简单直观的排序算法。它的工作原理：首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。 </p>
@@ -96,7 +98,7 @@
 <li>将新元素插入到该位置后；</li>
 <li>重复步骤 2~5。</li>
 </ul>
-<h4 id="3-2-动图演示"><a href="#3-2-动图演示" class="headerlink" title="3.2 动图演示"></a>3.2 动图演示</h4><p><img src="https://raw.githubusercontent.com/braveyouth/figurebed/master/img/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt=""></p>
+<h4 id="3-2-动图演示"><a href="#3-2-动图演示" class="headerlink" title="3.2 动图演示"></a>3.2 动图演示</h4><p><img src="https://github.com/braveyouth/figurebed/blob/master/img/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt="插入排序动画"></p>
 <h4 id="3-2-代码实现"><a href="#3-2-代码实现" class="headerlink" title="3.2 代码实现"></a>3.2 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function insertionSort(arr) &#123;</span><br><span class="line">    varlen &#x3D; arr.length;</span><br><span class="line">    varpreIndex, current;</span><br><span class="line">    for(vari &#x3D; 1; i &lt; len; i++) &#123;</span><br><span class="line">        preIndex &#x3D; i - 1;</span><br><span class="line">        current &#x3D; arr[i];</span><br><span class="line">        while(preIndex &gt;&#x3D; 0 &amp;&amp; arr[preIndex] &gt; current) &#123;</span><br><span class="line">            arr[preIndex + 1] &#x3D; arr[preIndex];</span><br><span class="line">            preIndex--;</span><br><span class="line">        &#125;</span><br><span class="line">        arr[preIndex + 1] &#x3D; current;</span><br><span class="line">    &#125;</span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="3-4-算法分析"><a href="#3-4-算法分析" class="headerlink" title="3.4 算法分析"></a>3.4 算法分析</h4><p>插入排序在实现上，通常采用 in-place 排序（即只需用到 O(1) 的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p>
@@ -185,7 +187,7 @@
   <entry>
     <title>studio 3T 两种破解教程</title>
     <url>/2020/05/15/studio-3T-%E4%B8%A4%E7%A7%8D%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="解决studio-3T时间到期的两种方法"><a href="#解决studio-3T时间到期的两种方法" class="headerlink" title="解决studio 3T时间到期的两种方法"></a>解决studio 3T时间到期的两种方法</h2><blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="解决studio-3T时间到期的两种方法"><a href="#解决studio-3T时间到期的两种方法" class="headerlink" title="解决studio 3T时间到期的两种方法"></a>解决studio 3T时间到期的两种方法</h2><blockquote>
 <p>此教程并非真正破解，而是通过重置 studio 3t 的试用时间解决的。</p>
 </blockquote>
 <a id="more"></a>
@@ -225,7 +227,7 @@
   <entry>
     <title>观剧记录</title>
     <url>/2020/05/04/%E8%A7%82%E5%89%A7%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<p> 一部剧一台戏，一台戏一种人生！ </p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p> 一部剧一台戏，一台戏一种人生！ </p>
 <a id="more"></a>
 
 <h3 id="美剧"><a href="#美剧" class="headerlink" title="美剧"></a>美剧</h3><table>
@@ -386,7 +388,7 @@
   <entry>
     <title>健康的作息时间表</title>
     <url>/2020/05/02/%E5%85%A8%E7%90%83%E5%85%AC%E8%AE%A4%E6%9C%80%E5%81%A5%E5%BA%B7%E7%9A%84%E4%BD%9C%E6%81%AF%E6%97%B6%E9%97%B4%E8%A1%A8/</url>
-    <content><![CDATA[<p>下面是全球公认最健康的作息时间表，你值得拥有！</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>下面是全球公认最健康的作息时间表，你值得拥有！</p>
 <a id="more"></a>
 
 <h3 id="7-00-起床"><a href="#7-00-起床" class="headerlink" title="7:00    起床"></a>7:00    起床</h3><p>迎着清晨的阳光起床。一杯温水是早起之后的必需品，能让你获得一天最好的开始。</p>
@@ -437,7 +439,7 @@
   <entry>
     <title>观影记录</title>
     <url>/2020/05/01/%E8%A7%82%E5%BD%B1%E8%AE%B0%E5%BD%95/</url>
-    <content><![CDATA[<blockquote>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
 <p>人们去电影院通常是因为时间：为了失去或错过的时光，为了不曾拥有的时光。<br><strong>–塔可夫斯基《雕刻时光》</strong> </p>
 </blockquote>
 <a id="more"></a>
@@ -869,7 +871,7 @@
   <entry>
     <title>网络资源使用简明指南之电子书篇</title>
     <url>/2020/04/17/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90%E4%BD%BF%E7%94%A8%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97%E4%B9%8B%E7%94%B5%E5%AD%90%E4%B9%A6%E7%AF%87/</url>
-    <content><![CDATA[<p>书写出来并不是为了藏在高墙之后，而是为了向世界传播，激励和启发世人。<br>知识不是一小部分人的特权，是应该自由顺畅流向每一个需要它的人。 <a id="more"></a></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>书写出来并不是为了藏在高墙之后，而是为了向世界传播，激励和启发世人。<br>知识不是一小部分人的特权，是应该自由顺畅流向每一个需要它的人。 <a id="more"></a></p>
 <blockquote>
 <p>信息就是力量。但就像所有力量一样，有些人只想占为己有。<br>世界上所有的科学和文化遗产，已在书籍和期刊上发布了数个世纪，正渐渐地被少数私有的公司数字化并上锁。<br>那些能够获取这些资源的人，你有责任将它与世界分享。                                                                                                                                                 – <strong>亚伦·希勒尔·斯沃茨</strong> </p>
 </blockquote>
@@ -972,7 +974,7 @@
   <entry>
     <title>一个字节的奇幻之旅</title>
     <url>/2020/04/14/%E4%B8%80%E4%B8%AA%E5%AD%97%E8%8A%82%E7%9A%84%E5%A5%87%E5%B9%BB%E4%B9%8B%E6%97%85/</url>
-    <content><![CDATA[<p>大家好，给大家介绍一下，我是一个字节。相比于你们人类据说即将达到的百岁人生的寿命，我的一生简直不直一提（我只能存活零点几个毫秒）。<a id="more"></a></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>大家好，给大家介绍一下，我是一个字节。相比于你们人类据说即将达到的百岁人生的寿命，我的一生简直不直一提（我只能存活零点几个毫秒）。<a id="more"></a></p>
 <p>也许只有那些码农才会了解我，而且也只有一部分码农。那些整天做业务的猿们想来也不会真正的了解我，更别提人类其他行业的人了。</p>
 <p>我不甘心，虽然我微不足道，但是我对人类的贡献实在是太大了。没有我的世界根本无法想像：不能开微信，不能刷微博，不能听网易云音乐，不能刷抖音，不能上天猫，所有和网络相关的活动都无法进行。</p>
 <p>所以，今天我要讲讲我的一生，让更多的人知道我的存在，知道我的故事，也为证明自己曾经存在过吧。</p>
@@ -1023,7 +1025,7 @@
   <entry>
     <title>计算机科学与技术是什么</title>
     <url>/2020/04/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E6%98%AF%E4%BB%80%E4%B9%88/</url>
-    <content><![CDATA[<p>什么是计算机科学与技术？</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>什么是计算机科学与技术？</p>
 <p>百度百科：</p>
 <blockquote>
 <p>计算机科学与技术是研究计算机的设计与制造，并利用计算机进行有关的信息表示、收发、存储、处理、控制等的理论方法和技术的学科。</p>
@@ -1059,7 +1061,7 @@
   <entry>
     <title>故宫博物馆</title>
     <url>/2020/04/11/%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%A6%86/</url>
-    <content><![CDATA[<p>一款线上的故宫博物馆全景。<a id="more"></a></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>一款线上的故宫博物馆全景。<a id="more"></a></p>
 <p><a href=" http://t.cn/RXnGc1e " rel="noopener norefferrer" target="_blank">传送门</a></p>
 ]]></content>
       <categories>
@@ -1072,7 +1074,7 @@
   <entry>
     <title>电脑博物馆</title>
     <url>/2020/04/11/%E7%94%B5%E8%84%91%E5%8D%9A%E7%89%A9%E9%A6%86/</url>
-    <content><![CDATA[<p>当你用着最新的电脑，有没有想着感受一下上古时代的电脑，去体验一下那即将改变人类生活方式的10101000古董级电脑。<a id="more"></a></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>当你用着最新的电脑，有没有想着感受一下上古时代的电脑，去体验一下那即将改变人类生活方式的10101000古董级电脑。<a id="more"></a></p>
 <p>现在推荐的一个网站是配合知乎专栏,古董电脑室建设的在线电脑模拟器网站，希望能够以一种更直观的方式展示历史上著名的电脑平台的特性。针对中文读者还加入了许多中国市场上独有的硬件和软件平台，包括 UCDOS、文曲星电子词典、小霸王学习机、中华学习机等。</p>
 <p>快去体验一下吧。</p>
 <p><a href="http://www.dnbwg.com/" rel="noopener norefferrer" target="_blank">传送门</a></p>
@@ -1087,7 +1089,7 @@
   <entry>
     <title>自由钢琴</title>
     <url>/2020/04/11/%E8%87%AA%E7%94%B1%E9%92%A2%E7%90%B4/</url>
-    <content><![CDATA[<p>浏览互联网的过程中，往往都是思维肆意飘荡的时刻，此时某处微小的声音也会激起你内心深处音乐细胞的复苏，相信拥有非凡音乐灵感的你一定想将此情感表达出来。<a id="more"></a></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>浏览互联网的过程中，往往都是思维肆意飘荡的时刻，此时某处微小的声音也会激起你内心深处音乐细胞的复苏，相信拥有非凡音乐灵感的你一定想将此情感表达出来。<a id="more"></a></p>
 <p>巧合的是你目前并没有乐器在手，不用慌乱，进入这款在线音乐网站，可能就会帮助到你实现你的情感表达。</p>
 <p><a href=" https://www.autopiano.cn/ " rel="noopener norefferrer" target="_blank">传送门</a></p>
 ]]></content>
@@ -1101,7 +1103,7 @@
   <entry>
     <title>编程到底难在哪里</title>
     <url>/2020/04/10/%E7%BC%96%E7%A8%8B%E5%88%B0%E5%BA%95%E9%9A%BE%E5%9C%A8%E5%93%AA%E9%87%8C/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>知乎上有个问题：编程到底难在哪里？知乎网友 DJ Hitori 的回答获赞无数。<a id="more"></a></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>知乎上有个问题：编程到底难在哪里？知乎网友 DJ Hitori 的回答获赞无数。<a id="more"></a></p>
 <p>这篇回答并不是讲述在生活中程序员如何买苹果，而是以买苹果为例说明程序员如何解决问题。程序员需要对问题进行透彻的分析，理清其涉及的所有细节，预测可能发生的所有意外与非意外的情况，列出解决方案的所有步骤，以及对解决方案进行尽量全面的测试。而这些正是编程难的地方。任何一点遗漏都会成为 bug，轻则导致挨骂，重则导致经济损失甚至危害安全。</p>
 <h3 id="高赞回答"><a href="#高赞回答" class="headerlink" title="高赞回答"></a>高赞回答</h3><p><strong>普通人：</strong></p>
 <p>我今天要买一斤苹果。</p>
@@ -1136,7 +1138,7 @@
   <entry>
     <title>window使用问题解决方案</title>
     <url>/2020/04/10/window%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
-    <content><![CDATA[<h3 id="一、护眼模式的开启和关闭"><a href="#一、护眼模式的开启和关闭" class="headerlink" title="一、护眼模式的开启和关闭"></a>一、护眼模式的开启和关闭</h3><p>﻿1.使用 <strong>Win + R</strong> 组合快捷键，打开“运行”，然后键入打开注册表命令<strong>regedit</strong>，按回车键确认打开。<a id="more"></a></p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="一、护眼模式的开启和关闭"><a href="#一、护眼模式的开启和关闭" class="headerlink" title="一、护眼模式的开启和关闭"></a>一、护眼模式的开启和关闭</h3><p>﻿1.使用 <strong>Win + R</strong> 组合快捷键，打开“运行”，然后键入打开注册表命令<strong>regedit</strong>，按回车键确认打开。<a id="more"></a></p>
 <p>2.打开Win10注册表之后，依次在左侧树状菜单中展开：<code>HKEY_CURRENT_USER\Control Panel\Colors</code>，然后再右侧找到Windows值，并双击打开。</p>
 <p>3.双击Windows，打开编辑字符串窗口，将的<strong>255 255 255</strong>(默认是白色背景)三组颜色数值改成<strong>202 234 206</strong>(淡绿色)，完成后，点击下方的“确定”保存。</p>
 <p>4.继续找到注册表的路径：<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\</code></p>
