@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>window使用问题解决方案</title>
+    <url>/2020/04/10/window%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="一、护眼模式的开启和关闭"><a href="#一、护眼模式的开启和关闭" class="headerlink" title="一、护眼模式的开启和关闭"></a>一、护眼模式的开启和关闭</h3><p>﻿1.使用 <strong>Win + R</strong> 组合快捷键，打开“运行”，然后键入打开注册表命令<strong>regedit</strong>，按回车键确认打开。<a id="more"></a></p>
+<p>2.打开Win10注册表之后，依次在左侧树状菜单中展开：<code>HKEY_CURRENT_USER\Control Panel\Colors</code>，然后再右侧找到Windows值，并双击打开。</p>
+<p>3.双击Windows，打开编辑字符串窗口，将的<strong>255 255 255</strong>(默认是白色背景)三组颜色数值改成<strong>202 234 206</strong>(淡绿色)，完成后，点击下方的“确定”保存。</p>
+<p>4.继续找到注册表的路径：<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\</code></p>
+<p><code>CurrentVersion\Themes\DefaultColors\Standard</code>。</p>
+<p>5.同样再在右侧找到Windows双击打开，将默认的数据值 <strong>ffffff</strong> 改成 <strong>caeace</strong> 完成后，点击下方的确定保存。之后重启就会变成淡绿色的护眼状态。</p>
+<blockquote>
+<p>备注：想要恢复怎么办呢。其实很简单。将你修改的202 234 206变为255 255 255。然后将caeace 改为ffffff。重启一下，就可以变成原来的白色背景了。</p>
+</blockquote>
+<h3 id="二、端口被占用"><a href="#二、端口被占用" class="headerlink" title="二、端口被占用"></a>二、端口被占用</h3><p>1.开始–&gt;运行–&gt;cmd；或者是window+R组合键，调出命令窗口 </p>
+<p>2.输入命令：netstat -ano， 列出所有端口已占用的情况</p>
+<p>3.输入命令：netstat -aon|findstr “1001”，查看被占用端口1001对应的PID4</p>
+<p>4.输入命令：tasklist|findstr “4”，回车，查看是哪个进程或者程序占用了1001端口，结果是：svchost.exe ；或者打开任务管理器，切换到进程选项卡，在PID一列查看4对应的进程</p>
+<blockquote>
+<p>如果看不到PID这一列，右键点击选择列，勾选pid，点击确定</p>
+</blockquote>
+<p>5.输入命令： taskkill /f /t /im tasklist.exe ；或者在任务管理器结束pid为4的进程</p>
+<h3 id="三、删除文件提示正在被另一程序占用"><a href="#三、删除文件提示正在被另一程序占用" class="headerlink" title="三、删除文件提示正在被另一程序占用"></a>三、删除文件提示正在被另一程序占用</h3><p>1.打开任务管理器，切换到性能选项卡，点击“打开资源监视器”</p>
+<p>2.在cpu选项卡下找到关联的句柄搜索框</p>
+<p>3.输入要删除文件的文件名，看到新出现的程序，右键点击”结束进程”</p>
+<p>4.重新删除文件</p>
+<h3 id="四、生成文件夹树目录"><a href="#四、生成文件夹树目录" class="headerlink" title="四、生成文件夹树目录"></a>四、生成文件夹树目录</h3><ul>
+<li><p>命令窗口模式</p>
+<ul>
+<li><p>进入文件夹，打开命令窗口</p>
+</li>
+<li><p>输入命令： tree  /f &gt;tree.txt 生成包含当前文件夹及子文件夹目录的文件tree.txt</p>
+<blockquote>
+<p>“.txt”也可以写成”.docx”,”.doc”,”.xlsx”,”.xls”,”.md”结尾生成对应的文件</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>bat脚本模式</p>
+<ul>
+<li>新建文本文档，输入tree  /f &gt;tree.txt </li>
+<li>修改后缀名为.bat</li>
+<li>将修改后的文件拖入需要生成目录的文件夹下，双击运行脚本</li>
+</ul>
+</li>
+</ul>
+<h3 id="五、命令行窗口打开方式"><a href="#五、命令行窗口打开方式" class="headerlink" title="五、命令行窗口打开方式"></a>五、命令行窗口打开方式</h3><ul>
+<li>全局<ul>
+<li><code>Win</code> + <code>R</code>打开运行，输入<code>cmd</code>，然后按下回车键即可。</li>
+<li><code>Win</code> + <code>R</code>打开运行，输入<code>powershell</code>，然后按下回车键即可。</li>
+<li><code>Win</code> + <code>X</code>或开始菜单按钮右键打开 <code>Windows PowerShell</code></li>
+</ul>
+</li>
+<li>指定目录<ul>
+<li>通过 <code>cd</code> 命令进入指定目录。</li>
+<li>资源管理器打开目录，在地址栏输入 <code>cmd</code> 回车键即可</li>
+<li>按下 <code>Shift</code> 键的同时鼠标右键该目录空白处可选择打开 <code>Windows PowerShell</code></li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>开发</category>
+      </categories>
+      <tags>
+        <tag>开发环境</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>幸存者偏差</title>
     <url>/2020/04/09/%E5%B9%B8%E5%AD%98%E8%80%85%E5%81%8F%E5%B7%AE/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="幸存者偏差"><a href="#幸存者偏差" class="headerlink" title="幸存者偏差"></a>幸存者偏差</h2><h3 id="一、-简单了解幸存者偏差概念"><a href="#一、-简单了解幸存者偏差概念" class="headerlink" title="一、 简单了解幸存者偏差概念"></a>一、 简单了解幸存者偏差概念</h3><p> 幸存者偏差（Survivor bias），另译为 “生存者偏差” 或 “存活者偏差”，是一种常见的逻辑谬误。指的是<strong>只能看到经过某种筛选而产生的结果，而没有意识到筛选的过程，因此忽略了被筛选掉的关键信息。</strong> <a id="more"></a></p>
@@ -98,6 +164,20 @@
       </tags>
   </entry>
   <entry>
+    <title>自由钢琴</title>
+    <url>/2020/04/11/%E8%87%AA%E7%94%B1%E9%92%A2%E7%90%B4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>浏览互联网的过程中，往往都是思维肆意飘荡的时刻，此时某处微小的声音也会激起你内心深处音乐细胞的复苏，相信拥有非凡音乐灵感的你一定想将此情感表达出来。<a id="more"></a></p>
+<p>巧合的是你目前并没有乐器在手，不用慌乱，进入这款在线音乐网站，可能就会帮助到你实现你的情感表达。</p>
+<p><a href=" https://www.autopiano.cn/ " rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">传送门</a></p>
+]]></content>
+      <categories>
+        <category>音乐</category>
+      </categories>
+      <tags>
+        <tag>有趣的</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>电脑博物馆</title>
     <url>/2020/04/11/%E7%94%B5%E8%84%91%E5%8D%9A%E7%89%A9%E9%A6%86/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>当你用着最新的电脑，有没有想着感受一下上古时代的电脑，去体验一下那即将改变人类生活方式的10101000古董级电脑。<a id="more"></a></p>
@@ -107,122 +187,6 @@
 ]]></content>
       <categories>
         <category>博物馆</category>
-      </categories>
-      <tags>
-        <tag>有趣的</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>window使用问题解决方案</title>
-    <url>/2020/04/10/window%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="一、护眼模式的开启和关闭"><a href="#一、护眼模式的开启和关闭" class="headerlink" title="一、护眼模式的开启和关闭"></a>一、护眼模式的开启和关闭</h3><p>﻿1.使用 <strong>Win + R</strong> 组合快捷键，打开“运行”，然后键入打开注册表命令<strong>regedit</strong>，按回车键确认打开。<a id="more"></a></p>
-<p>2.打开Win10注册表之后，依次在左侧树状菜单中展开：<code>HKEY_CURRENT_USER\Control Panel\Colors</code>，然后再右侧找到Windows值，并双击打开。</p>
-<p>3.双击Windows，打开编辑字符串窗口，将的<strong>255 255 255</strong>(默认是白色背景)三组颜色数值改成<strong>202 234 206</strong>(淡绿色)，完成后，点击下方的“确定”保存。</p>
-<p>4.继续找到注册表的路径：<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\</code></p>
-<p><code>CurrentVersion\Themes\DefaultColors\Standard</code>。</p>
-<p>5.同样再在右侧找到Windows双击打开，将默认的数据值 <strong>ffffff</strong> 改成 <strong>caeace</strong> 完成后，点击下方的确定保存。之后重启就会变成淡绿色的护眼状态。</p>
-<blockquote>
-<p>备注：想要恢复怎么办呢。其实很简单。将你修改的202 234 206变为255 255 255。然后将caeace 改为ffffff。重启一下，就可以变成原来的白色背景了。</p>
-</blockquote>
-<h3 id="二、端口被占用"><a href="#二、端口被占用" class="headerlink" title="二、端口被占用"></a>二、端口被占用</h3><p>1.开始–&gt;运行–&gt;cmd；或者是window+R组合键，调出命令窗口 </p>
-<p>2.输入命令：netstat -ano， 列出所有端口已占用的情况</p>
-<p>3.输入命令：netstat -aon|findstr “1001”，查看被占用端口1001对应的PID4</p>
-<p>4.输入命令：tasklist|findstr “4”，回车，查看是哪个进程或者程序占用了1001端口，结果是：svchost.exe ；或者打开任务管理器，切换到进程选项卡，在PID一列查看4对应的进程</p>
-<blockquote>
-<p>如果看不到PID这一列，右键点击选择列，勾选pid，点击确定</p>
-</blockquote>
-<p>5.输入命令： taskkill /f /t /im tasklist.exe ；或者在任务管理器结束pid为4的进程</p>
-<h3 id="三、删除文件提示正在被另一程序占用"><a href="#三、删除文件提示正在被另一程序占用" class="headerlink" title="三、删除文件提示正在被另一程序占用"></a>三、删除文件提示正在被另一程序占用</h3><p>1.打开任务管理器，切换到性能选项卡，点击“打开资源监视器”</p>
-<p>2.在cpu选项卡下找到关联的句柄搜索框</p>
-<p>3.输入要删除文件的文件名，看到新出现的程序，右键点击”结束进程”</p>
-<p>4.重新删除文件</p>
-<h3 id="四、生成文件夹树目录"><a href="#四、生成文件夹树目录" class="headerlink" title="四、生成文件夹树目录"></a>四、生成文件夹树目录</h3><ul>
-<li><p>命令窗口模式</p>
-<ul>
-<li><p>进入文件夹，打开命令窗口</p>
-</li>
-<li><p>输入命令： tree  /f &gt;tree.txt 生成包含当前文件夹及子文件夹目录的文件tree.txt</p>
-<blockquote>
-<p>“.txt”也可以写成”.docx”,”.doc”,”.xlsx”,”.xls”,”.md”结尾生成对应的文件</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>bat脚本模式</p>
-<ul>
-<li>新建文本文档，输入tree  /f &gt;tree.txt </li>
-<li>修改后缀名为.bat</li>
-<li>将修改后的文件拖入需要生成目录的文件夹下，双击运行脚本</li>
-</ul>
-</li>
-</ul>
-<h3 id="五、命令行窗口打开方式"><a href="#五、命令行窗口打开方式" class="headerlink" title="五、命令行窗口打开方式"></a>五、命令行窗口打开方式</h3><ul>
-<li>全局<ul>
-<li><code>Win</code> + <code>R</code>打开运行，输入<code>cmd</code>，然后按下回车键即可。</li>
-<li><code>Win</code> + <code>R</code>打开运行，输入<code>powershell</code>，然后按下回车键即可。</li>
-<li><code>Win</code> + <code>X</code>或开始菜单按钮右键打开 <code>Windows PowerShell</code></li>
-</ul>
-</li>
-<li>指定目录<ul>
-<li>通过 <code>cd</code> 命令进入指定目录。</li>
-<li>资源管理器打开目录，在地址栏输入 <code>cmd</code> 回车键即可</li>
-<li>按下 <code>Shift</code> 键的同时鼠标右键该目录空白处可选择打开 <code>Windows PowerShell</code></li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>开发</category>
-      </categories>
-      <tags>
-        <tag>开发环境</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机科学与技术是什么</title>
-    <url>/2020/04/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E6%98%AF%E4%BB%80%E4%B9%88/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>什么是计算机科学与技术？</p>
-<p>百度百科：</p>
-<blockquote>
-<p>计算机科学与技术是研究计算机的设计与制造，并利用计算机进行有关的信息表示、收发、存储、处理、控制等的理论方法和技术的学科。</p>
-</blockquote>
-<a id="more"></a>
-
-<p>维基百科：</p>
-<blockquote>
-<p>Computer science is the theory, experimentation, and engineering that form the basis for the design and use of computers. It involves the study of algorithms that process, store, and communicate digital information. A computer scientist specializes in the theory of computation and the design of computational systems.</p>
-</blockquote>
-<p>总结来说，计算机科学与技术是设计和使用计算机的理论和实践基础，包括处理、存储和传输数字信息的算法学习。</p>
-<p><strong>计算机科学与技术可以分为科学与技术两部分</strong>，像计算机组成原理、计算机网络、操作系统、数据结构与算法等课程都是在阐述科学的部分，而像 C 语言程序设计、Java 面向对象编程、WEB 网页设计等课程则是在阐述技术部分。</p>
-<p>那么如何学好呢？</p>
-<p>借鉴柏拉图在《理想国》中阐述的教育理念，划分四个学习阶段。</p>
-<p><strong>第一阶段学习一门编程语言以及基础的数据结构与算法知识</strong>。编程语言选择主流的即可，比如 C、Java、Python 都是可以的。编程语言不需要学习的有多么地深入，比如 Java 基本数据类型以及基本的操作、条件分支语句、循环语句、类与对象即可；C 语言或 Python 语言类似。在此阶段不需要把编程语言学习的面面俱到，最重要的是为后面的数据结构与算法的学习打下一定的基础。</p>
-<p>之后，就可以开始学习基础的数据结构与算法知识。在学习此阶段时一定要利用前面所学的编程语言，将学习到的数据结构、算法等实现一遍，这样不仅能够对编程语言有更深入地理解，同时能够对数据结构与算法有更深入地理解。</p>
-<p>经过此阶段的学习，已经具备解决一些算法题目的能力了，可以尝试去一些算法网站去刷题。注意解决刷算法题是一个长期的学习任务，第一阶段结束后就可以尝试每周去刷一道有难度的题目，可以到欧拉计划 (Project Euler) 上找，也可以到 LeetCode 上找，养成用程序的思维来解决问题的习惯。</p>
-<p><strong>第二阶段学习操作系统相关的知识。</strong>这里的操作系统不仅指要学习的计算机操作系统专业课程，同时还要学习并发编程相关的知识。学习计算机操作系统时重点学习操作系统的内存管理、进程线程管理等理论知识，同时结合自己所学习的编程语言来进行相关实践，比如可以同步学习 Java 并发编程、JVM 等知识。</p>
-<p>此阶段的学习至关重要，为以后的学习工作打下扎实的理论和实践基础。</p>
-<p><strong>第三阶段学习计算机网络相关的知识。</strong>同操作系统知识的学习一样，不仅要学习计算机网络专业课，同时还要理论结合实践，去学习 HttpClient 等网络框架技术来进行理论和实践的结合。</p>
-<p>在此阶段的学习过程中，如果时间充裕的话，可以尝试去学习一些微服务、分布式等相关的知识，也可以去学习 WEB 开发、gRPC、Netty、Thrift 等相关知识，这些都和并发编程、网络有密不可分的关系。</p>
-<p>此阶段的学习具备网络开发的能力，可以试着开发一些网络应用。</p>
-<p><strong>第四阶段学习数据库相关知识，同时补充学习一些其他编程知识</strong>，比如汇编语言等。数据库的学习以 MySQL 为主，学习基本的 SQL 操作、SQL 优化以及 InnoDB 存储引擎。</p>
-<p>以上的学习内容是非常充实的学习之旅，当然由于学习的内容比较多，且比较深入，对大家的自学能力有比较高的要求。不过，无论怎样，如果大家能够坚持学习下来，肯定会有很大的收获。</p>
-]]></content>
-      <categories>
-        <category>开发</category>
-      </categories>
-      <tags>
-        <tag>学科概念</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>自由钢琴</title>
-    <url>/2020/04/11/%E8%87%AA%E7%94%B1%E9%92%A2%E7%90%B4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>浏览互联网的过程中，往往都是思维肆意飘荡的时刻，此时某处微小的声音也会激起你内心深处音乐细胞的复苏，相信拥有非凡音乐灵感的你一定想将此情感表达出来。<a id="more"></a></p>
-<p>巧合的是你目前并没有乐器在手，不用慌乱，进入这款在线音乐网站，可能就会帮助到你实现你的情感表达。</p>
-<p><a href=" https://www.autopiano.cn/ " rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">传送门</a></p>
-]]></content>
-      <categories>
-        <category>音乐</category>
       </categories>
       <tags>
         <tag>有趣的</tag>
@@ -329,6 +293,42 @@
       </categories>
       <tags>
         <tag>电子书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机科学与技术是什么</title>
+    <url>/2020/04/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E6%98%AF%E4%BB%80%E4%B9%88/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>什么是计算机科学与技术？</p>
+<p>百度百科：</p>
+<blockquote>
+<p>计算机科学与技术是研究计算机的设计与制造，并利用计算机进行有关的信息表示、收发、存储、处理、控制等的理论方法和技术的学科。</p>
+</blockquote>
+<a id="more"></a>
+
+<p>维基百科：</p>
+<blockquote>
+<p>Computer science is the theory, experimentation, and engineering that form the basis for the design and use of computers. It involves the study of algorithms that process, store, and communicate digital information. A computer scientist specializes in the theory of computation and the design of computational systems.</p>
+</blockquote>
+<p>总结来说，计算机科学与技术是设计和使用计算机的理论和实践基础，包括处理、存储和传输数字信息的算法学习。</p>
+<p><strong>计算机科学与技术可以分为科学与技术两部分</strong>，像计算机组成原理、计算机网络、操作系统、数据结构与算法等课程都是在阐述科学的部分，而像 C 语言程序设计、Java 面向对象编程、WEB 网页设计等课程则是在阐述技术部分。</p>
+<p>那么如何学好呢？</p>
+<p>借鉴柏拉图在《理想国》中阐述的教育理念，划分四个学习阶段。</p>
+<p><strong>第一阶段学习一门编程语言以及基础的数据结构与算法知识</strong>。编程语言选择主流的即可，比如 C、Java、Python 都是可以的。编程语言不需要学习的有多么地深入，比如 Java 基本数据类型以及基本的操作、条件分支语句、循环语句、类与对象即可；C 语言或 Python 语言类似。在此阶段不需要把编程语言学习的面面俱到，最重要的是为后面的数据结构与算法的学习打下一定的基础。</p>
+<p>之后，就可以开始学习基础的数据结构与算法知识。在学习此阶段时一定要利用前面所学的编程语言，将学习到的数据结构、算法等实现一遍，这样不仅能够对编程语言有更深入地理解，同时能够对数据结构与算法有更深入地理解。</p>
+<p>经过此阶段的学习，已经具备解决一些算法题目的能力了，可以尝试去一些算法网站去刷题。注意解决刷算法题是一个长期的学习任务，第一阶段结束后就可以尝试每周去刷一道有难度的题目，可以到欧拉计划 (Project Euler) 上找，也可以到 LeetCode 上找，养成用程序的思维来解决问题的习惯。</p>
+<p><strong>第二阶段学习操作系统相关的知识。</strong>这里的操作系统不仅指要学习的计算机操作系统专业课程，同时还要学习并发编程相关的知识。学习计算机操作系统时重点学习操作系统的内存管理、进程线程管理等理论知识，同时结合自己所学习的编程语言来进行相关实践，比如可以同步学习 Java 并发编程、JVM 等知识。</p>
+<p>此阶段的学习至关重要，为以后的学习工作打下扎实的理论和实践基础。</p>
+<p><strong>第三阶段学习计算机网络相关的知识。</strong>同操作系统知识的学习一样，不仅要学习计算机网络专业课，同时还要理论结合实践，去学习 HttpClient 等网络框架技术来进行理论和实践的结合。</p>
+<p>在此阶段的学习过程中，如果时间充裕的话，可以尝试去学习一些微服务、分布式等相关的知识，也可以去学习 WEB 开发、gRPC、Netty、Thrift 等相关知识，这些都和并发编程、网络有密不可分的关系。</p>
+<p>此阶段的学习具备网络开发的能力，可以试着开发一些网络应用。</p>
+<p><strong>第四阶段学习数据库相关知识，同时补充学习一些其他编程知识</strong>，比如汇编语言等。数据库的学习以 MySQL 为主，学习基本的 SQL 操作、SQL 优化以及 InnoDB 存储引擎。</p>
+<p>以上的学习内容是非常充实的学习之旅，当然由于学习的内容比较多，且比较深入，对大家的自学能力有比较高的要求。不过，无论怎样，如果大家能够坚持学习下来，肯定会有很大的收获。</p>
+]]></content>
+      <categories>
+        <category>开发</category>
+      </categories>
+      <tags>
+        <tag>学科概念</tag>
       </tags>
   </entry>
   <entry>
