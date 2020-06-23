@@ -50,6 +50,19 @@
       </tags>
   </entry>
   <entry>
+    <title>故宫博物馆</title>
+    <url>/2020/04/11/%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%A6%86/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>一款线上的故宫博物馆全景。<a id="more"></a></p>
+<p><a href=" http://t.cn/RXnGc1e " rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">传送门</a></p>
+]]></content>
+      <categories>
+        <category>博物馆</category>
+      </categories>
+      <tags>
+        <tag>虚拟体验</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>编程到底难在哪里</title>
     <url>/2020/04/10/%E7%BC%96%E7%A8%8B%E5%88%B0%E5%BA%95%E9%9A%BE%E5%9C%A8%E5%93%AA%E9%87%8C/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>知乎上有个问题：编程到底难在哪里？知乎网友 DJ Hitori 的回答获赞无数。<a id="more"></a></p>
@@ -85,19 +98,6 @@
       </tags>
   </entry>
   <entry>
-    <title>故宫博物馆</title>
-    <url>/2020/04/11/%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%A6%86/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>一款线上的故宫博物馆全景。<a id="more"></a></p>
-<p><a href=" http://t.cn/RXnGc1e " rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">传送门</a></p>
-]]></content>
-      <categories>
-        <category>博物馆</category>
-      </categories>
-      <tags>
-        <tag>虚拟体验</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>电脑博物馆</title>
     <url>/2020/04/11/%E7%94%B5%E8%84%91%E5%8D%9A%E7%89%A9%E9%A6%86/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>当你用着最新的电脑，有没有想着感受一下上古时代的电脑，去体验一下那即将改变人类生活方式的10101000古董级电脑。<a id="more"></a></p>
@@ -113,17 +113,69 @@
       </tags>
   </entry>
   <entry>
-    <title>自由钢琴</title>
-    <url>/2020/04/11/%E8%87%AA%E7%94%B1%E9%92%A2%E7%90%B4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>浏览互联网的过程中，往往都是思维肆意飘荡的时刻，此时某处微小的声音也会激起你内心深处音乐细胞的复苏，相信拥有非凡音乐灵感的你一定想将此情感表达出来。<a id="more"></a></p>
-<p>巧合的是你目前并没有乐器在手，不用慌乱，进入这款在线音乐网站，可能就会帮助到你实现你的情感表达。</p>
-<p><a href=" https://www.autopiano.cn/ " rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">传送门</a></p>
+    <title>window使用问题解决方案</title>
+    <url>/2020/04/10/window%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="一、护眼模式的开启和关闭"><a href="#一、护眼模式的开启和关闭" class="headerlink" title="一、护眼模式的开启和关闭"></a>一、护眼模式的开启和关闭</h3><p>﻿1.使用 <strong>Win + R</strong> 组合快捷键，打开“运行”，然后键入打开注册表命令<strong>regedit</strong>，按回车键确认打开。<a id="more"></a></p>
+<p>2.打开Win10注册表之后，依次在左侧树状菜单中展开：<code>HKEY_CURRENT_USER\Control Panel\Colors</code>，然后再右侧找到Windows值，并双击打开。</p>
+<p>3.双击Windows，打开编辑字符串窗口，将的<strong>255 255 255</strong>(默认是白色背景)三组颜色数值改成<strong>202 234 206</strong>(淡绿色)，完成后，点击下方的“确定”保存。</p>
+<p>4.继续找到注册表的路径：<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\</code></p>
+<p><code>CurrentVersion\Themes\DefaultColors\Standard</code>。</p>
+<p>5.同样再在右侧找到Windows双击打开，将默认的数据值 <strong>ffffff</strong> 改成 <strong>caeace</strong> 完成后，点击下方的确定保存。之后重启就会变成淡绿色的护眼状态。</p>
+<blockquote>
+<p>备注：想要恢复怎么办呢。其实很简单。将你修改的202 234 206变为255 255 255。然后将caeace 改为ffffff。重启一下，就可以变成原来的白色背景了。</p>
+</blockquote>
+<h3 id="二、端口被占用"><a href="#二、端口被占用" class="headerlink" title="二、端口被占用"></a>二、端口被占用</h3><p>1.开始–&gt;运行–&gt;cmd；或者是window+R组合键，调出命令窗口 </p>
+<p>2.输入命令：netstat -ano， 列出所有端口已占用的情况</p>
+<p>3.输入命令：netstat -aon|findstr “1001”，查看被占用端口1001对应的PID4</p>
+<p>4.输入命令：tasklist|findstr “4”，回车，查看是哪个进程或者程序占用了1001端口，结果是：svchost.exe ；或者打开任务管理器，切换到进程选项卡，在PID一列查看4对应的进程</p>
+<blockquote>
+<p>如果看不到PID这一列，右键点击选择列，勾选pid，点击确定</p>
+</blockquote>
+<p>5.输入命令： taskkill /f /t /im tasklist.exe ；或者在任务管理器结束pid为4的进程</p>
+<h3 id="三、删除文件提示正在被另一程序占用"><a href="#三、删除文件提示正在被另一程序占用" class="headerlink" title="三、删除文件提示正在被另一程序占用"></a>三、删除文件提示正在被另一程序占用</h3><p>1.打开任务管理器，切换到性能选项卡，点击“打开资源监视器”</p>
+<p>2.在cpu选项卡下找到关联的句柄搜索框</p>
+<p>3.输入要删除文件的文件名，看到新出现的程序，右键点击”结束进程”</p>
+<p>4.重新删除文件</p>
+<h3 id="四、生成文件夹树目录"><a href="#四、生成文件夹树目录" class="headerlink" title="四、生成文件夹树目录"></a>四、生成文件夹树目录</h3><ul>
+<li><p>命令窗口模式</p>
+<ul>
+<li><p>进入文件夹，打开命令窗口</p>
+</li>
+<li><p>输入命令： tree  /f &gt;tree.txt 生成包含当前文件夹及子文件夹目录的文件tree.txt</p>
+<blockquote>
+<p>“.txt”也可以写成”.docx”,”.doc”,”.xlsx”,”.xls”,”.md”结尾生成对应的文件</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>bat脚本模式</p>
+<ul>
+<li>新建文本文档，输入tree  /f &gt;tree.txt </li>
+<li>修改后缀名为.bat</li>
+<li>将修改后的文件拖入需要生成目录的文件夹下，双击运行脚本</li>
+</ul>
+</li>
+</ul>
+<h3 id="五、命令行窗口打开方式"><a href="#五、命令行窗口打开方式" class="headerlink" title="五、命令行窗口打开方式"></a>五、命令行窗口打开方式</h3><ul>
+<li>全局<ul>
+<li><code>Win</code> + <code>R</code>打开运行，输入<code>cmd</code>，然后按下回车键即可。</li>
+<li><code>Win</code> + <code>R</code>打开运行，输入<code>powershell</code>，然后按下回车键即可。</li>
+<li><code>Win</code> + <code>X</code>或开始菜单按钮右键打开 <code>Windows PowerShell</code></li>
+</ul>
+</li>
+<li>指定目录<ul>
+<li>通过 <code>cd</code> 命令进入指定目录。</li>
+<li>资源管理器打开目录，在地址栏输入 <code>cmd</code> 回车键即可</li>
+<li>按下 <code>Shift</code> 键的同时鼠标右键该目录空白处可选择打开 <code>Windows PowerShell</code></li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <categories>
-        <category>音乐</category>
+        <category>开发</category>
       </categories>
       <tags>
-        <tag>有趣的</tag>
+        <tag>开发环境</tag>
       </tags>
   </entry>
   <entry>
@@ -163,54 +215,17 @@
       </tags>
   </entry>
   <entry>
-    <title>健康的作息时间表</title>
-    <url>/2020/05/02/%E5%85%A8%E7%90%83%E5%85%AC%E8%AE%A4%E6%9C%80%E5%81%A5%E5%BA%B7%E7%9A%84%E4%BD%9C%E6%81%AF%E6%97%B6%E9%97%B4%E8%A1%A8/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>下面是全球公认最健康的作息时间表，你值得拥有！</p>
-<a id="more"></a>
-
-<h3 id="7-00-起床"><a href="#7-00-起床" class="headerlink" title="7:00    起床"></a>7:00    起床</h3><p>迎着清晨的阳光起床。一杯温水是早起之后的必需品，能让你获得一天最好的开始。</p>
-<p><img src="https://qqpublic.qpic.cn/qq_public/0/0-2229531210-75463C8A7BB7FD51561AA7E241451669/900" alt=""></p>
-<h3 id="7-20-8-00-吃早饭"><a href="#7-20-8-00-吃早饭" class="headerlink" title="7:20-8:00    吃早饭"></a>7:20-8:00    吃早饭</h3><p>你需要营养全面而丰富的早餐。一顿优质的早餐，能让你一整天都充满活力。</p>
-<p><img src="https://qqpublic.qpic.cn/qq_public/0/0-3006431292-DC47FFDD6807F2150236DF4464F9E428/900" alt=""></p>
-<h3 id="8-30-9-00-避免剧烈运动"><a href="#8-30-9-00-避免剧烈运动" class="headerlink" title="8:30-9:00    避免剧烈运动"></a>8:30-9:00    避免剧烈运动</h3><p>早上是人体免疫系统最弱的时候，不要做剧烈的运动，走路上班是很好的选择，健康又惬意。</p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2498594716-52EED3E9DAB6B73B6736508CF00A0E43/0?fmt=jpg&size=18&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="9-00-10-00-做困难性工作"><a href="#9-00-10-00-做困难性工作" class="headerlink" title="9:00-10:00    做困难性工作"></a>9:00-10:00    做困难性工作</h3><p>上午，人脑最清醒犀利，应该用来做最有难度的事。比如攻克工作的难题，给复杂的报告列提纲等等，充分利用好上午清醒的大脑。</p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2821994936-30E6B86D9F0717CB59E1A7C4279DA02F/0?fmt=jpg&size=16&h=360&w=640&ppv=1" alt="">  </p>
-<h3 id="10-30-让眼睛休息一下"><a href="#10-30-让眼睛休息一下" class="headerlink" title="10:30    让眼睛休息一下"></a>10:30    让眼睛休息一下</h3><p>一晃就十点半了，起来走动走动，眺望一下远方，做一做眼保健操，让眼睛舒缓舒缓。  </p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2593181746-7096933C12220814D6BACC8E60D75819/0?fmt=jpg&size=13&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="11-00-吃点水果"><a href="#11-00-吃点水果" class="headerlink" title="11:00    吃点水果"></a>11:00    吃点水果</h3><p>上午工作得差不多了，该吃点水果了。上午是一天吃水果的最佳时机，因为上午人体最适合吸收水果里的营养。</p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2821155990-CD6ED1A1C88F33A25D112D51ABAF2CD5/0?fmt=jpg&size=12&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="12-00-12-30-午餐"><a href="#12-00-12-30-午餐" class="headerlink" title="12:00-12:30    午餐"></a>12:00-12:30    午餐</h3><p>午餐要吃饱，中午应该补充足够的蛋白质，豆类食品是最佳选择。虽然是午饭，久坐办公室的人也不要吃得太油腻。</p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2465346863-07413ECBB2DADBF056E348A0AD9A09D3/0?fmt=jpg&size=14&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="13-00-14-00-午睡"><a href="#13-00-14-00-午睡" class="headerlink" title="13:00-14:00    午睡"></a>13:00-14:00    午睡</h3><p>午饭后的时间很宝贵，最好用来小睡一觉。有的人喜欢在中午网上购物或者是打激烈的游戏，这反而会让大脑处于过度紧张的状态，造成下午身体的疲惫。</p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2854960333-A59C8DEB6EE9F43848E12D0E6955E7C3/0?fmt=jpg&size=13&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="14-00-16-00-做创意性工作"><a href="#14-00-16-00-做创意性工作" class="headerlink" title="14:00-16:00    做创意性工作"></a>14:00-16:00    做创意性工作</h3><p>午后是人思维最活跃的时间，非常适合做一些创意性的工作。想一想工作中的创新，即使是微小的改善，日积月累也会有巨大的成就。</p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2594154900-30323458FC4D49163895D1520D7CD1E1/0?fmt=jpg&size=16&h=360&w=640&ppv=1" alt="">  </p>
-<h3 id="16-00-喝杯酸奶"><a href="#16-00-喝杯酸奶" class="headerlink" title="16:00    喝杯酸奶"></a>16:00    喝杯酸奶</h3><p>四点左右，喝杯酸奶，能补充身体流失的血糖。马上将要投入到一天里最密集的工作中了。</p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2566162499-52E792A0178F7914A111CEE1C7F01973/0?fmt=jpg&size=13&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="16-10-19-00-做细致性工作"><a href="#16-10-19-00-做细致性工作" class="headerlink" title="16:10-19:00    做细致性工作"></a>16:10-19:00    做细致性工作</h3><p>四点到七点，身体和大脑都处于一天的巅峰状态，这时候我们应该做细致而密集的工作。做完这些别着急回家，  </p>
-<p>花 10 分钟总结一下当天的工作：</p>
-<p>今天收获了哪些好创意</p>
-<p>积累了哪些经验</p>
-<p>学习了什么新工具</p>
-<p>验证了什么想法</p>
-<p>……</p>
-<p>每天 10 分钟反思，大器必将早成！  </p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2352655579-6B318663F2D9E875C6226676FED4E9F5/0?fmt=jpg&size=16&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="19-00-最佳的运动时间"><a href="#19-00-最佳的运动时间" class="headerlink" title="19:00    最佳的运动时间"></a>19:00    最佳的运动时间</h3><p>下班之后稍微吃点东西，晚饭不要吃太多，三分饱即可。晚饭后稍微歇一会儿再开始运动。先散步，再慢跑，是非常健康的运动方式。</p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2974698069-25AE66C7605EEE5F8A148793725DCA79/0?fmt=jpg&size=15&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="20-00-看电视或看书"><a href="#20-00-看电视或看书" class="headerlink" title="20:00    看电视或看书"></a>20:00    看电视或看书</h3><p>运动之后可以看看电视，或打开你阅读计划中的书放松阅读。最好的选择还是在娱乐休闲中延绵不绝地思考工作，这样会碰撞出意想不到的火花。  </p>
-<p>劳逸结合的精髓就是：休闲的时候还有一根弦在牵挂工作，稍有灵感迸发就立刻抓住。</p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-3012196757-2B146EBE02449840F364A0E24574E8AC/0?fmt=jpg&size=14&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="22-00-洗个热水澡"><a href="#22-00-洗个热水澡" class="headerlink" title="22:00    洗个热水澡"></a>22:00    洗个热水澡</h3><p>时间差不多就该洗个澡了，让身体彻底舒缓下来，洗去一天的疲惫。  </p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-3163399326-A2F9AB0CA64042E2EFC922B98DDA1FEC/0?fmt=jpg&size=17&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="23-00-上床睡觉"><a href="#23-00-上床睡觉" class="headerlink" title="23:00    上床睡觉"></a>23:00    上床睡觉</h3><p>人体的各个器官都开始处于休息期了，不要违背身体的自然规律，放松睡一个好觉，明天又是美好的一天！</p>
+    <title>自由钢琴</title>
+    <url>/2020/04/11/%E8%87%AA%E7%94%B1%E9%92%A2%E7%90%B4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>浏览互联网的过程中，往往都是思维肆意飘荡的时刻，此时某处微小的声音也会激起你内心深处音乐细胞的复苏，相信拥有非凡音乐灵感的你一定想将此情感表达出来。<a id="more"></a></p>
+<p>巧合的是你目前并没有乐器在手，不用慌乱，进入这款在线音乐网站，可能就会帮助到你实现你的情感表达。</p>
+<p><a href=" https://www.autopiano.cn/ " rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">传送门</a></p>
 ]]></content>
       <categories>
-        <category>生活</category>
+        <category>音乐</category>
       </categories>
       <tags>
-        <tag>作息时间表</tag>
+        <tag>有趣的</tag>
       </tags>
   </entry>
   <entry>
@@ -314,6 +329,57 @@
       </categories>
       <tags>
         <tag>电子书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>健康的作息时间表</title>
+    <url>/2020/05/02/%E5%85%A8%E7%90%83%E5%85%AC%E8%AE%A4%E6%9C%80%E5%81%A5%E5%BA%B7%E7%9A%84%E4%BD%9C%E6%81%AF%E6%97%B6%E9%97%B4%E8%A1%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>下面是全球公认最健康的作息时间表，你值得拥有！</p>
+<a id="more"></a>
+
+<h3 id="7-00-起床"><a href="#7-00-起床" class="headerlink" title="7:00    起床"></a>7:00    起床</h3><p>迎着清晨的阳光起床。一杯温水是早起之后的必需品，能让你获得一天最好的开始。</p>
+<p><img src="https://qqpublic.qpic.cn/qq_public/0/0-2229531210-75463C8A7BB7FD51561AA7E241451669/900" alt=""></p>
+<h3 id="7-20-8-00-吃早饭"><a href="#7-20-8-00-吃早饭" class="headerlink" title="7:20-8:00    吃早饭"></a>7:20-8:00    吃早饭</h3><p>你需要营养全面而丰富的早餐。一顿优质的早餐，能让你一整天都充满活力。</p>
+<p><img src="https://qqpublic.qpic.cn/qq_public/0/0-3006431292-DC47FFDD6807F2150236DF4464F9E428/900" alt=""></p>
+<h3 id="8-30-9-00-避免剧烈运动"><a href="#8-30-9-00-避免剧烈运动" class="headerlink" title="8:30-9:00    避免剧烈运动"></a>8:30-9:00    避免剧烈运动</h3><p>早上是人体免疫系统最弱的时候，不要做剧烈的运动，走路上班是很好的选择，健康又惬意。</p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2498594716-52EED3E9DAB6B73B6736508CF00A0E43/0?fmt=jpg&size=18&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="9-00-10-00-做困难性工作"><a href="#9-00-10-00-做困难性工作" class="headerlink" title="9:00-10:00    做困难性工作"></a>9:00-10:00    做困难性工作</h3><p>上午，人脑最清醒犀利，应该用来做最有难度的事。比如攻克工作的难题，给复杂的报告列提纲等等，充分利用好上午清醒的大脑。</p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2821994936-30E6B86D9F0717CB59E1A7C4279DA02F/0?fmt=jpg&size=16&h=360&w=640&ppv=1" alt="">  </p>
+<h3 id="10-30-让眼睛休息一下"><a href="#10-30-让眼睛休息一下" class="headerlink" title="10:30    让眼睛休息一下"></a>10:30    让眼睛休息一下</h3><p>一晃就十点半了，起来走动走动，眺望一下远方，做一做眼保健操，让眼睛舒缓舒缓。  </p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2593181746-7096933C12220814D6BACC8E60D75819/0?fmt=jpg&size=13&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="11-00-吃点水果"><a href="#11-00-吃点水果" class="headerlink" title="11:00    吃点水果"></a>11:00    吃点水果</h3><p>上午工作得差不多了，该吃点水果了。上午是一天吃水果的最佳时机，因为上午人体最适合吸收水果里的营养。</p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2821155990-CD6ED1A1C88F33A25D112D51ABAF2CD5/0?fmt=jpg&size=12&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="12-00-12-30-午餐"><a href="#12-00-12-30-午餐" class="headerlink" title="12:00-12:30    午餐"></a>12:00-12:30    午餐</h3><p>午餐要吃饱，中午应该补充足够的蛋白质，豆类食品是最佳选择。虽然是午饭，久坐办公室的人也不要吃得太油腻。</p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2465346863-07413ECBB2DADBF056E348A0AD9A09D3/0?fmt=jpg&size=14&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="13-00-14-00-午睡"><a href="#13-00-14-00-午睡" class="headerlink" title="13:00-14:00    午睡"></a>13:00-14:00    午睡</h3><p>午饭后的时间很宝贵，最好用来小睡一觉。有的人喜欢在中午网上购物或者是打激烈的游戏，这反而会让大脑处于过度紧张的状态，造成下午身体的疲惫。</p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2854960333-A59C8DEB6EE9F43848E12D0E6955E7C3/0?fmt=jpg&size=13&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="14-00-16-00-做创意性工作"><a href="#14-00-16-00-做创意性工作" class="headerlink" title="14:00-16:00    做创意性工作"></a>14:00-16:00    做创意性工作</h3><p>午后是人思维最活跃的时间，非常适合做一些创意性的工作。想一想工作中的创新，即使是微小的改善，日积月累也会有巨大的成就。</p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2594154900-30323458FC4D49163895D1520D7CD1E1/0?fmt=jpg&size=16&h=360&w=640&ppv=1" alt="">  </p>
+<h3 id="16-00-喝杯酸奶"><a href="#16-00-喝杯酸奶" class="headerlink" title="16:00    喝杯酸奶"></a>16:00    喝杯酸奶</h3><p>四点左右，喝杯酸奶，能补充身体流失的血糖。马上将要投入到一天里最密集的工作中了。</p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2566162499-52E792A0178F7914A111CEE1C7F01973/0?fmt=jpg&size=13&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="16-10-19-00-做细致性工作"><a href="#16-10-19-00-做细致性工作" class="headerlink" title="16:10-19:00    做细致性工作"></a>16:10-19:00    做细致性工作</h3><p>四点到七点，身体和大脑都处于一天的巅峰状态，这时候我们应该做细致而密集的工作。做完这些别着急回家，  </p>
+<p>花 10 分钟总结一下当天的工作：</p>
+<p>今天收获了哪些好创意</p>
+<p>积累了哪些经验</p>
+<p>学习了什么新工具</p>
+<p>验证了什么想法</p>
+<p>……</p>
+<p>每天 10 分钟反思，大器必将早成！  </p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2352655579-6B318663F2D9E875C6226676FED4E9F5/0?fmt=jpg&size=16&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="19-00-最佳的运动时间"><a href="#19-00-最佳的运动时间" class="headerlink" title="19:00    最佳的运动时间"></a>19:00    最佳的运动时间</h3><p>下班之后稍微吃点东西，晚饭不要吃太多，三分饱即可。晚饭后稍微歇一会儿再开始运动。先散步，再慢跑，是非常健康的运动方式。</p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2974698069-25AE66C7605EEE5F8A148793725DCA79/0?fmt=jpg&size=15&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="20-00-看电视或看书"><a href="#20-00-看电视或看书" class="headerlink" title="20:00    看电视或看书"></a>20:00    看电视或看书</h3><p>运动之后可以看看电视，或打开你阅读计划中的书放松阅读。最好的选择还是在娱乐休闲中延绵不绝地思考工作，这样会碰撞出意想不到的火花。  </p>
+<p>劳逸结合的精髓就是：休闲的时候还有一根弦在牵挂工作，稍有灵感迸发就立刻抓住。</p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-3012196757-2B146EBE02449840F364A0E24574E8AC/0?fmt=jpg&size=14&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="22-00-洗个热水澡"><a href="#22-00-洗个热水澡" class="headerlink" title="22:00    洗个热水澡"></a>22:00    洗个热水澡</h3><p>时间差不多就该洗个澡了，让身体彻底舒缓下来，洗去一天的疲惫。  </p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-3163399326-A2F9AB0CA64042E2EFC922B98DDA1FEC/0?fmt=jpg&size=17&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="23-00-上床睡觉"><a href="#23-00-上床睡觉" class="headerlink" title="23:00    上床睡觉"></a>23:00    上床睡觉</h3><p>人体的各个器官都开始处于休息期了，不要违背身体的自然规律，放松睡一个好觉，明天又是美好的一天！</p>
+]]></content>
+      <categories>
+        <category>生活</category>
+      </categories>
+      <tags>
+        <tag>作息时间表</tag>
       </tags>
   </entry>
   <entry>
@@ -701,72 +767,6 @@
       </categories>
       <tags>
         <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>window使用问题解决方案</title>
-    <url>/2020/04/10/window%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="一、护眼模式的开启和关闭"><a href="#一、护眼模式的开启和关闭" class="headerlink" title="一、护眼模式的开启和关闭"></a>一、护眼模式的开启和关闭</h3><p>﻿1.使用 <strong>Win + R</strong> 组合快捷键，打开“运行”，然后键入打开注册表命令<strong>regedit</strong>，按回车键确认打开。<a id="more"></a></p>
-<p>2.打开Win10注册表之后，依次在左侧树状菜单中展开：<code>HKEY_CURRENT_USER\Control Panel\Colors</code>，然后再右侧找到Windows值，并双击打开。</p>
-<p>3.双击Windows，打开编辑字符串窗口，将的<strong>255 255 255</strong>(默认是白色背景)三组颜色数值改成<strong>202 234 206</strong>(淡绿色)，完成后，点击下方的“确定”保存。</p>
-<p>4.继续找到注册表的路径：<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\</code></p>
-<p><code>CurrentVersion\Themes\DefaultColors\Standard</code>。</p>
-<p>5.同样再在右侧找到Windows双击打开，将默认的数据值 <strong>ffffff</strong> 改成 <strong>caeace</strong> 完成后，点击下方的确定保存。之后重启就会变成淡绿色的护眼状态。</p>
-<blockquote>
-<p>备注：想要恢复怎么办呢。其实很简单。将你修改的202 234 206变为255 255 255。然后将caeace 改为ffffff。重启一下，就可以变成原来的白色背景了。</p>
-</blockquote>
-<h3 id="二、端口被占用"><a href="#二、端口被占用" class="headerlink" title="二、端口被占用"></a>二、端口被占用</h3><p>1.开始–&gt;运行–&gt;cmd；或者是window+R组合键，调出命令窗口 </p>
-<p>2.输入命令：netstat -ano， 列出所有端口已占用的情况</p>
-<p>3.输入命令：netstat -aon|findstr “1001”，查看被占用端口1001对应的PID4</p>
-<p>4.输入命令：tasklist|findstr “4”，回车，查看是哪个进程或者程序占用了1001端口，结果是：svchost.exe ；或者打开任务管理器，切换到进程选项卡，在PID一列查看4对应的进程</p>
-<blockquote>
-<p>如果看不到PID这一列，右键点击选择列，勾选pid，点击确定</p>
-</blockquote>
-<p>5.输入命令： taskkill /f /t /im tasklist.exe ；或者在任务管理器结束pid为4的进程</p>
-<h3 id="三、删除文件提示正在被另一程序占用"><a href="#三、删除文件提示正在被另一程序占用" class="headerlink" title="三、删除文件提示正在被另一程序占用"></a>三、删除文件提示正在被另一程序占用</h3><p>1.打开任务管理器，切换到性能选项卡，点击“打开资源监视器”</p>
-<p>2.在cpu选项卡下找到关联的句柄搜索框</p>
-<p>3.输入要删除文件的文件名，看到新出现的程序，右键点击”结束进程”</p>
-<p>4.重新删除文件</p>
-<h3 id="四、生成文件夹树目录"><a href="#四、生成文件夹树目录" class="headerlink" title="四、生成文件夹树目录"></a>四、生成文件夹树目录</h3><ul>
-<li><p>命令窗口模式</p>
-<ul>
-<li><p>进入文件夹，打开命令窗口</p>
-</li>
-<li><p>输入命令： tree  /f &gt;tree.txt 生成包含当前文件夹及子文件夹目录的文件tree.txt</p>
-<blockquote>
-<p>“.txt”也可以写成”.docx”,”.doc”,”.xlsx”,”.xls”,”.md”结尾生成对应的文件</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>bat脚本模式</p>
-<ul>
-<li>新建文本文档，输入tree  /f &gt;tree.txt </li>
-<li>修改后缀名为.bat</li>
-<li>将修改后的文件拖入需要生成目录的文件夹下，双击运行脚本</li>
-</ul>
-</li>
-</ul>
-<h3 id="五、命令行窗口打开方式"><a href="#五、命令行窗口打开方式" class="headerlink" title="五、命令行窗口打开方式"></a>五、命令行窗口打开方式</h3><ul>
-<li>全局<ul>
-<li><code>Win</code> + <code>R</code>打开运行，输入<code>cmd</code>，然后按下回车键即可。</li>
-<li><code>Win</code> + <code>R</code>打开运行，输入<code>powershell</code>，然后按下回车键即可。</li>
-<li><code>Win</code> + <code>X</code>或开始菜单按钮右键打开 <code>Windows PowerShell</code></li>
-</ul>
-</li>
-<li>指定目录<ul>
-<li>通过 <code>cd</code> 命令进入指定目录。</li>
-<li>资源管理器打开目录，在地址栏输入 <code>cmd</code> 回车键即可</li>
-<li>按下 <code>Shift</code> 键的同时鼠标右键该目录空白处可选择打开 <code>Windows PowerShell</code></li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>开发</category>
-      </categories>
-      <tags>
-        <tag>开发环境</tag>
       </tags>
   </entry>
   <entry>
