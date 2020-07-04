@@ -1,99 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>window使用问题解决方案</title>
-    <url>/2020/04/10/window%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="一、护眼模式的开启和关闭"><a href="#一、护眼模式的开启和关闭" class="headerlink" title="一、护眼模式的开启和关闭"></a>一、护眼模式的开启和关闭</h3><p>﻿1.使用 <strong>Win + R</strong> 组合快捷键，打开“运行”，然后键入打开注册表命令<strong>regedit</strong>，按回车键确认打开。<a id="more"></a></p>
-<p>2.打开Win10注册表之后，依次在左侧树状菜单中展开：<code>HKEY_CURRENT_USER\Control Panel\Colors</code>，然后再右侧找到Windows值，并双击打开。</p>
-<p>3.双击Windows，打开编辑字符串窗口，将的<strong>255 255 255</strong>(默认是白色背景)三组颜色数值改成<strong>202 234 206</strong>(淡绿色)，完成后，点击下方的“确定”保存。</p>
-<p>4.继续找到注册表的路径：<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\</code></p>
-<p><code>CurrentVersion\Themes\DefaultColors\Standard</code>。</p>
-<p>5.同样再在右侧找到Windows双击打开，将默认的数据值 <strong>ffffff</strong> 改成 <strong>caeace</strong> 完成后，点击下方的确定保存。之后重启就会变成淡绿色的护眼状态。</p>
-<blockquote>
-<p>备注：想要恢复怎么办呢。其实很简单。将你修改的202 234 206变为255 255 255。然后将caeace 改为ffffff。重启一下，就可以变成原来的白色背景了。</p>
-</blockquote>
-<h3 id="二、端口被占用"><a href="#二、端口被占用" class="headerlink" title="二、端口被占用"></a>二、端口被占用</h3><p>1.开始–&gt;运行–&gt;cmd；或者是window+R组合键，调出命令窗口 </p>
-<p>2.输入命令：netstat -ano， 列出所有端口已占用的情况</p>
-<p>3.输入命令：netstat -aon|findstr “1001”，查看被占用端口1001对应的PID4</p>
-<p>4.输入命令：tasklist|findstr “4”，回车，查看是哪个进程或者程序占用了1001端口，结果是：svchost.exe ；或者打开任务管理器，切换到进程选项卡，在PID一列查看4对应的进程</p>
-<blockquote>
-<p>如果看不到PID这一列，右键点击选择列，勾选pid，点击确定</p>
-</blockquote>
-<p>5.输入命令： taskkill /f /t /im tasklist.exe ；或者在任务管理器结束pid为4的进程</p>
-<h3 id="三、删除文件提示正在被另一程序占用"><a href="#三、删除文件提示正在被另一程序占用" class="headerlink" title="三、删除文件提示正在被另一程序占用"></a>三、删除文件提示正在被另一程序占用</h3><p>1.打开任务管理器，切换到性能选项卡，点击“打开资源监视器”</p>
-<p>2.在cpu选项卡下找到关联的句柄搜索框</p>
-<p>3.输入要删除文件的文件名，看到新出现的程序，右键点击”结束进程”</p>
-<p>4.重新删除文件</p>
-<h3 id="四、生成文件夹树目录"><a href="#四、生成文件夹树目录" class="headerlink" title="四、生成文件夹树目录"></a>四、生成文件夹树目录</h3><ul>
-<li><p>命令窗口模式</p>
-<ul>
-<li><p>进入文件夹，打开命令窗口</p>
-</li>
-<li><p>输入命令： tree  /f &gt;tree.txt 生成包含当前文件夹及子文件夹目录的文件tree.txt</p>
-<blockquote>
-<p>“.txt”也可以写成”.docx”,”.doc”,”.xlsx”,”.xls”,”.md”结尾生成对应的文件</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>bat脚本模式</p>
-<ul>
-<li>新建文本文档，输入tree  /f &gt;tree.txt </li>
-<li>修改后缀名为.bat</li>
-<li>将修改后的文件拖入需要生成目录的文件夹下，双击运行脚本</li>
-</ul>
-</li>
-</ul>
-<h3 id="五、命令行窗口打开方式"><a href="#五、命令行窗口打开方式" class="headerlink" title="五、命令行窗口打开方式"></a>五、命令行窗口打开方式</h3><ul>
-<li>全局<ul>
-<li><code>Win</code> + <code>R</code>打开运行，输入<code>cmd</code>，然后按下回车键即可。</li>
-<li><code>Win</code> + <code>R</code>打开运行，输入<code>powershell</code>，然后按下回车键即可。</li>
-<li><code>Win</code> + <code>X</code>或开始菜单按钮右键打开 <code>Windows PowerShell</code></li>
-</ul>
-</li>
-<li>指定目录<ul>
-<li>通过 <code>cd</code> 命令进入指定目录。</li>
-<li>资源管理器打开目录，在地址栏输入 <code>cmd</code> 回车键即可</li>
-<li>按下 <code>Shift</code> 键的同时鼠标右键该目录空白处可选择打开 <code>Windows PowerShell</code></li>
-</ul>
-</li>
-</ul>
-<h3 id="六、IE浏览器打不开网页原因与解决方案"><a href="#六、IE浏览器打不开网页原因与解决方案" class="headerlink" title="六、IE浏览器打不开网页原因与解决方案"></a>六、IE浏览器打不开网页原因与解决方案</h3><ul>
-<li>原因<ul>
-<li>设置问题</li>
-<li>浏览器程序中个别程序被误删</li>
-</ul>
-</li>
-<li>解决方案<ul>
-<li>打开控制面板</li>
-<li>点击网络和Internet</li>
-<li>点击管理浏览器加载项</li>
-<li>点击高级，在重置Internet Explorer设置后面点击重置</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>开发</category>
-      </categories>
-      <tags>
-        <tag>开发环境</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>故宫博物馆</title>
-    <url>/2020/04/11/%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%A6%86/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>一款线上的故宫博物馆全景。<a id="more"></a></p>
-<p><a href=" http://t.cn/RXnGc1e " rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">传送门</a></p>
-]]></content>
-      <categories>
-        <category>博物馆</category>
-      </categories>
-      <tags>
-        <tag>虚拟体验</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>幸存者偏差</title>
     <url>/2020/04/09/%E5%B9%B8%E5%AD%98%E8%80%85%E5%81%8F%E5%B7%AE/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="幸存者偏差"><a href="#幸存者偏差" class="headerlink" title="幸存者偏差"></a>幸存者偏差</h2><h3 id="一、-简单了解幸存者偏差概念"><a href="#一、-简单了解幸存者偏差概念" class="headerlink" title="一、 简单了解幸存者偏差概念"></a>一、 简单了解幸存者偏差概念</h3><p> 幸存者偏差（Survivor bias），另译为 “生存者偏差” 或 “存活者偏差”，是一种常见的逻辑谬误。指的是<strong>只能看到经过某种筛选而产生的结果，而没有意识到筛选的过程，因此忽略了被筛选掉的关键信息。</strong> <a id="more"></a></p>
@@ -143,257 +50,175 @@
       </tags>
   </entry>
   <entry>
-    <title>编程到底难在哪里</title>
-    <url>/2020/04/10/%E7%BC%96%E7%A8%8B%E5%88%B0%E5%BA%95%E9%9A%BE%E5%9C%A8%E5%93%AA%E9%87%8C/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>知乎上有个问题：编程到底难在哪里？知乎网友 DJ Hitori 的回答获赞无数。<a id="more"></a></p>
-<p>这篇回答并不是讲述在生活中程序员如何买苹果，而是以买苹果为例说明程序员如何解决问题。程序员需要对问题进行透彻的分析，理清其涉及的所有细节，预测可能发生的所有意外与非意外的情况，列出解决方案的所有步骤，以及对解决方案进行尽量全面的测试。而这些正是编程难的地方。任何一点遗漏都会成为 bug，轻则导致挨骂，重则导致经济损失甚至危害安全。</p>
-<h3 id="高赞回答"><a href="#高赞回答" class="headerlink" title="高赞回答"></a>高赞回答</h3><p><strong>普通人：</strong></p>
-<p>我今天要买一斤苹果。</p>
-<p><strong>程序员：</strong></p>
-<p>我今天要买一斤苹果。</p>
-<p>因为我只喜欢红富士苹果，所以我只买红富士苹果。</p>
-<p>我能接受的最高价格是 10 元 / 斤。</p>
-<p>正常情况下一斤苹果用一个袋子能装下，但是为防万一，我会带两个袋子。</p>
-<p>我知道附近的 3 家水果店，所以我会依次访问这 3 家水果店。</p>
-<p>根据上述条件，我设计出以下的买苹果的流程：</p>
-<p><img src="https://i.loli.net/2020/04/10/yTUwouKFQqsnYGc.jpg" alt="1.jpg"></p>
-<p>这个流程怎么样？我来设计一些测试样例，测试一下这个流程。</p>
-<p>测试发现一个问题：</p>
-<p>如果水果店 0 和水果店 1 都有红富士苹果并且价格都低于 10 元 / 斤，而且水果店 1 的价格比水果店 0 更低，那么我希望买水果店 1 的苹果，但我设计的流程会让我买水果店 0 的苹果。</p>
-<p>为了解决这个问题，我应该先询问所有水果店的价格，然后去价格最低的那一家买苹果。</p>
-<p>经过修改，我重新设计出以下的买苹果的流程：</p>
-<p><img src="https://i.loli.net/2020/04/10/DlUaVeLhJBAW5fv.jpg" alt="2.jpg"></p>
-<p>现在这个流程是不是完美了呢？不是，我还能发现很多问题。</p>
-<p>如果 3 家水果店都有红富士苹果但都不到一斤，但是三家店加起来能达到一斤，那么我不应该结束流程回家，而是应该把三家店的红富士苹果都买下来。</p>
-<p>如果我向水果店询问价格的时候这家店还有红富士苹果，但我询问完所有水果店的价格后这家店的红富士苹果卖完了，那么我的流程会让我试图处理不存在的红富士苹果。</p>
-<p>我走路的过程中可能会遇到突发事件，比如发现了新的水果店，比如袋子破掉了苹果掉一地，对于这些情况我的流程都无法进行处理。</p>
-<p>啊问题太多了我懒得再改流程了。我还是去 X 宝买吧。<br>那么接下来我要设计一个在 X 宝买红富士苹果的流程……</p>
-<p>文章来源：<a href="https://www.zhihu.com/answer/141334678" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">传送门</a></p>
+    <title>十大经典排序算法（动图演示）</title>
+    <url>/2020/06/04/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%88%E5%8A%A8%E5%9B%BE%E6%BC%94%E7%A4%BA%EF%BC%89/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="0、算法概述"><a href="#0、算法概述" class="headerlink" title="0、算法概述"></a>0、算法概述</h3><h4 id="0-1-算法分类"><a href="#0-1-算法分类" class="headerlink" title="0.1 算法分类"></a>0.1 算法分类</h4><p>十种常见排序算法可以分为两大类：</p>
+<ul>
+<li><strong>比较类排序</strong>：通过比较来决定元素间的相对次序，由于其时间复杂度不能突破 O(nlogn)，因此也称为非线性时间比较类排序。</li>
+<li><strong>非比较类排序</strong>：不通过比较来决定元素间的相对次序，它可以突破基于比较排序的时间下界，以线性时间运行，因此也称为线性时间非比较类排序。 <a id="more"></a></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E5%88%86%E7%B1%BB.png" alt="排序算法分类"></p>
+<h4 id="0-2-算法复杂度"><a href="#0-2-算法复杂度" class="headerlink" title="0.2 算法复杂度"></a>0.2 算法复杂度</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6.png" alt="算法复杂度"></p>
+<h4 id="0-3-相关概念"><a href="#0-3-相关概念" class="headerlink" title="0.3 相关概念"></a>0.3 相关概念</h4><ul>
+<li><strong>稳定</strong>：如果 a 原本在 b 前面，而 a=b，排序之后 a 仍然在 b 的前面。</li>
+<li><strong>不稳定</strong>：如果 a 原本在 b 的前面，而 a=b，排序之后 a 可能会出现在 b 的后面。</li>
+<li><strong>时间复杂度</strong>：对排序数据的总的操作次数。反映当 n 变化时，操作次数呈现什么规律。</li>
+<li><strong>空间复杂度：</strong>是指算法在计算机内执行时所需存储空间的度量，它也是数据规模 n 的函数。 </li>
+</ul>
+<h3 id="1、冒泡排序（Bubble-Sort）"><a href="#1、冒泡排序（Bubble-Sort）" class="headerlink" title="1、冒泡排序（Bubble Sort）"></a>1、冒泡排序（Bubble Sort）</h3><p>冒泡排序是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果它们的顺序错误就把它们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢 “浮” 到数列的顶端。 </p>
+<h4 id="1-1-算法描述"><a href="#1-1-算法描述" class="headerlink" title="1.1 算法描述"></a>1.1 算法描述</h4><ul>
+<li>比较相邻的元素。如果第一个比第二个大，就交换它们两个；</li>
+<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；</li>
+<li>针对所有的元素重复以上的步骤，除了最后一个；</li>
+<li>重复步骤 1~3，直到排序完成。</li>
+</ul>
+<h4 id="1-2-动图演示"><a href="#1-2-动图演示" class="headerlink" title="1.2 动图演示"></a>1.2 动图演示</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt="冒泡排序动画"></p>
+<h4 id="1-3-代码实现"><a href="#1-3-代码实现" class="headerlink" title="1.3 代码实现"></a>1.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function bubbleSort(arr) &#123;</span><br><span class="line">    varlen &#x3D; arr.length;</span><br><span class="line">    for(vari &#x3D; 0; i &lt; len - 1; i++) &#123;</span><br><span class="line">        for(varj &#x3D; 0; j &lt; len - 1 - i; j++) &#123;</span><br><span class="line">            if(arr[j] &gt; arr[j+1]) &#123;       &#x2F;&#x2F; 相邻元素两两对比</span><br><span class="line">                vartemp &#x3D; arr[j+1];       &#x2F;&#x2F; 元素交换</span><br><span class="line">                arr[j+1] &#x3D; arr[j];</span><br><span class="line">                arr[j] &#x3D; temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、选择排序（Selection-Sort）"><a href="#2、选择排序（Selection-Sort）" class="headerlink" title="2、选择排序（Selection Sort）"></a>2、选择排序（Selection Sort）</h3><p>选择排序 (Selection-sort) 是一种简单直观的排序算法。它的工作原理：首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。 </p>
+<h4 id="2-1-算法描述"><a href="#2-1-算法描述" class="headerlink" title="2.1 算法描述"></a>2.1 算法描述</h4><p>n 个记录的直接选择排序可经过 n-1 趟直接选择排序得到有序结果。具体算法描述如下：</p>
+<ul>
+<li>初始状态：无序区为 R[1..n]，有序区为空；</li>
+<li>第 i 趟排序 (i=1,2,3…n-1) 开始时，当前有序区和无序区分别为 R[1..i-1]和 R(i..n）。该趟排序从当前无序区中 - 选出关键字最小的记录 R[k]，将它与无序区的第 1 个记录 R 交换，使 R[1..i]和 R[i+1..n)分别变为记录个数增加 1 个的新有序区和记录个数减少 1 个的新无序区；</li>
+<li>n-1 趟结束，数组有序化了。</li>
+</ul>
+<h4 id="2-2-动图演示"><a href="#2-2-动图演示" class="headerlink" title="2.2 动图演示"></a><strong>2.2 动图演示</strong></h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt="选择排序动画"></p>
+<h4 id="2-3-代码实现"><a href="#2-3-代码实现" class="headerlink" title="2.3 代码实现"></a>2.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function selectionSort(arr) &#123;</span><br><span class="line">    varlen &#x3D; arr.length;</span><br><span class="line">    varminIndex, temp;</span><br><span class="line">    for(vari &#x3D; 0; i &lt; len - 1; i++) &#123;</span><br><span class="line">        minIndex &#x3D; i;</span><br><span class="line">        for(varj &#x3D; i + 1; j &lt; len; j++) &#123;</span><br><span class="line">            if(arr[j] &lt; arr[minIndex]) &#123;    &#x2F;&#x2F; 寻找最小的数</span><br><span class="line">                minIndex &#x3D; j;                &#x2F;&#x2F; 将最小数的索引保存</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        temp &#x3D; arr[i];</span><br><span class="line">        arr[i] &#x3D; arr[minIndex];</span><br><span class="line">        arr[minIndex] &#x3D; temp;</span><br><span class="line">    &#125;</span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-4-算法分析"><a href="#2-4-算法分析" class="headerlink" title="2.4 算法分析"></a>2.4 算法分析</h4><p>表现最稳定的排序算法之一，因为无论什么数据进去都是 O(n2) 的时间复杂度，所以用到它的时候，数据规模越小越好。唯一的好处可能就是不占用额外的内存空间了吧。理论上讲，选择排序可能也是平时排序一般人想到的最多的排序方法了吧。</p>
+<h3 id="3、插入排序（Insertion-Sort）"><a href="#3、插入排序（Insertion-Sort）" class="headerlink" title="3、插入排序（Insertion Sort）"></a>3、插入排序（Insertion Sort）</h3><p>插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。</p>
+<h4 id="3-1-算法描述"><a href="#3-1-算法描述" class="headerlink" title="3.1 算法描述"></a>3.1 算法描述</h4><p>一般来说，插入排序都采用 in-place 在数组上实现。具体算法描述如下：</p>
+<ul>
+<li>从第一个元素开始，该元素可以认为已经被排序；</li>
+<li>取出下一个元素，在已经排序的元素序列中从后向前扫描；</li>
+<li>如果该元素（已排序）大于新元素，将该元素移到下一位置；</li>
+<li>重复步骤 3，直到找到已排序的元素小于或者等于新元素的位置；</li>
+<li>将新元素插入到该位置后；</li>
+<li>重复步骤 2~5。</li>
+</ul>
+<h4 id="3-2-动图演示"><a href="#3-2-动图演示" class="headerlink" title="3.2 动图演示"></a>3.2 动图演示</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt="插入排序动画"> </p>
+<h4 id="3-2-代码实现"><a href="#3-2-代码实现" class="headerlink" title="3.2 代码实现"></a>3.2 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function insertionSort(arr) &#123;</span><br><span class="line">    varlen &#x3D; arr.length;</span><br><span class="line">    varpreIndex, current;</span><br><span class="line">    for(vari &#x3D; 1; i &lt; len; i++) &#123;</span><br><span class="line">        preIndex &#x3D; i - 1;</span><br><span class="line">        current &#x3D; arr[i];</span><br><span class="line">        while(preIndex &gt;&#x3D; 0 &amp;&amp; arr[preIndex] &gt; current) &#123;</span><br><span class="line">            arr[preIndex + 1] &#x3D; arr[preIndex];</span><br><span class="line">            preIndex--;</span><br><span class="line">        &#125;</span><br><span class="line">        arr[preIndex + 1] &#x3D; current;</span><br><span class="line">    &#125;</span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-4-算法分析"><a href="#3-4-算法分析" class="headerlink" title="3.4 算法分析"></a>3.4 算法分析</h4><p>插入排序在实现上，通常采用 in-place 排序（即只需用到 O(1) 的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p>
+<h3 id="4、希尔排序（Shell-Sort）"><a href="#4、希尔排序（Shell-Sort）" class="headerlink" title="4、希尔排序（Shell Sort）"></a>4、希尔排序（Shell Sort）</h3><p>1959 年 Shell 发明，第一个突破 O(n2) 的排序算法，是简单插入排序的改进版。它与插入排序的不同之处在于，它会优先比较距离较远的元素。希尔排序又叫<strong>缩小增量排序</strong>。</p>
+<h4 id="4-1-算法描述"><a href="#4-1-算法描述" class="headerlink" title="4.1 算法描述"></a>4.1 算法描述</h4><p>先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，具体算法描述：</p>
+<ul>
+<li>选择一个增量序列 t1，t2，…，tk，其中 ti&gt;tj，tk=1；</li>
+<li>按增量序列个数 k，对序列进行 k 趟排序；</li>
+<li>每趟排序，根据对应的增量 ti，将待排序列分割成若干长度为 m 的子序列，分别对各子表进行直接插入排序。仅增量因子为 1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。</li>
+</ul>
+<h4 id="4-2-动图演示"><a href="#4-2-动图演示" class="headerlink" title="4.2 动图演示"></a>4.2 动图演示</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt="希尔排序动画"></p>
+<h4 id="4-3-代码实现"><a href="#4-3-代码实现" class="headerlink" title="4.3 代码实现"></a>4.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 修改于 2019-03-06</span><br><span class="line">function shellSort(arr) &#123;</span><br><span class="line">    varlen &#x3D; arr.length;</span><br><span class="line">    for(vargap &#x3D; Math.floor(len &#x2F; 2); gap &gt; 0; gap &#x3D; Math.floor(gap &#x2F; 2)) &#123;</span><br><span class="line">        &#x2F;&#x2F; 注意：这里和动图演示的不一样，动图是分组执行，实际操作是多个分组交替执行</span><br><span class="line">        for(vari &#x3D; gap; i &lt; len; i++) &#123;</span><br><span class="line">            varj &#x3D; i;</span><br><span class="line">            varcurrent &#x3D; arr[i];</span><br><span class="line">            while(j - gap &gt;&#x3D; 0 &amp;&amp; current &lt; arr[j - gap]) &#123;</span><br><span class="line">                 arr[j] &#x3D; arr[j - gap];</span><br><span class="line">                 j &#x3D; j - gap;</span><br><span class="line">            &#125;</span><br><span class="line">            arr[j] &#x3D; current;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-4-算法分析"><a href="#4-4-算法分析" class="headerlink" title="4.4 算法分析"></a>4.4 算法分析</h4><p>希尔排序的核心在于间隔序列的设定。既可以提前设定好间隔序列，也可以动态的定义间隔序列。动态定义间隔序列的算法是《算法（第 4 版）》的合著者 Robert Sedgewick 提出的。　</p>
+<h3 id="5、归并排序（Merge-Sort）"><a href="#5、归并排序（Merge-Sort）" class="headerlink" title="5、归并排序（Merge Sort）"></a>5、归并排序（Merge Sort）</h3><p>归并排序是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为 2 - 路归并。 </p>
+<h4 id="5-1-算法描述"><a href="#5-1-算法描述" class="headerlink" title="5.1 算法描述"></a>5.1 算法描述</h4><ul>
+<li>把长度为 n 的输入序列分成两个长度为 n/2 的子序列；</li>
+<li>对这两个子序列分别采用归并排序；</li>
+<li>将两个排序好的子序列合并成一个最终的排序序列。</li>
+</ul>
+<h4 id="5-2-动图演示"><a href="#5-2-动图演示" class="headerlink" title="5.2 动图演示"></a>5.2 动图演示</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt="归并排序动画"></p>
+<h4 id="5-3-代码实现"><a href="#5-3-代码实现" class="headerlink" title="5.3 代码实现"></a>5.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function mergeSort(arr) &#123;</span><br><span class="line">    varlen &#x3D; arr.length;</span><br><span class="line">    if(len &lt; 2) &#123;</span><br><span class="line">        returnarr;</span><br><span class="line">    &#125;</span><br><span class="line">    varmiddle &#x3D; Math.floor(len &#x2F; 2),</span><br><span class="line">        left &#x3D; arr.slice(0, middle),</span><br><span class="line">        right &#x3D; arr.slice(middle);</span><br><span class="line">    returnmerge(mergeSort(left), mergeSort(right));</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">function merge(left, right) &#123;</span><br><span class="line">    varresult &#x3D; [];</span><br><span class="line"> </span><br><span class="line">    while(left.length&gt;0 &amp;&amp; right.length&gt;0) &#123;</span><br><span class="line">        if(left[0] &lt;&#x3D; right[0]) &#123;</span><br><span class="line">            result.push(left.shift());</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            result.push(right.shift());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    while(left.length)</span><br><span class="line">        result.push(left.shift());</span><br><span class="line"> </span><br><span class="line">    while(right.length)</span><br><span class="line">        result.push(right.shift());</span><br><span class="line"> </span><br><span class="line">    returnresult;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-4-算法分析"><a href="#5-4-算法分析" class="headerlink" title="5.4 算法分析"></a>5.4 算法分析</h4><p>归并排序是一种稳定的排序方法。和选择排序一样，归并排序的性能不受输入数据的影响，但表现比选择排序好的多，因为始终都是 O(nlogn）的时间复杂度。代价是需要额外的内存空间。</p>
+<h3 id="6、快速排序（Quick-Sort）"><a href="#6、快速排序（Quick-Sort）" class="headerlink" title="6、快速排序（Quick Sort）"></a>6、快速排序（Quick Sort）</h3><p>快速排序的基本思想：通过一趟排序将待排记录分隔成独立的两部分，其中一部分记录的关键字均比另一部分的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序。</p>
+<h4 id="6-1-算法描述"><a href="#6-1-算法描述" class="headerlink" title="6.1 算法描述"></a>6.1 算法描述</h4><p>快速排序使用分治法来把一个串（list）分为两个子串（sub-lists）。具体算法描述如下：</p>
+<ul>
+<li>从数列中挑出一个元素，称为 “基准”（pivot）；</li>
+<li>重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；</li>
+<li>递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。</li>
+</ul>
+<h4 id="6-2-动图演示"><a href="#6-2-动图演示" class="headerlink" title="6.2 动图演示"></a>6.2 动图演示</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt="快速排序动画"></p>
+<h4 id="6-3-代码实现"><a href="#6-3-代码实现" class="headerlink" title="6.3 代码实现"></a>6.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function quickSort(arr, left, right) &#123;</span><br><span class="line">    varlen &#x3D; arr.length,</span><br><span class="line">        partitionIndex,</span><br><span class="line">        left &#x3D;typeofleft !&#x3D;&#39;number&#39;? 0 : left,</span><br><span class="line">        right &#x3D;typeofright !&#x3D;&#39;number&#39;? len - 1 : right;</span><br><span class="line"> </span><br><span class="line">    if(left &lt; right) &#123;</span><br><span class="line">        partitionIndex &#x3D; partition(arr, left, right);</span><br><span class="line">        quickSort(arr, left, partitionIndex-1);</span><br><span class="line">        quickSort(arr, partitionIndex+1, right);</span><br><span class="line">    &#125;</span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">function partition(arr, left ,right) &#123;    &#x2F;&#x2F; 分区操作</span><br><span class="line">    varpivot &#x3D; left,                     &#x2F;&#x2F; 设定基准值（pivot）</span><br><span class="line">        index &#x3D; pivot + 1;</span><br><span class="line">    for(vari &#x3D; index; i &lt;&#x3D; right; i++) &#123;</span><br><span class="line">        if(arr[i] &lt; arr[pivot]) &#123;</span><br><span class="line">            swap(arr, i, index);</span><br><span class="line">            index++;</span><br><span class="line">        &#125;       </span><br><span class="line">    &#125;</span><br><span class="line">    swap(arr, pivot, index - 1);</span><br><span class="line">    returnindex-1;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">function swap(arr, i, j) &#123;</span><br><span class="line">    vartemp &#x3D; arr[i];</span><br><span class="line">    arr[i] &#x3D; arr[j];</span><br><span class="line">    arr[j] &#x3D; temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="7、堆排序（Heap-Sort）"><a href="#7、堆排序（Heap-Sort）" class="headerlink" title="7、堆排序（Heap Sort）"></a>7、堆排序（Heap Sort）</h3><p>堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。</p>
+<h4 id="7-1-算法描述"><a href="#7-1-算法描述" class="headerlink" title="7.1 算法描述"></a>7.1 算法描述</h4><ul>
+<li>将初始待排序关键字序列 (R1,R2….Rn) 构建成大顶堆，此堆为初始的无序区；</li>
+<li>将堆顶元素 R[1]与最后一个元素 R[n]交换，此时得到新的无序区 (R1,R2,……Rn-1) 和新的有序区(Rn), 且满足 R[1,2…n-1]&lt;=R[n]；</li>
+<li>由于交换后新的堆顶 R[1]可能违反堆的性质，因此需要对当前无序区 (R1,R2,……Rn-1) 调整为新堆，然后再次将 R[1]与无序区最后一个元素交换，得到新的无序区 (R1,R2….Rn-2) 和新的有序区(Rn-1,Rn)。不断重复此过程直到有序区的元素个数为 n-1，则整个排序过程完成。</li>
+</ul>
+<h4 id="7-2-动图演示"><a href="#7-2-动图演示" class="headerlink" title="7.2 动图演示"></a>7.2 动图演示</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E5%A0%86%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt="堆排序动画"></p>
+<h4 id="7-3-代码实现"><a href="#7-3-代码实现" class="headerlink" title="7.3 代码实现"></a>7.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">varlen;   &#x2F;&#x2F; 因为声明的多个函数都需要数据长度，所以把len设置成为全局变量</span><br><span class="line"> </span><br><span class="line">function buildMaxHeap(arr) &#123;  &#x2F;&#x2F; 建立大顶堆</span><br><span class="line">    len &#x3D; arr.length;</span><br><span class="line">    for(vari &#x3D; Math.floor(len&#x2F;2); i &gt;&#x3D; 0; i--) &#123;</span><br><span class="line">        heapify(arr, i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">function heapify(arr, i) &#123;    &#x2F;&#x2F; 堆调整</span><br><span class="line">    varleft &#x3D; 2 * i + 1,</span><br><span class="line">        right &#x3D; 2 * i + 2,</span><br><span class="line">        largest &#x3D; i;</span><br><span class="line"> </span><br><span class="line">    if(left &lt; len &amp;&amp; arr[left] &gt; arr[largest]) &#123;</span><br><span class="line">        largest &#x3D; left;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    if(right &lt; len &amp;&amp; arr[right] &gt; arr[largest]) &#123;</span><br><span class="line">        largest &#x3D; right;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    if(largest !&#x3D; i) &#123;</span><br><span class="line">        swap(arr, i, largest);</span><br><span class="line">        heapify(arr, largest);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">function swap(arr, i, j) &#123;</span><br><span class="line">    vartemp &#x3D; arr[i];</span><br><span class="line">    arr[i] &#x3D; arr[j];</span><br><span class="line">    arr[j] &#x3D; temp;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">function heapSort(arr) &#123;</span><br><span class="line">    buildMaxHeap(arr);</span><br><span class="line"> </span><br><span class="line">    for(vari &#x3D; arr.length - 1; i &gt; 0; i--) &#123;</span><br><span class="line">        swap(arr, 0, i);</span><br><span class="line">        len--;</span><br><span class="line">        heapify(arr, 0);</span><br><span class="line">    &#125;</span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="8、计数排序（Counting-Sort）"><a href="#8、计数排序（Counting-Sort）" class="headerlink" title="8、计数排序（Counting Sort）"></a>8、计数排序（Counting Sort）</h3><p>计数排序不是基于比较的排序算法，其核心在于将输入的数据值转化为键存储在额外开辟的数组空间中。 作为一种线性时间复杂度的排序，计数排序要求输入的数据必须是有确定范围的整数。</p>
+<h4 id="8-1-算法描述"><a href="#8-1-算法描述" class="headerlink" title="8.1 算法描述"></a>8.1 算法描述</h4><ul>
+<li>找出待排序的数组中最大和最小的元素；</li>
+<li>统计数组中每个值为 i 的元素出现的次数，存入数组 C 的第 i 项；</li>
+<li>对所有的计数累加（从 C 中的第一个元素开始，每一项和前一项相加）；</li>
+<li>反向填充目标数组：将每个元素 i 放在新数组的第 C(i) 项，每放一个元素就将 C(i) 减去 1。</li>
+</ul>
+<h4 id="8-2-动图演示"><a href="#8-2-动图演示" class="headerlink" title="8.2 动图演示"></a>8.2 动图演示</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt="计数排序动画"></p>
+<h4 id="8-3-代码实现"><a href="#8-3-代码实现" class="headerlink" title="8.3 代码实现"></a>8.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function countingSort(arr, maxValue) &#123;</span><br><span class="line">    varbucket &#x3D;newArray(maxValue + 1),</span><br><span class="line">        sortedIndex &#x3D; 0;</span><br><span class="line">        arrLen &#x3D; arr.length,</span><br><span class="line">        bucketLen &#x3D; maxValue + 1;</span><br><span class="line"> </span><br><span class="line">    for(vari &#x3D; 0; i &lt; arrLen; i++) &#123;</span><br><span class="line">        if(!bucket[arr[i]]) &#123;</span><br><span class="line">            bucket[arr[i]] &#x3D; 0;</span><br><span class="line">        &#125;</span><br><span class="line">        bucket[arr[i]]++;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    for(varj &#x3D; 0; j &lt; bucketLen; j++) &#123;</span><br><span class="line">        while(bucket[j] &gt; 0) &#123;</span><br><span class="line">            arr[sortedIndex++] &#x3D; j;</span><br><span class="line">            bucket[j]--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="8-4-算法分析"><a href="#8-4-算法分析" class="headerlink" title="8.4 算法分析"></a>8.4 算法分析</h4><p>计数排序是一个稳定的排序算法。当输入的元素是 n 个 0 到 k 之间的整数时，时间复杂度是 O(n+k)，空间复杂度也是 O(n+k)，其排序速度快于任何比较排序算法。当 k 不是很大并且序列比较集中时，计数排序是一个很有效的排序算法。</p>
+<h3 id="9、桶排序（Bucket-Sort）"><a href="#9、桶排序（Bucket-Sort）" class="headerlink" title="9、桶排序（Bucket Sort）"></a>9、桶排序（Bucket Sort）</h3><p>桶排序是计数排序的升级版。它利用了函数的映射关系，高效与否的关键就在于这个映射函数的确定。桶排序 (Bucket sort) 的工作的原理：假设输入数据服从均匀分布，将数据分到有限数量的桶里，每个桶再分别排序（有可能再使用别的排序算法或是以递归方式继续使用桶排序进行排）。</p>
+<h4 id="9-1-算法描述"><a href="#9-1-算法描述" class="headerlink" title="9.1 算法描述"></a>9.1 算法描述</h4><ul>
+<li>设置一个定量的数组当作空桶；</li>
+<li>遍历输入数据，并且把数据一个一个放到对应的桶里去；</li>
+<li>对每个不是空的桶进行排序；</li>
+<li>从不是空的桶里把排好序的数据拼接起来。 </li>
+</ul>
+<h4 id="9-2-图片演示"><a href="#9-2-图片演示" class="headerlink" title="9.2 图片演示"></a>9.2 图片演示</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E6%A1%B6%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.png" alt="桶排序动画"></p>
+<h4 id="9-3-代码实现"><a href="#9-3-代码实现" class="headerlink" title="9.3 代码实现"></a>9.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function bucketSort(arr, bucketSize) &#123;</span><br><span class="line">    if(arr.length &#x3D;&#x3D;&#x3D; 0) &#123;</span><br><span class="line">      returnarr;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    vari;</span><br><span class="line">    varminValue &#x3D; arr[0];</span><br><span class="line">    varmaxValue &#x3D; arr[0];</span><br><span class="line">    for(i &#x3D; 1; i &lt; arr.length; i++) &#123;</span><br><span class="line">      if(arr[i] &lt; minValue) &#123;</span><br><span class="line">          minValue &#x3D; arr[i];               &#x2F;&#x2F; 输入数据的最小值</span><br><span class="line">      &#125;elseif(arr[i] &gt; maxValue) &#123;</span><br><span class="line">          maxValue &#x3D; arr[i];               &#x2F;&#x2F; 输入数据的最大值</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    &#x2F;&#x2F; 桶的初始化</span><br><span class="line">    varDEFAULT_BUCKET_SIZE &#x3D; 5;           &#x2F;&#x2F; 设置桶的默认数量为5</span><br><span class="line">    bucketSize &#x3D; bucketSize || DEFAULT_BUCKET_SIZE;</span><br><span class="line">    varbucketCount &#x3D; Math.floor((maxValue - minValue) &#x2F; bucketSize) + 1;  </span><br><span class="line">    varbuckets &#x3D;newArray(bucketCount);</span><br><span class="line">    for(i &#x3D; 0; i &lt; buckets.length; i++) &#123;</span><br><span class="line">        buckets[i] &#x3D; [];</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    &#x2F;&#x2F; 利用映射函数将数据分配到各个桶中</span><br><span class="line">    for(i &#x3D; 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">        buckets[Math.floor((arr[i] - minValue) &#x2F; bucketSize)].push(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    arr.length &#x3D; 0;</span><br><span class="line">    for(i &#x3D; 0; i &lt; buckets.length; i++) &#123;</span><br><span class="line">        insertionSort(buckets[i]);                     &#x2F;&#x2F; 对每个桶进行排序，这里使用了插入排序</span><br><span class="line">        for(varj &#x3D; 0; j &lt; buckets[i].length; j++) &#123;</span><br><span class="line">            arr.push(buckets[i][j]);                     </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="9-4-算法分析"><a href="#9-4-算法分析" class="headerlink" title="9.4 算法分析"></a>9.4 算法分析</h4><p>桶排序最好情况下使用线性时间 O(n)，桶排序的时间复杂度，取决与对各个桶之间数据进行排序的时间复杂度，因为其它部分的时间复杂度都为 O(n)。很显然，桶划分的越小，各个桶之间的数据越少，排序所用的时间也会越少。但相应的空间消耗就会增大。 </p>
+<h3 id="10、基数排序（Radix-Sort）"><a href="#10、基数排序（Radix-Sort）" class="headerlink" title="10、基数排序（Radix Sort）"></a>10、基数排序（Radix Sort）</h3><p>基数排序是按照低位先排序，然后收集；再按照高位排序，然后再收集；依次类推，直到最高位。有时候有些属性是有优先级顺序的，先按低优先级排序，再按高优先级排序。最后的次序就是高优先级高的在前，高优先级相同的低优先级高的在前。</p>
+<h4 id="10-1-算法描述"><a href="#10-1-算法描述" class="headerlink" title="10.1 算法描述"></a>10.1 算法描述</h4><ul>
+<li>取得数组中的最大数，并取得位数；</li>
+<li>arr 为原始数组，从最低位开始取每个位组成 radix 数组；</li>
+<li>对 radix 进行计数排序（利用计数排序适用于小范围数的特点）；</li>
+</ul>
+<h4 id="10-2-动图演示"><a href="#10-2-动图演示" class="headerlink" title="10.2 动图演示"></a>10.2 动图演示</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F.gif" alt="基数排序动画"></p>
+<h4 id="10-3-代码实现"><a href="#10-3-代码实现" class="headerlink" title="10.3 代码实现"></a>10.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">varcounter &#x3D; [];</span><br><span class="line">function radixSort(arr, maxDigit) &#123;</span><br><span class="line">    varmod &#x3D; 10;</span><br><span class="line">    vardev &#x3D; 1;</span><br><span class="line">    for(vari &#x3D; 0; i &lt; maxDigit; i++, dev *&#x3D; 10, mod *&#x3D; 10) &#123;</span><br><span class="line">        for(varj &#x3D; 0; j &lt; arr.length; j++) &#123;</span><br><span class="line">            varbucket &#x3D; parseInt((arr[j] % mod) &#x2F; dev);</span><br><span class="line">            if(counter[bucket]&#x3D;&#x3D;null) &#123;</span><br><span class="line">                counter[bucket] &#x3D; [];</span><br><span class="line">            &#125;</span><br><span class="line">            counter[bucket].push(arr[j]);</span><br><span class="line">        &#125;</span><br><span class="line">        varpos &#x3D; 0;</span><br><span class="line">        for(varj &#x3D; 0; j &lt; counter.length; j++) &#123;</span><br><span class="line">            varvalue &#x3D;null;</span><br><span class="line">            if(counter[j]!&#x3D;null) &#123;</span><br><span class="line">                while((value &#x3D; counter[j].shift()) !&#x3D;null) &#123;</span><br><span class="line">                      arr[pos++] &#x3D; value;</span><br><span class="line">                &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="10-4-算法分析"><a href="#10-4-算法分析" class="headerlink" title="10.4 算法分析"></a>10.4 算法分析</h4><p>基数排序基于分别排序，分别收集，所以是稳定的。但基数排序的性能比桶排序要略差，每一次关键字的桶分配都需要 O(n) 的时间复杂度，而且分配之后得到新的关键字序列又需要 O(n) 的时间复杂度。假如待排数据可以分为 d 个关键字，则基数排序的时间复杂度将是 O(d*2n) ，当然 d 要远远小于 n，因此基本上还是线性级别的。</p>
+<p>基数排序的空间复杂度为 O(n+k)，其中 k 为桶的数量。一般来说 n&gt;&gt;k，因此额外空间需要大概 n 个左右。</p>
 ]]></content>
       <categories>
         <category>开发</category>
       </categories>
       <tags>
-        <tag>编程</tag>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
-    <title>电脑博物馆</title>
-    <url>/2020/04/11/%E7%94%B5%E8%84%91%E5%8D%9A%E7%89%A9%E9%A6%86/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>当你用着最新的电脑，有没有想着感受一下上古时代的电脑，去体验一下那即将改变人类生活方式的10101000古董级电脑。<a id="more"></a></p>
-<p>现在推荐的一个网站是配合知乎专栏,古董电脑室建设的在线电脑模拟器网站，希望能够以一种更直观的方式展示历史上著名的电脑平台的特性。针对中文读者还加入了许多中国市场上独有的硬件和软件平台，包括 UCDOS、文曲星电子词典、小霸王学习机、中华学习机等。</p>
-<p>快去体验一下吧。</p>
-<p><a href="http://www.dnbwg.com/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">传送门</a></p>
-]]></content>
-      <categories>
-        <category>博物馆</category>
-      </categories>
-      <tags>
-        <tag>有趣的</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>自由钢琴</title>
-    <url>/2020/04/11/%E8%87%AA%E7%94%B1%E9%92%A2%E7%90%B4/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>浏览互联网的过程中，往往都是思维肆意飘荡的时刻，此时某处微小的声音也会激起你内心深处音乐细胞的复苏，相信拥有非凡音乐灵感的你一定想将此情感表达出来。<a id="more"></a></p>
-<p>巧合的是你目前并没有乐器在手，不用慌乱，进入这款在线音乐网站，可能就会帮助到你实现你的情感表达。</p>
-<p><a href=" https://www.autopiano.cn/ " rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">传送门</a></p>
-]]></content>
-      <categories>
-        <category>音乐</category>
-      </categories>
-      <tags>
-        <tag>有趣的</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机科学与技术是什么</title>
-    <url>/2020/04/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E6%98%AF%E4%BB%80%E4%B9%88/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>什么是计算机科学与技术？</p>
-<p>百度百科：</p>
-<blockquote>
-<p>计算机科学与技术是研究计算机的设计与制造，并利用计算机进行有关的信息表示、收发、存储、处理、控制等的理论方法和技术的学科。</p>
+    <title>studio 3T 两种破解教程</title>
+    <url>/2020/05/15/studio-3T-%E4%B8%A4%E7%A7%8D%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="解决studio-3T时间到期的两种方法"><a href="#解决studio-3T时间到期的两种方法" class="headerlink" title="解决studio 3T时间到期的两种方法"></a>解决studio 3T时间到期的两种方法</h2><blockquote>
+<p>此教程并非真正破解，而是通过重置 studio 3t 的试用时间解决的。</p>
 </blockquote>
 <a id="more"></a>
 
-<p>维基百科：</p>
-<blockquote>
-<p>Computer science is the theory, experimentation, and engineering that form the basis for the design and use of computers. It involves the study of algorithms that process, store, and communicate digital information. A computer scientist specializes in the theory of computation and the design of computational systems.</p>
-</blockquote>
-<p>总结来说，计算机科学与技术是设计和使用计算机的理论和实践基础，包括处理、存储和传输数字信息的算法学习。</p>
-<p><strong>计算机科学与技术可以分为科学与技术两部分</strong>，像计算机组成原理、计算机网络、操作系统、数据结构与算法等课程都是在阐述科学的部分，而像 C 语言程序设计、Java 面向对象编程、WEB 网页设计等课程则是在阐述技术部分。</p>
-<p>那么如何学好呢？</p>
-<p>借鉴柏拉图在《理想国》中阐述的教育理念，划分四个学习阶段。</p>
-<p><strong>第一阶段学习一门编程语言以及基础的数据结构与算法知识</strong>。编程语言选择主流的即可，比如 C、Java、Python 都是可以的。编程语言不需要学习的有多么地深入，比如 Java 基本数据类型以及基本的操作、条件分支语句、循环语句、类与对象即可；C 语言或 Python 语言类似。在此阶段不需要把编程语言学习的面面俱到，最重要的是为后面的数据结构与算法的学习打下一定的基础。</p>
-<p>之后，就可以开始学习基础的数据结构与算法知识。在学习此阶段时一定要利用前面所学的编程语言，将学习到的数据结构、算法等实现一遍，这样不仅能够对编程语言有更深入地理解，同时能够对数据结构与算法有更深入地理解。</p>
-<p>经过此阶段的学习，已经具备解决一些算法题目的能力了，可以尝试去一些算法网站去刷题。注意解决刷算法题是一个长期的学习任务，第一阶段结束后就可以尝试每周去刷一道有难度的题目，可以到欧拉计划 (Project Euler) 上找，也可以到 LeetCode 上找，养成用程序的思维来解决问题的习惯。</p>
-<p><strong>第二阶段学习操作系统相关的知识。</strong>这里的操作系统不仅指要学习的计算机操作系统专业课程，同时还要学习并发编程相关的知识。学习计算机操作系统时重点学习操作系统的内存管理、进程线程管理等理论知识，同时结合自己所学习的编程语言来进行相关实践，比如可以同步学习 Java 并发编程、JVM 等知识。</p>
-<p>此阶段的学习至关重要，为以后的学习工作打下扎实的理论和实践基础。</p>
-<p><strong>第三阶段学习计算机网络相关的知识。</strong>同操作系统知识的学习一样，不仅要学习计算机网络专业课，同时还要理论结合实践，去学习 HttpClient 等网络框架技术来进行理论和实践的结合。</p>
-<p>在此阶段的学习过程中，如果时间充裕的话，可以尝试去学习一些微服务、分布式等相关的知识，也可以去学习 WEB 开发、gRPC、Netty、Thrift 等相关知识，这些都和并发编程、网络有密不可分的关系。</p>
-<p>此阶段的学习具备网络开发的能力，可以试着开发一些网络应用。</p>
-<p><strong>第四阶段学习数据库相关知识，同时补充学习一些其他编程知识</strong>，比如汇编语言等。数据库的学习以 MySQL 为主，学习基本的 SQL 操作、SQL 优化以及 InnoDB 存储引擎。</p>
-<p>以上的学习内容是非常充实的学习之旅，当然由于学习的内容比较多，且比较深入，对大家的自学能力有比较高的要求。不过，无论怎样，如果大家能够坚持学习下来，肯定会有很大的收获。</p>
+<h3 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h3><ul>
+<li><p>按住<code>win + r</code> 键输入 <code>regedit</code></p>
+</li>
+<li><p>找到以下路径<br><code>HKEY_USERS\S-1-5-21-xxxxxxxxxxxxxx\SOFTWARE\JavaSoft\Prefs\3t\mongochef\enterprise</code></p>
+</li>
+<li><p>将除了 <code>installation-date-2019.2.1</code>（这个是软件安装日期的时间戳）<strong>这个项以外的项数据修改为空</strong>，再次打开软件就又是 30 天试用了  </p>
+</li>
+</ul>
+<h3 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h3><ul>
+<li><p>创建一个文本文档</p>
+</li>
+<li><p>输入以下代码</p>
+</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line">ECHO 重置Studio 3T的使用日期......</span><br><span class="line">FOR /f "tokens=1,2,* " %%i IN ('reg query "HKEY_CURRENT_USER\Software\JavaSoft\Prefs\3t\mongochef\enterprise" ^| find /V "installation" ^| find /V "HKEY"') DO ECHO yes | reg add "HKEY_CURRENT_USER\Software\JavaSoft\Prefs\3t\mongochef\enterprise" /v %%i /t REG_SZ /d ""</span><br><span class="line">ECHO 重置完成, 按任意键退出......</span><br><span class="line"><span class="meta">pause&gt;</span><span class="bash">nul</span></span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>将文件命名为<code>studio3t.bat</code></p>
+</li>
+<li><p>将<code>studio3t.bat</code>文件添加到以下路径<br><code>C:\ProgramData\Microsoft\Windows\Start Menu\Programs</code></p>
+</li>
+<li><p>运行 studio 3T 即可延长使用期限</p>
+</li>
+</ul>
 ]]></content>
       <categories>
         <category>开发</category>
       </categories>
       <tags>
-        <tag>学科概念</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>健康的作息时间表</title>
-    <url>/2020/05/02/%E5%85%A8%E7%90%83%E5%85%AC%E8%AE%A4%E6%9C%80%E5%81%A5%E5%BA%B7%E7%9A%84%E4%BD%9C%E6%81%AF%E6%97%B6%E9%97%B4%E8%A1%A8/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>下面是全球公认最健康的作息时间表，你值得拥有！</p>
-<a id="more"></a>
-
-<h3 id="7-00-起床"><a href="#7-00-起床" class="headerlink" title="7:00    起床"></a>7:00    起床</h3><p>迎着清晨的阳光起床。一杯温水是早起之后的必需品，能让你获得一天最好的开始。</p>
-<p><img src="https://qqpublic.qpic.cn/qq_public/0/0-2229531210-75463C8A7BB7FD51561AA7E241451669/900" alt=""></p>
-<h3 id="7-20-8-00-吃早饭"><a href="#7-20-8-00-吃早饭" class="headerlink" title="7:20-8:00    吃早饭"></a>7:20-8:00    吃早饭</h3><p>你需要营养全面而丰富的早餐。一顿优质的早餐，能让你一整天都充满活力。</p>
-<p><img src="https://qqpublic.qpic.cn/qq_public/0/0-3006431292-DC47FFDD6807F2150236DF4464F9E428/900" alt=""></p>
-<h3 id="8-30-9-00-避免剧烈运动"><a href="#8-30-9-00-避免剧烈运动" class="headerlink" title="8:30-9:00    避免剧烈运动"></a>8:30-9:00    避免剧烈运动</h3><p>早上是人体免疫系统最弱的时候，不要做剧烈的运动，走路上班是很好的选择，健康又惬意。</p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2498594716-52EED3E9DAB6B73B6736508CF00A0E43/0?fmt=jpg&size=18&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="9-00-10-00-做困难性工作"><a href="#9-00-10-00-做困难性工作" class="headerlink" title="9:00-10:00    做困难性工作"></a>9:00-10:00    做困难性工作</h3><p>上午，人脑最清醒犀利，应该用来做最有难度的事。比如攻克工作的难题，给复杂的报告列提纲等等，充分利用好上午清醒的大脑。</p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2821994936-30E6B86D9F0717CB59E1A7C4279DA02F/0?fmt=jpg&size=16&h=360&w=640&ppv=1" alt="">  </p>
-<h3 id="10-30-让眼睛休息一下"><a href="#10-30-让眼睛休息一下" class="headerlink" title="10:30    让眼睛休息一下"></a>10:30    让眼睛休息一下</h3><p>一晃就十点半了，起来走动走动，眺望一下远方，做一做眼保健操，让眼睛舒缓舒缓。  </p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2593181746-7096933C12220814D6BACC8E60D75819/0?fmt=jpg&size=13&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="11-00-吃点水果"><a href="#11-00-吃点水果" class="headerlink" title="11:00    吃点水果"></a>11:00    吃点水果</h3><p>上午工作得差不多了，该吃点水果了。上午是一天吃水果的最佳时机，因为上午人体最适合吸收水果里的营养。</p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2821155990-CD6ED1A1C88F33A25D112D51ABAF2CD5/0?fmt=jpg&size=12&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="12-00-12-30-午餐"><a href="#12-00-12-30-午餐" class="headerlink" title="12:00-12:30    午餐"></a>12:00-12:30    午餐</h3><p>午餐要吃饱，中午应该补充足够的蛋白质，豆类食品是最佳选择。虽然是午饭，久坐办公室的人也不要吃得太油腻。</p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2465346863-07413ECBB2DADBF056E348A0AD9A09D3/0?fmt=jpg&size=14&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="13-00-14-00-午睡"><a href="#13-00-14-00-午睡" class="headerlink" title="13:00-14:00    午睡"></a>13:00-14:00    午睡</h3><p>午饭后的时间很宝贵，最好用来小睡一觉。有的人喜欢在中午网上购物或者是打激烈的游戏，这反而会让大脑处于过度紧张的状态，造成下午身体的疲惫。</p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2854960333-A59C8DEB6EE9F43848E12D0E6955E7C3/0?fmt=jpg&size=13&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="14-00-16-00-做创意性工作"><a href="#14-00-16-00-做创意性工作" class="headerlink" title="14:00-16:00    做创意性工作"></a>14:00-16:00    做创意性工作</h3><p>午后是人思维最活跃的时间，非常适合做一些创意性的工作。想一想工作中的创新，即使是微小的改善，日积月累也会有巨大的成就。</p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2594154900-30323458FC4D49163895D1520D7CD1E1/0?fmt=jpg&size=16&h=360&w=640&ppv=1" alt="">  </p>
-<h3 id="16-00-喝杯酸奶"><a href="#16-00-喝杯酸奶" class="headerlink" title="16:00    喝杯酸奶"></a>16:00    喝杯酸奶</h3><p>四点左右，喝杯酸奶，能补充身体流失的血糖。马上将要投入到一天里最密集的工作中了。</p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2566162499-52E792A0178F7914A111CEE1C7F01973/0?fmt=jpg&size=13&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="16-10-19-00-做细致性工作"><a href="#16-10-19-00-做细致性工作" class="headerlink" title="16:10-19:00    做细致性工作"></a>16:10-19:00    做细致性工作</h3><p>四点到七点，身体和大脑都处于一天的巅峰状态，这时候我们应该做细致而密集的工作。做完这些别着急回家，  </p>
-<p>花 10 分钟总结一下当天的工作：</p>
-<p>今天收获了哪些好创意</p>
-<p>积累了哪些经验</p>
-<p>学习了什么新工具</p>
-<p>验证了什么想法</p>
-<p>……</p>
-<p>每天 10 分钟反思，大器必将早成！  </p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2352655579-6B318663F2D9E875C6226676FED4E9F5/0?fmt=jpg&size=16&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="19-00-最佳的运动时间"><a href="#19-00-最佳的运动时间" class="headerlink" title="19:00    最佳的运动时间"></a>19:00    最佳的运动时间</h3><p>下班之后稍微吃点东西，晚饭不要吃太多，三分饱即可。晚饭后稍微歇一会儿再开始运动。先散步，再慢跑，是非常健康的运动方式。</p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2974698069-25AE66C7605EEE5F8A148793725DCA79/0?fmt=jpg&size=15&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="20-00-看电视或看书"><a href="#20-00-看电视或看书" class="headerlink" title="20:00    看电视或看书"></a>20:00    看电视或看书</h3><p>运动之后可以看看电视，或打开你阅读计划中的书放松阅读。最好的选择还是在娱乐休闲中延绵不绝地思考工作，这样会碰撞出意想不到的火花。  </p>
-<p>劳逸结合的精髓就是：休闲的时候还有一根弦在牵挂工作，稍有灵感迸发就立刻抓住。</p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-3012196757-2B146EBE02449840F364A0E24574E8AC/0?fmt=jpg&size=14&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="22-00-洗个热水澡"><a href="#22-00-洗个热水澡" class="headerlink" title="22:00    洗个热水澡"></a>22:00    洗个热水澡</h3><p>时间差不多就该洗个澡了，让身体彻底舒缓下来，洗去一天的疲惫。  </p>
-<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-3163399326-A2F9AB0CA64042E2EFC922B98DDA1FEC/0?fmt=jpg&size=17&h=360&w=640&ppv=1" alt=""></p>
-<h3 id="23-00-上床睡觉"><a href="#23-00-上床睡觉" class="headerlink" title="23:00    上床睡觉"></a>23:00    上床睡觉</h3><p>人体的各个器官都开始处于休息期了，不要违背身体的自然规律，放松睡一个好觉，明天又是美好的一天！</p>
-]]></content>
-      <categories>
-        <category>生活</category>
-      </categories>
-      <tags>
-        <tag>作息时间表</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>网络资源使用简明指南之电子书篇</title>
-    <url>/2020/04/17/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90%E4%BD%BF%E7%94%A8%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97%E4%B9%8B%E7%94%B5%E5%AD%90%E4%B9%A6%E7%AF%87/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>书写出来并不是为了藏在高墙之后，而是为了向世界传播，激励和启发世人。<br>知识不是一小部分人的特权，是应该自由顺畅流向每一个需要它的人。 <a id="more"></a></p>
-<blockquote>
-<p>信息就是力量。但就像所有力量一样，有些人只想占为己有。<br>世界上所有的科学和文化遗产，已在书籍和期刊上发布了数个世纪，正渐渐地被少数私有的公司数字化并上锁。<br>那些能够获取这些资源的人，你有责任将它与世界分享。                                                                                                                                                 – <strong>亚伦·希勒尔·斯沃茨</strong> </p>
-</blockquote>
-<h3 id="电子书下载类"><a href="#电子书下载类" class="headerlink" title="电子书下载类"></a>电子书下载类</h3><table>
-<thead>
-<tr>
-<th>图标</th>
-<th>名称</th>
-<th>简介</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><img src="https://www.google.cn/s2/favicons?domain=https://sobooks.cc/"></td>
-<td><a href="https://sobooks.cc/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">sobooks</a></td>
-<td>优质电子书资源免费下载</td>
-</tr>
-<tr>
-<td><img src="https://www.google.cn/s2/favicons?domain=https://www.jiumodiary.com/"></td>
-<td><a href="https://www.jiumodiary.com/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">鸠摩搜书</a></td>
-<td>很受欢迎的电子书搜索引擎</td>
-</tr>
-<tr>
-<td><img src="https://www.google.cn/s2/favicons?domain=https://www.zqbook.top/"></td>
-<td><a href="https://www.zqbook.top/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">智奇搜书</a></td>
-<td>电子书搜索平台</td>
-</tr>
-<tr>
-<td><img src="https://www.google.cn/s2/favicons?domain=http://kindle.archiew.top/"></td>
-<td><a href="http://kindle.archiew.top/" rel="noopener norefferrer" target="_blank">书舟网</a></td>
-<td>聚合多个电子书网站，多达 14 万册资源</td>
-</tr>
-<tr>
-<td><img src="https://www.google.cn/s2/favicons?domain=http://neikuw.com/"></td>
-<td><a href="http://neikuw.com/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">内酷网</a></td>
-<td>电子书网站，数据丰富，提供多种格式，并提供合集下载</td>
-</tr>
-<tr>
-<td><img src="https://www.google.cn/s2/favicons?domain=https://book.51read.site/"></td>
-<td><a href="https://book.51read.site/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">Kindle电子书</a></td>
-<td>电子书网站，超过 6 万本书，下载没有任何限制。</td>
-</tr>
-<tr>
-<td><img src="https://www.google.cn/s2/favicons?domain=http://ebook.name/"></td>
-<td><a href="http://ebook.name/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">采书</a></td>
-<td>聚合多个电子书网站，帮你更快的找到你要的资源。</td>
-</tr>
-<tr>
-<td><img src="https://www.google.cn/s2/favicons?domain=https://yabook.org/"></td>
-<td><a href="https://yabook.org/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">雅书</a></td>
-<td>PDF电子书学习下载站</td>
-</tr>
-<tr>
-<td><img src="https://www.google.cn/s2/favicons?domain=https://shuayouxi.cn/"></td>
-<td><a href="https://shuayouxi.cn/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">超级书库</a></td>
-<td>电子书网站</td>
-</tr>
-</tbody></table>
-<h3 id="电子书推荐类"><a href="#电子书推荐类" class="headerlink" title="电子书推荐类"></a>电子书推荐类</h3><table>
-<thead>
-<tr>
-<th>图标</th>
-<th>名称</th>
-<th>简介</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><img src="https://www.google.cn/s2/favicons?domain=https://haoshu100.com/"></td>
-<td><a href="https://haoshu100.com/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">好书推荐</a></td>
-<td>书单推荐，好书推荐排行榜。</td>
-</tr>
-<tr>
-<td><img class="" src="https://www.google.cn/s2/favicons?domain=https://bookfere.com/"></td>
-<td><a href="https://bookfere.com/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">书伴</a></td>
-<td>阅读工具，提供与阅读相关的工具及技巧</td>
-</tr>
-</tbody></table>
-<h3 id="电子书杂志类"><a href="#电子书杂志类" class="headerlink" title="电子书杂志类"></a>电子书杂志类</h3><table>
-<thead>
-<tr>
-<th>图标</th>
-<th>名称</th>
-<th>简介</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><img src="https://www.google.cn/s2/favicons?domain=http://www.rensheng5.com/"></td>
-<td><a href="http://www.rensheng5.com/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">人生屋</a></td>
-<td>聚合青年文摘、读者、意林、故事会及其他哲理或寓言文章</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>网络资源使用</category>
-        <category>简明指南</category>
-      </categories>
-      <tags>
-        <tag>电子书</tag>
+        <tag>开发软件</tag>
       </tags>
   </entry>
   <entry>
@@ -558,226 +383,54 @@
       </tags>
   </entry>
   <entry>
-    <title>studio 3T 两种破解教程</title>
-    <url>/2020/05/15/studio-3T-%E4%B8%A4%E7%A7%8D%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="解决studio-3T时间到期的两种方法"><a href="#解决studio-3T时间到期的两种方法" class="headerlink" title="解决studio 3T时间到期的两种方法"></a>解决studio 3T时间到期的两种方法</h2><blockquote>
-<p>此教程并非真正破解，而是通过重置 studio 3t 的试用时间解决的。</p>
-</blockquote>
+    <title>健康的作息时间表</title>
+    <url>/2020/05/02/%E5%85%A8%E7%90%83%E5%85%AC%E8%AE%A4%E6%9C%80%E5%81%A5%E5%BA%B7%E7%9A%84%E4%BD%9C%E6%81%AF%E6%97%B6%E9%97%B4%E8%A1%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>下面是全球公认最健康的作息时间表，你值得拥有！</p>
 <a id="more"></a>
 
-<h3 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h3><ul>
-<li><p>按住<code>win + r</code> 键输入 <code>regedit</code></p>
-</li>
-<li><p>找到以下路径<br><code>HKEY_USERS\S-1-5-21-xxxxxxxxxxxxxx\SOFTWARE\JavaSoft\Prefs\3t\mongochef\enterprise</code></p>
-</li>
-<li><p>将除了 <code>installation-date-2019.2.1</code>（这个是软件安装日期的时间戳）<strong>这个项以外的项数据修改为空</strong>，再次打开软件就又是 30 天试用了  </p>
-</li>
-</ul>
-<h3 id="第二种方法"><a href="#第二种方法" class="headerlink" title="第二种方法"></a>第二种方法</h3><ul>
-<li><p>创建一个文本文档</p>
-</li>
-<li><p>输入以下代码</p>
-</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">@echo off</span><br><span class="line">ECHO 重置Studio 3T的使用日期......</span><br><span class="line">FOR /f "tokens=1,2,* " %%i IN ('reg query "HKEY_CURRENT_USER\Software\JavaSoft\Prefs\3t\mongochef\enterprise" ^| find /V "installation" ^| find /V "HKEY"') DO ECHO yes | reg add "HKEY_CURRENT_USER\Software\JavaSoft\Prefs\3t\mongochef\enterprise" /v %%i /t REG_SZ /d ""</span><br><span class="line">ECHO 重置完成, 按任意键退出......</span><br><span class="line"><span class="meta">pause&gt;</span><span class="bash">nul</span></span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>将文件命名为<code>studio3t.bat</code></p>
-</li>
-<li><p>将<code>studio3t.bat</code>文件添加到以下路径<br><code>C:\ProgramData\Microsoft\Windows\Start Menu\Programs</code></p>
-</li>
-<li><p>运行 studio 3T 即可延长使用期限</p>
-</li>
-</ul>
+<h3 id="7-00-起床"><a href="#7-00-起床" class="headerlink" title="7:00    起床"></a>7:00    起床</h3><p>迎着清晨的阳光起床。一杯温水是早起之后的必需品，能让你获得一天最好的开始。</p>
+<p><img src="https://qqpublic.qpic.cn/qq_public/0/0-2229531210-75463C8A7BB7FD51561AA7E241451669/900" alt=""></p>
+<h3 id="7-20-8-00-吃早饭"><a href="#7-20-8-00-吃早饭" class="headerlink" title="7:20-8:00    吃早饭"></a>7:20-8:00    吃早饭</h3><p>你需要营养全面而丰富的早餐。一顿优质的早餐，能让你一整天都充满活力。</p>
+<p><img src="https://qqpublic.qpic.cn/qq_public/0/0-3006431292-DC47FFDD6807F2150236DF4464F9E428/900" alt=""></p>
+<h3 id="8-30-9-00-避免剧烈运动"><a href="#8-30-9-00-避免剧烈运动" class="headerlink" title="8:30-9:00    避免剧烈运动"></a>8:30-9:00    避免剧烈运动</h3><p>早上是人体免疫系统最弱的时候，不要做剧烈的运动，走路上班是很好的选择，健康又惬意。</p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2498594716-52EED3E9DAB6B73B6736508CF00A0E43/0?fmt=jpg&size=18&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="9-00-10-00-做困难性工作"><a href="#9-00-10-00-做困难性工作" class="headerlink" title="9:00-10:00    做困难性工作"></a>9:00-10:00    做困难性工作</h3><p>上午，人脑最清醒犀利，应该用来做最有难度的事。比如攻克工作的难题，给复杂的报告列提纲等等，充分利用好上午清醒的大脑。</p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2821994936-30E6B86D9F0717CB59E1A7C4279DA02F/0?fmt=jpg&size=16&h=360&w=640&ppv=1" alt="">  </p>
+<h3 id="10-30-让眼睛休息一下"><a href="#10-30-让眼睛休息一下" class="headerlink" title="10:30    让眼睛休息一下"></a>10:30    让眼睛休息一下</h3><p>一晃就十点半了，起来走动走动，眺望一下远方，做一做眼保健操，让眼睛舒缓舒缓。  </p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2593181746-7096933C12220814D6BACC8E60D75819/0?fmt=jpg&size=13&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="11-00-吃点水果"><a href="#11-00-吃点水果" class="headerlink" title="11:00    吃点水果"></a>11:00    吃点水果</h3><p>上午工作得差不多了，该吃点水果了。上午是一天吃水果的最佳时机，因为上午人体最适合吸收水果里的营养。</p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2821155990-CD6ED1A1C88F33A25D112D51ABAF2CD5/0?fmt=jpg&size=12&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="12-00-12-30-午餐"><a href="#12-00-12-30-午餐" class="headerlink" title="12:00-12:30    午餐"></a>12:00-12:30    午餐</h3><p>午餐要吃饱，中午应该补充足够的蛋白质，豆类食品是最佳选择。虽然是午饭，久坐办公室的人也不要吃得太油腻。</p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2465346863-07413ECBB2DADBF056E348A0AD9A09D3/0?fmt=jpg&size=14&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="13-00-14-00-午睡"><a href="#13-00-14-00-午睡" class="headerlink" title="13:00-14:00    午睡"></a>13:00-14:00    午睡</h3><p>午饭后的时间很宝贵，最好用来小睡一觉。有的人喜欢在中午网上购物或者是打激烈的游戏，这反而会让大脑处于过度紧张的状态，造成下午身体的疲惫。</p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2854960333-A59C8DEB6EE9F43848E12D0E6955E7C3/0?fmt=jpg&size=13&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="14-00-16-00-做创意性工作"><a href="#14-00-16-00-做创意性工作" class="headerlink" title="14:00-16:00    做创意性工作"></a>14:00-16:00    做创意性工作</h3><p>午后是人思维最活跃的时间，非常适合做一些创意性的工作。想一想工作中的创新，即使是微小的改善，日积月累也会有巨大的成就。</p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2594154900-30323458FC4D49163895D1520D7CD1E1/0?fmt=jpg&size=16&h=360&w=640&ppv=1" alt="">  </p>
+<h3 id="16-00-喝杯酸奶"><a href="#16-00-喝杯酸奶" class="headerlink" title="16:00    喝杯酸奶"></a>16:00    喝杯酸奶</h3><p>四点左右，喝杯酸奶，能补充身体流失的血糖。马上将要投入到一天里最密集的工作中了。</p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2566162499-52E792A0178F7914A111CEE1C7F01973/0?fmt=jpg&size=13&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="16-10-19-00-做细致性工作"><a href="#16-10-19-00-做细致性工作" class="headerlink" title="16:10-19:00    做细致性工作"></a>16:10-19:00    做细致性工作</h3><p>四点到七点，身体和大脑都处于一天的巅峰状态，这时候我们应该做细致而密集的工作。做完这些别着急回家，  </p>
+<p>花 10 分钟总结一下当天的工作：</p>
+<p>今天收获了哪些好创意</p>
+<p>积累了哪些经验</p>
+<p>学习了什么新工具</p>
+<p>验证了什么想法</p>
+<p>……</p>
+<p>每天 10 分钟反思，大器必将早成！  </p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2352655579-6B318663F2D9E875C6226676FED4E9F5/0?fmt=jpg&size=16&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="19-00-最佳的运动时间"><a href="#19-00-最佳的运动时间" class="headerlink" title="19:00    最佳的运动时间"></a>19:00    最佳的运动时间</h3><p>下班之后稍微吃点东西，晚饭不要吃太多，三分饱即可。晚饭后稍微歇一会儿再开始运动。先散步，再慢跑，是非常健康的运动方式。</p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-2974698069-25AE66C7605EEE5F8A148793725DCA79/0?fmt=jpg&size=15&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="20-00-看电视或看书"><a href="#20-00-看电视或看书" class="headerlink" title="20:00    看电视或看书"></a>20:00    看电视或看书</h3><p>运动之后可以看看电视，或打开你阅读计划中的书放松阅读。最好的选择还是在娱乐休闲中延绵不绝地思考工作，这样会碰撞出意想不到的火花。  </p>
+<p>劳逸结合的精髓就是：休闲的时候还有一根弦在牵挂工作，稍有灵感迸发就立刻抓住。</p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-3012196757-2B146EBE02449840F364A0E24574E8AC/0?fmt=jpg&size=14&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="22-00-洗个热水澡"><a href="#22-00-洗个热水澡" class="headerlink" title="22:00    洗个热水澡"></a>22:00    洗个热水澡</h3><p>时间差不多就该洗个澡了，让身体彻底舒缓下来，洗去一天的疲惫。  </p>
+<p><img src="http://qqpublic.qpic.cn/qq_public/0/0-3163399326-A2F9AB0CA64042E2EFC922B98DDA1FEC/0?fmt=jpg&size=17&h=360&w=640&ppv=1" alt=""></p>
+<h3 id="23-00-上床睡觉"><a href="#23-00-上床睡觉" class="headerlink" title="23:00    上床睡觉"></a>23:00    上床睡觉</h3><p>人体的各个器官都开始处于休息期了，不要违背身体的自然规律，放松睡一个好觉，明天又是美好的一天！</p>
 ]]></content>
       <categories>
-        <category>开发</category>
+        <category>生活</category>
       </categories>
       <tags>
-        <tag>开发软件</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一个字节的奇幻之旅</title>
-    <url>/2020/04/14/%E4%B8%80%E4%B8%AA%E5%AD%97%E8%8A%82%E7%9A%84%E5%A5%87%E5%B9%BB%E4%B9%8B%E6%97%85/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>大家好，给大家介绍一下，我是一个字节。相比于你们人类据说即将达到的百岁人生的寿命，我的一生简直不直一提（我只能存活零点几个毫秒）。<a id="more"></a></p>
-<p>也许只有那些码农才会了解我，而且也只有一部分码农。那些整天做业务的猿们想来也不会真正的了解我，更别提人类其他行业的人了。</p>
-<p>我不甘心，虽然我微不足道，但是我对人类的贡献实在是太大了。没有我的世界根本无法想像：不能开微信，不能刷微博，不能听网易云音乐，不能刷抖音，不能上天猫，所有和网络相关的活动都无法进行。</p>
-<p>所以，今天我要讲讲我的一生，让更多的人知道我的存在，知道我的故事，也为证明自己曾经存在过吧。</p>
-<p><strong>1、诞生</strong></p>
-<p>我的主人是一个在西二旗知名互联网公司上班的程序猿，过着 1095（注：早 10 点晚 9 点，一周 5 天工作）的生活，很少能在晚霞中回家，自然也说不出 “落霞与孤鹜齐飞” 那样的句子。</p>
-<p>这一天，他 9 点半到家，第一件事打开电脑，熟练地启动 chrome 浏览器，在地址栏敲下一个 z 字符，我所有的故事就从这里开始。</p>
-<p>当主人按下键盘上的 z 键时，系统了产生一个中断信号，通知 CPU 过来读取键盘输入，CPU 读取到 z 后，将 z 发送给 chrome 浏览器, chrome 收到后，将 z 显示到浏览器的地址栏上，同时后台搜索主人平时访问过的地址，排名第一的 <a href="https://www.zhihu.com" target="_blank" rel="noopener">https://www.zhihu.com</a> 被快速补全了。</p>
-<p>这时主人熟练地按下了回车键，chrome 收到指令后，进行了一顿操作，在这电光火石之间，我诞生了，同时诞生的还有我的字节兄弟们。</p>
-<p><strong>2、上路</strong></p>
-<p>话说 Chorme 老大哥接收到了 URL 后，首先拆解成自己能看懂的东西。 <a href="https://www.zhihu.com" target="_blank" rel="noopener">https://www.zhihu.com</a> 会被拆解成三部分： https、 <a href="http://www.zhihu.com、" target="_blank" rel="noopener">www.zhihu.com、</a> /。</p>
-<p>https 表示协议类型，通过这个 Chorme 老大哥知道他接下来该如何与远方的网站服务器通信； <a href="http://www.zhihu.com" target="_blank" rel="noopener">www.zhihu.com</a> 表示主机名，就是 Chorme 老大哥要通信的对象了；第三部分则是它要向服务器要的内容（注：这里表明是空，实际上隐含的表示主目录文件的概念）。</p>
-<p>有了这三项， Chorme 老大哥就能从服务器那里获取它想要的内容了，从而展示给我的主人。</p>
-<p>Chorme 老大哥跑到 HTTP 数据包生产车间，哼哧哼哧地倒腾半天，生产出了一个 HTTP 数据包（注：忽略 https, 简单起见当成 http），这个数据包实际上就是我和我的一群字节兄弟们，我们挤在一个集装箱内，熙熙攘攘。</p>
-<p>我们马上就要搭乘 IP 列车到远方的服务器，见识外面的世界了。集装箱被装上了 TCP 专车，它将带我们来到列车站。 TCP 专车很安全也很舒适，我从集装箱的缝隙中看到车前贴上了车牌： 80.</p>
-<p>到了车站， TCP 专车直接开到了列车上。这样也好， IP 列车上很脏，我们坐在专车上更好。 只是列车还不知道具体要去哪，所以我们就只能先在列车上等着了。</p>
-<p>不对啊，列车应该去 <a href="http://www.zhihu.com" target="_blank" rel="noopener">www.zhihu.com</a> 这个网站，不是已经知道了吗？对的，但是 IP 列车挺笨的，也挺古板的，不认识这些字母。它只认识数字，人类称之为 ip.</p>
-<p>Chorme 老大哥也有点抱怨，人类真是笨，连个 ip 都记不住，非得用域名来上网。害我还得拿着这个域名去问 DNS 老大爷，它知道所有域名对应的 ip.</p>
-<p>这不， Chorme 老大哥又跑到另外一个车间—— DNS 数据包生产车间里倒腾出了一个 DNS 数据包，当然还是一群字节兄弟们，不过这里的兄弟就少一些了。它们在集装箱里叽叽喳喳，被装上了 UDP 敞篷车，车虽然很快，但不太安全，我这些兄弟们坐在上面，提心吊胆，生怕掉下去，因为掉下去，就永远消失了。</p>
-<p>UDP 敞篷车也直接开到了 IP 列车上，车前贴了车牌：53.</p>
-<p>这回 Chrome 老大哥直接从 操作系统大佬那要到了 DNS 老大爷的 ip, 贴到了 IP 列车的车头， IP 列车马上全速启动，载着我这些字节兄弟，赶到了 DNS 老大爷的城堡， UDP 敞篷车开下列车，按照车牌号 53 找到了 DNS 老大爷的住处。从它那拿到了 <a href="http://www.zhihu.com" target="_blank" rel="noopener">www.zhihu.com</a> 对应的 ip.</p>
-<p>DNS 老大爷学问渊博，他也很仗义，从自己城堡里的 DNS 数据包生产车间造出了 DNS 响应包，包里也是我这些字节兄弟们，它们拿着重要的资料数据—— <a href="http://www.zhihu.com" target="_blank" rel="noopener">www.zhihu.com</a> 对应的 ip, 坐上了另一趟返程的 IP 列车，而列车的终点就是我现在所在的地方。当然了，他们是由另一辆 UDP 敞篷车载着他们回来的。</p>
-<p>Chorme 老大哥在车间接见了这些兄弟，非常感动。因为他们带回了 <a href="http://www.zhihu.com" target="_blank" rel="noopener">www.zhihu.com</a> 对应的 ip. 那些兄弟争先恐后的报告自己知道的东西，有些兄弟报告 1, 有些兄弟报告 0, Chorme 老大哥非常有经验，它把这些消息合并起来了，最终得到了它想要的 ip: 118.89.204.192.</p>
-<p>Chorme 老大哥拿着这个 ip 来到了我所在的列车前面，我激动地要叫起来了：终于我要出发了！它熟练地把 118.89.204.192 贴到了列车的前面，马上列车就开动了，我上路了。</p>
-<p>IP 列车的列车长在掌管着车头的方向，决定着我们的命运走向。路网非常复杂，而车头上只有一个 ip 地址，根本没告诉列车长应该走哪条路。这不难，富有经验的列车长根据车头的 ip 地址查到了下一个大站（路由器）的地址，之后再根据这个大站地址查到（ARP 协议）途经的下一个小站（交换机或集线器）应该走的轨道。在每个小站，对照这个大站地址，列车长就知道该走哪条路。搞定！</p>
-<p>经过了很多的小站，我们终于到了下一个大站了。站点的工作人员看着我们车头前的 ip 地址，查了下表（路由表）告诉我们下一个大站的地址，并且告诉我们途径的下一个小站应该走哪条轨道。列车长就这样，一路拿这张表，顺利地把我们带到了终点： 118.89.204.192.</p>
-<p>不过，刚刚就在到终点的前一刻，列车被拦住了，一群荷枪实弹的警卫冲上来了，一些胆小的字节兄弟们都哭了，我也是屏气凝声。他们先是查看了车头的 ip 地址，再查看了列车长手里的表，还看了下我们的 TCP 专车的车牌。很快就放行了，虚惊一场！</p>
-<p><strong>3、新生</strong></p>
-<p>到了终点站后，列车首先停下接受工作人员的检查。列车长出示了他手里的表，对了一下表上标注的下一站地址确实是：知乎。接着又看了下列车头部标注的 ip 地址，就算检查通过了，第一关很轻松。</p>
-<p>接下来，我们坐的 TCP 专车开下列车了。进了一个 TCP 车牌检查站，工作人员看了下车牌号 80, 也挥手示意我们通过。</p>
-<p>接着我们都下车走进了 主页车间，进去后，我们先按我们身上的标号排好了位置，工作人员将我们每个人所代表的信息进行了聚拢。得到了各种关于主人的信息，比如他所用的浏览器的版本，cookie 等等信息，我知道，我们的使命完成了。果然，一道光闪过，我们都消失了，完成了我们光荣的一生。</p>
-<p>主页车间领导马上下达生产命令：1 组去仓库拉取最新话题，2 组去商业中心获取今天的广告主信息……</p>
-<p>很快，各组都完成了任务，车间在一阵轰鸣过后，新的一批字节兄弟诞生了，他们带着这些话题、广告信息，和我们当年出生的时候一样，熙熙攘攘。但是我知道，我获得了新生。</p>
-<p><strong>4、归家</strong></p>
-<p>像我们当年一样，这些新出生的字节兄弟依次坐上了 TCP 专车， IP 列车一路跋涉，去往我出发的地方，那是我梦开始的地方。</p>
-<p>我所经历的，他们未曾少过一分。</p>
-<p><strong>5、定格</strong></p>
-<p>Chrome 老大哥终于等来了这些字节兄弟，在他们排好队后，老大哥看清了字节兄弟们代表的内容：话题2020魔幻剧连载，川建国变形记，切尔诺贝利再现危机，全球化面临的挑战，植发广告……</p>
-<p>这些是 Chrome 老大哥最擅长的事情，分分钟将他们显示在了网页上。字节兄弟们终于完成了使命，定格在了 retina 屏幕上。</p>
-<p>我的主人点开第一话题后，看了一会儿。然后瞅到了植发广告，他偷偷地开启了隐身模式，仔细地研究了起来……</p>
-]]></content>
-      <categories>
-        <category>开发</category>
-      </categories>
-      <tags>
-        <tag>有趣的</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>十大经典排序算法（动图演示）</title>
-    <url>/2020/06/04/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%EF%BC%88%E5%8A%A8%E5%9B%BE%E6%BC%94%E7%A4%BA%EF%BC%89/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="0、算法概述"><a href="#0、算法概述" class="headerlink" title="0、算法概述"></a>0、算法概述</h3><h4 id="0-1-算法分类"><a href="#0-1-算法分类" class="headerlink" title="0.1 算法分类"></a>0.1 算法分类</h4><p>十种常见排序算法可以分为两大类：</p>
-<ul>
-<li><strong>比较类排序</strong>：通过比较来决定元素间的相对次序，由于其时间复杂度不能突破 O(nlogn)，因此也称为非线性时间比较类排序。</li>
-<li><strong>非比较类排序</strong>：不通过比较来决定元素间的相对次序，它可以突破基于比较排序的时间下界，以线性时间运行，因此也称为线性时间非比较类排序。 <a id="more"></a></li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E5%88%86%E7%B1%BB.png" alt="排序算法分类"></p>
-<h4 id="0-2-算法复杂度"><a href="#0-2-算法复杂度" class="headerlink" title="0.2 算法复杂度"></a>0.2 算法复杂度</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6.png" alt="算法复杂度"></p>
-<h4 id="0-3-相关概念"><a href="#0-3-相关概念" class="headerlink" title="0.3 相关概念"></a>0.3 相关概念</h4><ul>
-<li><strong>稳定</strong>：如果 a 原本在 b 前面，而 a=b，排序之后 a 仍然在 b 的前面。</li>
-<li><strong>不稳定</strong>：如果 a 原本在 b 的前面，而 a=b，排序之后 a 可能会出现在 b 的后面。</li>
-<li><strong>时间复杂度</strong>：对排序数据的总的操作次数。反映当 n 变化时，操作次数呈现什么规律。</li>
-<li><strong>空间复杂度：</strong>是指算法在计算机内执行时所需存储空间的度量，它也是数据规模 n 的函数。 </li>
-</ul>
-<h3 id="1、冒泡排序（Bubble-Sort）"><a href="#1、冒泡排序（Bubble-Sort）" class="headerlink" title="1、冒泡排序（Bubble Sort）"></a>1、冒泡排序（Bubble Sort）</h3><p>冒泡排序是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果它们的顺序错误就把它们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢 “浮” 到数列的顶端。 </p>
-<h4 id="1-1-算法描述"><a href="#1-1-算法描述" class="headerlink" title="1.1 算法描述"></a>1.1 算法描述</h4><ul>
-<li>比较相邻的元素。如果第一个比第二个大，就交换它们两个；</li>
-<li>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；</li>
-<li>针对所有的元素重复以上的步骤，除了最后一个；</li>
-<li>重复步骤 1~3，直到排序完成。</li>
-</ul>
-<h4 id="1-2-动图演示"><a href="#1-2-动图演示" class="headerlink" title="1.2 动图演示"></a>1.2 动图演示</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt="冒泡排序动画"></p>
-<h4 id="1-3-代码实现"><a href="#1-3-代码实现" class="headerlink" title="1.3 代码实现"></a>1.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function bubbleSort(arr) &#123;</span><br><span class="line">    varlen &#x3D; arr.length;</span><br><span class="line">    for(vari &#x3D; 0; i &lt; len - 1; i++) &#123;</span><br><span class="line">        for(varj &#x3D; 0; j &lt; len - 1 - i; j++) &#123;</span><br><span class="line">            if(arr[j] &gt; arr[j+1]) &#123;       &#x2F;&#x2F; 相邻元素两两对比</span><br><span class="line">                vartemp &#x3D; arr[j+1];       &#x2F;&#x2F; 元素交换</span><br><span class="line">                arr[j+1] &#x3D; arr[j];</span><br><span class="line">                arr[j] &#x3D; temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、选择排序（Selection-Sort）"><a href="#2、选择排序（Selection-Sort）" class="headerlink" title="2、选择排序（Selection Sort）"></a>2、选择排序（Selection Sort）</h3><p>选择排序 (Selection-sort) 是一种简单直观的排序算法。它的工作原理：首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。 </p>
-<h4 id="2-1-算法描述"><a href="#2-1-算法描述" class="headerlink" title="2.1 算法描述"></a>2.1 算法描述</h4><p>n 个记录的直接选择排序可经过 n-1 趟直接选择排序得到有序结果。具体算法描述如下：</p>
-<ul>
-<li>初始状态：无序区为 R[1..n]，有序区为空；</li>
-<li>第 i 趟排序 (i=1,2,3…n-1) 开始时，当前有序区和无序区分别为 R[1..i-1]和 R(i..n）。该趟排序从当前无序区中 - 选出关键字最小的记录 R[k]，将它与无序区的第 1 个记录 R 交换，使 R[1..i]和 R[i+1..n)分别变为记录个数增加 1 个的新有序区和记录个数减少 1 个的新无序区；</li>
-<li>n-1 趟结束，数组有序化了。</li>
-</ul>
-<h4 id="2-2-动图演示"><a href="#2-2-动图演示" class="headerlink" title="2.2 动图演示"></a><strong>2.2 动图演示</strong></h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt="选择排序动画"></p>
-<h4 id="2-3-代码实现"><a href="#2-3-代码实现" class="headerlink" title="2.3 代码实现"></a>2.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function selectionSort(arr) &#123;</span><br><span class="line">    varlen &#x3D; arr.length;</span><br><span class="line">    varminIndex, temp;</span><br><span class="line">    for(vari &#x3D; 0; i &lt; len - 1; i++) &#123;</span><br><span class="line">        minIndex &#x3D; i;</span><br><span class="line">        for(varj &#x3D; i + 1; j &lt; len; j++) &#123;</span><br><span class="line">            if(arr[j] &lt; arr[minIndex]) &#123;    &#x2F;&#x2F; 寻找最小的数</span><br><span class="line">                minIndex &#x3D; j;                &#x2F;&#x2F; 将最小数的索引保存</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        temp &#x3D; arr[i];</span><br><span class="line">        arr[i] &#x3D; arr[minIndex];</span><br><span class="line">        arr[minIndex] &#x3D; temp;</span><br><span class="line">    &#125;</span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-4-算法分析"><a href="#2-4-算法分析" class="headerlink" title="2.4 算法分析"></a>2.4 算法分析</h4><p>表现最稳定的排序算法之一，因为无论什么数据进去都是 O(n2) 的时间复杂度，所以用到它的时候，数据规模越小越好。唯一的好处可能就是不占用额外的内存空间了吧。理论上讲，选择排序可能也是平时排序一般人想到的最多的排序方法了吧。</p>
-<h3 id="3、插入排序（Insertion-Sort）"><a href="#3、插入排序（Insertion-Sort）" class="headerlink" title="3、插入排序（Insertion Sort）"></a>3、插入排序（Insertion Sort）</h3><p>插入排序（Insertion-Sort）的算法描述是一种简单直观的排序算法。它的工作原理是通过构建有序序列，对于未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入。</p>
-<h4 id="3-1-算法描述"><a href="#3-1-算法描述" class="headerlink" title="3.1 算法描述"></a>3.1 算法描述</h4><p>一般来说，插入排序都采用 in-place 在数组上实现。具体算法描述如下：</p>
-<ul>
-<li>从第一个元素开始，该元素可以认为已经被排序；</li>
-<li>取出下一个元素，在已经排序的元素序列中从后向前扫描；</li>
-<li>如果该元素（已排序）大于新元素，将该元素移到下一位置；</li>
-<li>重复步骤 3，直到找到已排序的元素小于或者等于新元素的位置；</li>
-<li>将新元素插入到该位置后；</li>
-<li>重复步骤 2~5。</li>
-</ul>
-<h4 id="3-2-动图演示"><a href="#3-2-动图演示" class="headerlink" title="3.2 动图演示"></a>3.2 动图演示</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt="插入排序动画"> </p>
-<h4 id="3-2-代码实现"><a href="#3-2-代码实现" class="headerlink" title="3.2 代码实现"></a>3.2 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function insertionSort(arr) &#123;</span><br><span class="line">    varlen &#x3D; arr.length;</span><br><span class="line">    varpreIndex, current;</span><br><span class="line">    for(vari &#x3D; 1; i &lt; len; i++) &#123;</span><br><span class="line">        preIndex &#x3D; i - 1;</span><br><span class="line">        current &#x3D; arr[i];</span><br><span class="line">        while(preIndex &gt;&#x3D; 0 &amp;&amp; arr[preIndex] &gt; current) &#123;</span><br><span class="line">            arr[preIndex + 1] &#x3D; arr[preIndex];</span><br><span class="line">            preIndex--;</span><br><span class="line">        &#125;</span><br><span class="line">        arr[preIndex + 1] &#x3D; current;</span><br><span class="line">    &#125;</span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-4-算法分析"><a href="#3-4-算法分析" class="headerlink" title="3.4 算法分析"></a>3.4 算法分析</h4><p>插入排序在实现上，通常采用 in-place 排序（即只需用到 O(1) 的额外空间的排序），因而在从后向前扫描过程中，需要反复把已排序元素逐步向后挪位，为最新元素提供插入空间。</p>
-<h3 id="4、希尔排序（Shell-Sort）"><a href="#4、希尔排序（Shell-Sort）" class="headerlink" title="4、希尔排序（Shell Sort）"></a>4、希尔排序（Shell Sort）</h3><p>1959 年 Shell 发明，第一个突破 O(n2) 的排序算法，是简单插入排序的改进版。它与插入排序的不同之处在于，它会优先比较距离较远的元素。希尔排序又叫<strong>缩小增量排序</strong>。</p>
-<h4 id="4-1-算法描述"><a href="#4-1-算法描述" class="headerlink" title="4.1 算法描述"></a>4.1 算法描述</h4><p>先将整个待排序的记录序列分割成为若干子序列分别进行直接插入排序，具体算法描述：</p>
-<ul>
-<li>选择一个增量序列 t1，t2，…，tk，其中 ti&gt;tj，tk=1；</li>
-<li>按增量序列个数 k，对序列进行 k 趟排序；</li>
-<li>每趟排序，根据对应的增量 ti，将待排序列分割成若干长度为 m 的子序列，分别对各子表进行直接插入排序。仅增量因子为 1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。</li>
-</ul>
-<h4 id="4-2-动图演示"><a href="#4-2-动图演示" class="headerlink" title="4.2 动图演示"></a>4.2 动图演示</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt="希尔排序动画"></p>
-<h4 id="4-3-代码实现"><a href="#4-3-代码实现" class="headerlink" title="4.3 代码实现"></a>4.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 修改于 2019-03-06</span><br><span class="line">function shellSort(arr) &#123;</span><br><span class="line">    varlen &#x3D; arr.length;</span><br><span class="line">    for(vargap &#x3D; Math.floor(len &#x2F; 2); gap &gt; 0; gap &#x3D; Math.floor(gap &#x2F; 2)) &#123;</span><br><span class="line">        &#x2F;&#x2F; 注意：这里和动图演示的不一样，动图是分组执行，实际操作是多个分组交替执行</span><br><span class="line">        for(vari &#x3D; gap; i &lt; len; i++) &#123;</span><br><span class="line">            varj &#x3D; i;</span><br><span class="line">            varcurrent &#x3D; arr[i];</span><br><span class="line">            while(j - gap &gt;&#x3D; 0 &amp;&amp; current &lt; arr[j - gap]) &#123;</span><br><span class="line">                 arr[j] &#x3D; arr[j - gap];</span><br><span class="line">                 j &#x3D; j - gap;</span><br><span class="line">            &#125;</span><br><span class="line">            arr[j] &#x3D; current;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-4-算法分析"><a href="#4-4-算法分析" class="headerlink" title="4.4 算法分析"></a>4.4 算法分析</h4><p>希尔排序的核心在于间隔序列的设定。既可以提前设定好间隔序列，也可以动态的定义间隔序列。动态定义间隔序列的算法是《算法（第 4 版）》的合著者 Robert Sedgewick 提出的。　</p>
-<h3 id="5、归并排序（Merge-Sort）"><a href="#5、归并排序（Merge-Sort）" class="headerlink" title="5、归并排序（Merge Sort）"></a>5、归并排序（Merge Sort）</h3><p>归并排序是建立在归并操作上的一种有效的排序算法。该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为 2 - 路归并。 </p>
-<h4 id="5-1-算法描述"><a href="#5-1-算法描述" class="headerlink" title="5.1 算法描述"></a>5.1 算法描述</h4><ul>
-<li>把长度为 n 的输入序列分成两个长度为 n/2 的子序列；</li>
-<li>对这两个子序列分别采用归并排序；</li>
-<li>将两个排序好的子序列合并成一个最终的排序序列。</li>
-</ul>
-<h4 id="5-2-动图演示"><a href="#5-2-动图演示" class="headerlink" title="5.2 动图演示"></a>5.2 动图演示</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt="归并排序动画"></p>
-<h4 id="5-3-代码实现"><a href="#5-3-代码实现" class="headerlink" title="5.3 代码实现"></a>5.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function mergeSort(arr) &#123;</span><br><span class="line">    varlen &#x3D; arr.length;</span><br><span class="line">    if(len &lt; 2) &#123;</span><br><span class="line">        returnarr;</span><br><span class="line">    &#125;</span><br><span class="line">    varmiddle &#x3D; Math.floor(len &#x2F; 2),</span><br><span class="line">        left &#x3D; arr.slice(0, middle),</span><br><span class="line">        right &#x3D; arr.slice(middle);</span><br><span class="line">    returnmerge(mergeSort(left), mergeSort(right));</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">function merge(left, right) &#123;</span><br><span class="line">    varresult &#x3D; [];</span><br><span class="line"> </span><br><span class="line">    while(left.length&gt;0 &amp;&amp; right.length&gt;0) &#123;</span><br><span class="line">        if(left[0] &lt;&#x3D; right[0]) &#123;</span><br><span class="line">            result.push(left.shift());</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            result.push(right.shift());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    while(left.length)</span><br><span class="line">        result.push(left.shift());</span><br><span class="line"> </span><br><span class="line">    while(right.length)</span><br><span class="line">        result.push(right.shift());</span><br><span class="line"> </span><br><span class="line">    returnresult;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="5-4-算法分析"><a href="#5-4-算法分析" class="headerlink" title="5.4 算法分析"></a>5.4 算法分析</h4><p>归并排序是一种稳定的排序方法。和选择排序一样，归并排序的性能不受输入数据的影响，但表现比选择排序好的多，因为始终都是 O(nlogn）的时间复杂度。代价是需要额外的内存空间。</p>
-<h3 id="6、快速排序（Quick-Sort）"><a href="#6、快速排序（Quick-Sort）" class="headerlink" title="6、快速排序（Quick Sort）"></a>6、快速排序（Quick Sort）</h3><p>快速排序的基本思想：通过一趟排序将待排记录分隔成独立的两部分，其中一部分记录的关键字均比另一部分的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序。</p>
-<h4 id="6-1-算法描述"><a href="#6-1-算法描述" class="headerlink" title="6.1 算法描述"></a>6.1 算法描述</h4><p>快速排序使用分治法来把一个串（list）分为两个子串（sub-lists）。具体算法描述如下：</p>
-<ul>
-<li>从数列中挑出一个元素，称为 “基准”（pivot）；</li>
-<li>重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；</li>
-<li>递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序。</li>
-</ul>
-<h4 id="6-2-动图演示"><a href="#6-2-动图演示" class="headerlink" title="6.2 动图演示"></a>6.2 动图演示</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt="快速排序动画"></p>
-<h4 id="6-3-代码实现"><a href="#6-3-代码实现" class="headerlink" title="6.3 代码实现"></a>6.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function quickSort(arr, left, right) &#123;</span><br><span class="line">    varlen &#x3D; arr.length,</span><br><span class="line">        partitionIndex,</span><br><span class="line">        left &#x3D;typeofleft !&#x3D;&#39;number&#39;? 0 : left,</span><br><span class="line">        right &#x3D;typeofright !&#x3D;&#39;number&#39;? len - 1 : right;</span><br><span class="line"> </span><br><span class="line">    if(left &lt; right) &#123;</span><br><span class="line">        partitionIndex &#x3D; partition(arr, left, right);</span><br><span class="line">        quickSort(arr, left, partitionIndex-1);</span><br><span class="line">        quickSort(arr, partitionIndex+1, right);</span><br><span class="line">    &#125;</span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">function partition(arr, left ,right) &#123;    &#x2F;&#x2F; 分区操作</span><br><span class="line">    varpivot &#x3D; left,                     &#x2F;&#x2F; 设定基准值（pivot）</span><br><span class="line">        index &#x3D; pivot + 1;</span><br><span class="line">    for(vari &#x3D; index; i &lt;&#x3D; right; i++) &#123;</span><br><span class="line">        if(arr[i] &lt; arr[pivot]) &#123;</span><br><span class="line">            swap(arr, i, index);</span><br><span class="line">            index++;</span><br><span class="line">        &#125;       </span><br><span class="line">    &#125;</span><br><span class="line">    swap(arr, pivot, index - 1);</span><br><span class="line">    returnindex-1;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">function swap(arr, i, j) &#123;</span><br><span class="line">    vartemp &#x3D; arr[i];</span><br><span class="line">    arr[i] &#x3D; arr[j];</span><br><span class="line">    arr[j] &#x3D; temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="7、堆排序（Heap-Sort）"><a href="#7、堆排序（Heap-Sort）" class="headerlink" title="7、堆排序（Heap Sort）"></a>7、堆排序（Heap Sort）</h3><p>堆排序（Heapsort）是指利用堆这种数据结构所设计的一种排序算法。堆积是一个近似完全二叉树的结构，并同时满足堆积的性质：即子结点的键值或索引总是小于（或者大于）它的父节点。</p>
-<h4 id="7-1-算法描述"><a href="#7-1-算法描述" class="headerlink" title="7.1 算法描述"></a>7.1 算法描述</h4><ul>
-<li>将初始待排序关键字序列 (R1,R2….Rn) 构建成大顶堆，此堆为初始的无序区；</li>
-<li>将堆顶元素 R[1]与最后一个元素 R[n]交换，此时得到新的无序区 (R1,R2,……Rn-1) 和新的有序区(Rn), 且满足 R[1,2…n-1]&lt;=R[n]；</li>
-<li>由于交换后新的堆顶 R[1]可能违反堆的性质，因此需要对当前无序区 (R1,R2,……Rn-1) 调整为新堆，然后再次将 R[1]与无序区最后一个元素交换，得到新的无序区 (R1,R2….Rn-2) 和新的有序区(Rn-1,Rn)。不断重复此过程直到有序区的元素个数为 n-1，则整个排序过程完成。</li>
-</ul>
-<h4 id="7-2-动图演示"><a href="#7-2-动图演示" class="headerlink" title="7.2 动图演示"></a>7.2 动图演示</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E5%A0%86%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt="堆排序动画"></p>
-<h4 id="7-3-代码实现"><a href="#7-3-代码实现" class="headerlink" title="7.3 代码实现"></a>7.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">varlen;   &#x2F;&#x2F; 因为声明的多个函数都需要数据长度，所以把len设置成为全局变量</span><br><span class="line"> </span><br><span class="line">function buildMaxHeap(arr) &#123;  &#x2F;&#x2F; 建立大顶堆</span><br><span class="line">    len &#x3D; arr.length;</span><br><span class="line">    for(vari &#x3D; Math.floor(len&#x2F;2); i &gt;&#x3D; 0; i--) &#123;</span><br><span class="line">        heapify(arr, i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">function heapify(arr, i) &#123;    &#x2F;&#x2F; 堆调整</span><br><span class="line">    varleft &#x3D; 2 * i + 1,</span><br><span class="line">        right &#x3D; 2 * i + 2,</span><br><span class="line">        largest &#x3D; i;</span><br><span class="line"> </span><br><span class="line">    if(left &lt; len &amp;&amp; arr[left] &gt; arr[largest]) &#123;</span><br><span class="line">        largest &#x3D; left;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    if(right &lt; len &amp;&amp; arr[right] &gt; arr[largest]) &#123;</span><br><span class="line">        largest &#x3D; right;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    if(largest !&#x3D; i) &#123;</span><br><span class="line">        swap(arr, i, largest);</span><br><span class="line">        heapify(arr, largest);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">function swap(arr, i, j) &#123;</span><br><span class="line">    vartemp &#x3D; arr[i];</span><br><span class="line">    arr[i] &#x3D; arr[j];</span><br><span class="line">    arr[j] &#x3D; temp;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">function heapSort(arr) &#123;</span><br><span class="line">    buildMaxHeap(arr);</span><br><span class="line"> </span><br><span class="line">    for(vari &#x3D; arr.length - 1; i &gt; 0; i--) &#123;</span><br><span class="line">        swap(arr, 0, i);</span><br><span class="line">        len--;</span><br><span class="line">        heapify(arr, 0);</span><br><span class="line">    &#125;</span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="8、计数排序（Counting-Sort）"><a href="#8、计数排序（Counting-Sort）" class="headerlink" title="8、计数排序（Counting Sort）"></a>8、计数排序（Counting Sort）</h3><p>计数排序不是基于比较的排序算法，其核心在于将输入的数据值转化为键存储在额外开辟的数组空间中。 作为一种线性时间复杂度的排序，计数排序要求输入的数据必须是有确定范围的整数。</p>
-<h4 id="8-1-算法描述"><a href="#8-1-算法描述" class="headerlink" title="8.1 算法描述"></a>8.1 算法描述</h4><ul>
-<li>找出待排序的数组中最大和最小的元素；</li>
-<li>统计数组中每个值为 i 的元素出现的次数，存入数组 C 的第 i 项；</li>
-<li>对所有的计数累加（从 C 中的第一个元素开始，每一项和前一项相加）；</li>
-<li>反向填充目标数组：将每个元素 i 放在新数组的第 C(i) 项，每放一个元素就将 C(i) 减去 1。</li>
-</ul>
-<h4 id="8-2-动图演示"><a href="#8-2-动图演示" class="headerlink" title="8.2 动图演示"></a>8.2 动图演示</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.gif" alt="计数排序动画"></p>
-<h4 id="8-3-代码实现"><a href="#8-3-代码实现" class="headerlink" title="8.3 代码实现"></a>8.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function countingSort(arr, maxValue) &#123;</span><br><span class="line">    varbucket &#x3D;newArray(maxValue + 1),</span><br><span class="line">        sortedIndex &#x3D; 0;</span><br><span class="line">        arrLen &#x3D; arr.length,</span><br><span class="line">        bucketLen &#x3D; maxValue + 1;</span><br><span class="line"> </span><br><span class="line">    for(vari &#x3D; 0; i &lt; arrLen; i++) &#123;</span><br><span class="line">        if(!bucket[arr[i]]) &#123;</span><br><span class="line">            bucket[arr[i]] &#x3D; 0;</span><br><span class="line">        &#125;</span><br><span class="line">        bucket[arr[i]]++;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    for(varj &#x3D; 0; j &lt; bucketLen; j++) &#123;</span><br><span class="line">        while(bucket[j] &gt; 0) &#123;</span><br><span class="line">            arr[sortedIndex++] &#x3D; j;</span><br><span class="line">            bucket[j]--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="8-4-算法分析"><a href="#8-4-算法分析" class="headerlink" title="8.4 算法分析"></a>8.4 算法分析</h4><p>计数排序是一个稳定的排序算法。当输入的元素是 n 个 0 到 k 之间的整数时，时间复杂度是 O(n+k)，空间复杂度也是 O(n+k)，其排序速度快于任何比较排序算法。当 k 不是很大并且序列比较集中时，计数排序是一个很有效的排序算法。</p>
-<h3 id="9、桶排序（Bucket-Sort）"><a href="#9、桶排序（Bucket-Sort）" class="headerlink" title="9、桶排序（Bucket Sort）"></a>9、桶排序（Bucket Sort）</h3><p>桶排序是计数排序的升级版。它利用了函数的映射关系，高效与否的关键就在于这个映射函数的确定。桶排序 (Bucket sort) 的工作的原理：假设输入数据服从均匀分布，将数据分到有限数量的桶里，每个桶再分别排序（有可能再使用别的排序算法或是以递归方式继续使用桶排序进行排）。</p>
-<h4 id="9-1-算法描述"><a href="#9-1-算法描述" class="headerlink" title="9.1 算法描述"></a>9.1 算法描述</h4><ul>
-<li>设置一个定量的数组当作空桶；</li>
-<li>遍历输入数据，并且把数据一个一个放到对应的桶里去；</li>
-<li>对每个不是空的桶进行排序；</li>
-<li>从不是空的桶里把排好序的数据拼接起来。 </li>
-</ul>
-<h4 id="9-2-图片演示"><a href="#9-2-图片演示" class="headerlink" title="9.2 图片演示"></a>9.2 图片演示</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E6%A1%B6%E6%8E%92%E5%BA%8F%E5%8A%A8%E7%94%BB.png" alt="桶排序动画"></p>
-<h4 id="9-3-代码实现"><a href="#9-3-代码实现" class="headerlink" title="9.3 代码实现"></a>9.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function bucketSort(arr, bucketSize) &#123;</span><br><span class="line">    if(arr.length &#x3D;&#x3D;&#x3D; 0) &#123;</span><br><span class="line">      returnarr;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    vari;</span><br><span class="line">    varminValue &#x3D; arr[0];</span><br><span class="line">    varmaxValue &#x3D; arr[0];</span><br><span class="line">    for(i &#x3D; 1; i &lt; arr.length; i++) &#123;</span><br><span class="line">      if(arr[i] &lt; minValue) &#123;</span><br><span class="line">          minValue &#x3D; arr[i];               &#x2F;&#x2F; 输入数据的最小值</span><br><span class="line">      &#125;elseif(arr[i] &gt; maxValue) &#123;</span><br><span class="line">          maxValue &#x3D; arr[i];               &#x2F;&#x2F; 输入数据的最大值</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    &#x2F;&#x2F; 桶的初始化</span><br><span class="line">    varDEFAULT_BUCKET_SIZE &#x3D; 5;           &#x2F;&#x2F; 设置桶的默认数量为5</span><br><span class="line">    bucketSize &#x3D; bucketSize || DEFAULT_BUCKET_SIZE;</span><br><span class="line">    varbucketCount &#x3D; Math.floor((maxValue - minValue) &#x2F; bucketSize) + 1;  </span><br><span class="line">    varbuckets &#x3D;newArray(bucketCount);</span><br><span class="line">    for(i &#x3D; 0; i &lt; buckets.length; i++) &#123;</span><br><span class="line">        buckets[i] &#x3D; [];</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    &#x2F;&#x2F; 利用映射函数将数据分配到各个桶中</span><br><span class="line">    for(i &#x3D; 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">        buckets[Math.floor((arr[i] - minValue) &#x2F; bucketSize)].push(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    arr.length &#x3D; 0;</span><br><span class="line">    for(i &#x3D; 0; i &lt; buckets.length; i++) &#123;</span><br><span class="line">        insertionSort(buckets[i]);                     &#x2F;&#x2F; 对每个桶进行排序，这里使用了插入排序</span><br><span class="line">        for(varj &#x3D; 0; j &lt; buckets[i].length; j++) &#123;</span><br><span class="line">            arr.push(buckets[i][j]);                     </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="9-4-算法分析"><a href="#9-4-算法分析" class="headerlink" title="9.4 算法分析"></a>9.4 算法分析</h4><p>桶排序最好情况下使用线性时间 O(n)，桶排序的时间复杂度，取决与对各个桶之间数据进行排序的时间复杂度，因为其它部分的时间复杂度都为 O(n)。很显然，桶划分的越小，各个桶之间的数据越少，排序所用的时间也会越少。但相应的空间消耗就会增大。 </p>
-<h3 id="10、基数排序（Radix-Sort）"><a href="#10、基数排序（Radix-Sort）" class="headerlink" title="10、基数排序（Radix Sort）"></a>10、基数排序（Radix Sort）</h3><p>基数排序是按照低位先排序，然后收集；再按照高位排序，然后再收集；依次类推，直到最高位。有时候有些属性是有优先级顺序的，先按低优先级排序，再按高优先级排序。最后的次序就是高优先级高的在前，高优先级相同的低优先级高的在前。</p>
-<h4 id="10-1-算法描述"><a href="#10-1-算法描述" class="headerlink" title="10.1 算法描述"></a>10.1 算法描述</h4><ul>
-<li>取得数组中的最大数，并取得位数；</li>
-<li>arr 为原始数组，从最低位开始取每个位组成 radix 数组；</li>
-<li>对 radix 进行计数排序（利用计数排序适用于小范围数的特点）；</li>
-</ul>
-<h4 id="10-2-动图演示"><a href="#10-2-动图演示" class="headerlink" title="10.2 动图演示"></a>10.2 动图演示</h4><p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E5%8D%81%E5%A4%A7%E7%BB%8F%E5%85%B8%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/%E5%9F%BA%E6%95%B0%E6%8E%92%E5%BA%8F.gif" alt="基数排序动画"></p>
-<h4 id="10-3-代码实现"><a href="#10-3-代码实现" class="headerlink" title="10.3 代码实现"></a>10.3 代码实现</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">varcounter &#x3D; [];</span><br><span class="line">function radixSort(arr, maxDigit) &#123;</span><br><span class="line">    varmod &#x3D; 10;</span><br><span class="line">    vardev &#x3D; 1;</span><br><span class="line">    for(vari &#x3D; 0; i &lt; maxDigit; i++, dev *&#x3D; 10, mod *&#x3D; 10) &#123;</span><br><span class="line">        for(varj &#x3D; 0; j &lt; arr.length; j++) &#123;</span><br><span class="line">            varbucket &#x3D; parseInt((arr[j] % mod) &#x2F; dev);</span><br><span class="line">            if(counter[bucket]&#x3D;&#x3D;null) &#123;</span><br><span class="line">                counter[bucket] &#x3D; [];</span><br><span class="line">            &#125;</span><br><span class="line">            counter[bucket].push(arr[j]);</span><br><span class="line">        &#125;</span><br><span class="line">        varpos &#x3D; 0;</span><br><span class="line">        for(varj &#x3D; 0; j &lt; counter.length; j++) &#123;</span><br><span class="line">            varvalue &#x3D;null;</span><br><span class="line">            if(counter[j]!&#x3D;null) &#123;</span><br><span class="line">                while((value &#x3D; counter[j].shift()) !&#x3D;null) &#123;</span><br><span class="line">                      arr[pos++] &#x3D; value;</span><br><span class="line">                &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    returnarr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="10-4-算法分析"><a href="#10-4-算法分析" class="headerlink" title="10.4 算法分析"></a>10.4 算法分析</h4><p>基数排序基于分别排序，分别收集，所以是稳定的。但基数排序的性能比桶排序要略差，每一次关键字的桶分配都需要 O(n) 的时间复杂度，而且分配之后得到新的关键字序列又需要 O(n) 的时间复杂度。假如待排数据可以分为 d 个关键字，则基数排序的时间复杂度将是 O(d*2n) ，当然 d 要远远小于 n，因此基本上还是线性级别的。</p>
-<p>基数排序的空间复杂度为 O(n+k)，其中 k 为桶的数量。一般来说 n&gt;&gt;k，因此额外空间需要大概 n 个左右。</p>
-]]></content>
-      <categories>
-        <category>开发</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
+        <tag>作息时间表</tag>
       </tags>
   </entry>
   <entry>
@@ -1210,6 +863,353 @@
       </categories>
       <tags>
         <tag>观影记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网络资源使用简明指南之电子书篇</title>
+    <url>/2020/04/17/%E7%BD%91%E7%BB%9C%E8%B5%84%E6%BA%90%E4%BD%BF%E7%94%A8%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97%E4%B9%8B%E7%94%B5%E5%AD%90%E4%B9%A6%E7%AF%87/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>书写出来并不是为了藏在高墙之后，而是为了向世界传播，激励和启发世人。<br>知识不是一小部分人的特权，是应该自由顺畅流向每一个需要它的人。 <a id="more"></a></p>
+<blockquote>
+<p>信息就是力量。但就像所有力量一样，有些人只想占为己有。<br>世界上所有的科学和文化遗产，已在书籍和期刊上发布了数个世纪，正渐渐地被少数私有的公司数字化并上锁。<br>那些能够获取这些资源的人，你有责任将它与世界分享。                                                                                                                                                 – <strong>亚伦·希勒尔·斯沃茨</strong> </p>
+</blockquote>
+<h3 id="电子书下载类"><a href="#电子书下载类" class="headerlink" title="电子书下载类"></a>电子书下载类</h3><table>
+<thead>
+<tr>
+<th>图标</th>
+<th>名称</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://www.google.cn/s2/favicons?domain=https://sobooks.cc/"></td>
+<td><a href="https://sobooks.cc/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">sobooks</a></td>
+<td>优质电子书资源免费下载</td>
+</tr>
+<tr>
+<td><img src="https://www.google.cn/s2/favicons?domain=https://www.jiumodiary.com/"></td>
+<td><a href="https://www.jiumodiary.com/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">鸠摩搜书</a></td>
+<td>很受欢迎的电子书搜索引擎</td>
+</tr>
+<tr>
+<td><img src="https://www.google.cn/s2/favicons?domain=https://www.zqbook.top/"></td>
+<td><a href="https://www.zqbook.top/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">智奇搜书</a></td>
+<td>电子书搜索平台</td>
+</tr>
+<tr>
+<td><img src="https://www.google.cn/s2/favicons?domain=http://kindle.archiew.top/"></td>
+<td><a href="http://kindle.archiew.top/" rel="noopener norefferrer" target="_blank">书舟网</a></td>
+<td>聚合多个电子书网站，多达 14 万册资源</td>
+</tr>
+<tr>
+<td><img src="https://www.google.cn/s2/favicons?domain=http://neikuw.com/"></td>
+<td><a href="http://neikuw.com/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">内酷网</a></td>
+<td>电子书网站，数据丰富，提供多种格式，并提供合集下载</td>
+</tr>
+<tr>
+<td><img src="https://www.google.cn/s2/favicons?domain=https://book.51read.site/"></td>
+<td><a href="https://book.51read.site/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">Kindle电子书</a></td>
+<td>电子书网站，超过 6 万本书，下载没有任何限制。</td>
+</tr>
+<tr>
+<td><img src="https://www.google.cn/s2/favicons?domain=http://ebook.name/"></td>
+<td><a href="http://ebook.name/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">采书</a></td>
+<td>聚合多个电子书网站，帮你更快的找到你要的资源。</td>
+</tr>
+<tr>
+<td><img src="https://www.google.cn/s2/favicons?domain=https://yabook.org/"></td>
+<td><a href="https://yabook.org/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">雅书</a></td>
+<td>PDF电子书学习下载站</td>
+</tr>
+<tr>
+<td><img src="https://www.google.cn/s2/favicons?domain=https://shuayouxi.cn/"></td>
+<td><a href="https://shuayouxi.cn/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">超级书库</a></td>
+<td>电子书网站</td>
+</tr>
+</tbody></table>
+<h3 id="电子书推荐类"><a href="#电子书推荐类" class="headerlink" title="电子书推荐类"></a>电子书推荐类</h3><table>
+<thead>
+<tr>
+<th>图标</th>
+<th>名称</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://www.google.cn/s2/favicons?domain=https://haoshu100.com/"></td>
+<td><a href="https://haoshu100.com/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">好书推荐</a></td>
+<td>书单推荐，好书推荐排行榜。</td>
+</tr>
+<tr>
+<td><img class="" src="https://www.google.cn/s2/favicons?domain=https://bookfere.com/"></td>
+<td><a href="https://bookfere.com/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">书伴</a></td>
+<td>阅读工具，提供与阅读相关的工具及技巧</td>
+</tr>
+</tbody></table>
+<h3 id="电子书杂志类"><a href="#电子书杂志类" class="headerlink" title="电子书杂志类"></a>电子书杂志类</h3><table>
+<thead>
+<tr>
+<th>图标</th>
+<th>名称</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><img src="https://www.google.cn/s2/favicons?domain=http://www.rensheng5.com/"></td>
+<td><a href="http://www.rensheng5.com/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">人生屋</a></td>
+<td>聚合青年文摘、读者、意林、故事会及其他哲理或寓言文章</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>网络资源使用</category>
+        <category>简明指南</category>
+      </categories>
+      <tags>
+        <tag>电子书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一个字节的奇幻之旅</title>
+    <url>/2020/04/14/%E4%B8%80%E4%B8%AA%E5%AD%97%E8%8A%82%E7%9A%84%E5%A5%87%E5%B9%BB%E4%B9%8B%E6%97%85/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>大家好，给大家介绍一下，我是一个字节。相比于你们人类据说即将达到的百岁人生的寿命，我的一生简直不直一提（我只能存活零点几个毫秒）。<a id="more"></a></p>
+<p>也许只有那些码农才会了解我，而且也只有一部分码农。那些整天做业务的猿们想来也不会真正的了解我，更别提人类其他行业的人了。</p>
+<p>我不甘心，虽然我微不足道，但是我对人类的贡献实在是太大了。没有我的世界根本无法想像：不能开微信，不能刷微博，不能听网易云音乐，不能刷抖音，不能上天猫，所有和网络相关的活动都无法进行。</p>
+<p>所以，今天我要讲讲我的一生，让更多的人知道我的存在，知道我的故事，也为证明自己曾经存在过吧。</p>
+<p><strong>1、诞生</strong></p>
+<p>我的主人是一个在西二旗知名互联网公司上班的程序猿，过着 1095（注：早 10 点晚 9 点，一周 5 天工作）的生活，很少能在晚霞中回家，自然也说不出 “落霞与孤鹜齐飞” 那样的句子。</p>
+<p>这一天，他 9 点半到家，第一件事打开电脑，熟练地启动 chrome 浏览器，在地址栏敲下一个 z 字符，我所有的故事就从这里开始。</p>
+<p>当主人按下键盘上的 z 键时，系统了产生一个中断信号，通知 CPU 过来读取键盘输入，CPU 读取到 z 后，将 z 发送给 chrome 浏览器, chrome 收到后，将 z 显示到浏览器的地址栏上，同时后台搜索主人平时访问过的地址，排名第一的 <a href="https://www.zhihu.com" target="_blank" rel="noopener">https://www.zhihu.com</a> 被快速补全了。</p>
+<p>这时主人熟练地按下了回车键，chrome 收到指令后，进行了一顿操作，在这电光火石之间，我诞生了，同时诞生的还有我的字节兄弟们。</p>
+<p><strong>2、上路</strong></p>
+<p>话说 Chorme 老大哥接收到了 URL 后，首先拆解成自己能看懂的东西。 <a href="https://www.zhihu.com" target="_blank" rel="noopener">https://www.zhihu.com</a> 会被拆解成三部分： https、 <a href="http://www.zhihu.com、" target="_blank" rel="noopener">www.zhihu.com、</a> /。</p>
+<p>https 表示协议类型，通过这个 Chorme 老大哥知道他接下来该如何与远方的网站服务器通信； <a href="http://www.zhihu.com" target="_blank" rel="noopener">www.zhihu.com</a> 表示主机名，就是 Chorme 老大哥要通信的对象了；第三部分则是它要向服务器要的内容（注：这里表明是空，实际上隐含的表示主目录文件的概念）。</p>
+<p>有了这三项， Chorme 老大哥就能从服务器那里获取它想要的内容了，从而展示给我的主人。</p>
+<p>Chorme 老大哥跑到 HTTP 数据包生产车间，哼哧哼哧地倒腾半天，生产出了一个 HTTP 数据包（注：忽略 https, 简单起见当成 http），这个数据包实际上就是我和我的一群字节兄弟们，我们挤在一个集装箱内，熙熙攘攘。</p>
+<p>我们马上就要搭乘 IP 列车到远方的服务器，见识外面的世界了。集装箱被装上了 TCP 专车，它将带我们来到列车站。 TCP 专车很安全也很舒适，我从集装箱的缝隙中看到车前贴上了车牌： 80.</p>
+<p>到了车站， TCP 专车直接开到了列车上。这样也好， IP 列车上很脏，我们坐在专车上更好。 只是列车还不知道具体要去哪，所以我们就只能先在列车上等着了。</p>
+<p>不对啊，列车应该去 <a href="http://www.zhihu.com" target="_blank" rel="noopener">www.zhihu.com</a> 这个网站，不是已经知道了吗？对的，但是 IP 列车挺笨的，也挺古板的，不认识这些字母。它只认识数字，人类称之为 ip.</p>
+<p>Chorme 老大哥也有点抱怨，人类真是笨，连个 ip 都记不住，非得用域名来上网。害我还得拿着这个域名去问 DNS 老大爷，它知道所有域名对应的 ip.</p>
+<p>这不， Chorme 老大哥又跑到另外一个车间—— DNS 数据包生产车间里倒腾出了一个 DNS 数据包，当然还是一群字节兄弟们，不过这里的兄弟就少一些了。它们在集装箱里叽叽喳喳，被装上了 UDP 敞篷车，车虽然很快，但不太安全，我这些兄弟们坐在上面，提心吊胆，生怕掉下去，因为掉下去，就永远消失了。</p>
+<p>UDP 敞篷车也直接开到了 IP 列车上，车前贴了车牌：53.</p>
+<p>这回 Chrome 老大哥直接从 操作系统大佬那要到了 DNS 老大爷的 ip, 贴到了 IP 列车的车头， IP 列车马上全速启动，载着我这些字节兄弟，赶到了 DNS 老大爷的城堡， UDP 敞篷车开下列车，按照车牌号 53 找到了 DNS 老大爷的住处。从它那拿到了 <a href="http://www.zhihu.com" target="_blank" rel="noopener">www.zhihu.com</a> 对应的 ip.</p>
+<p>DNS 老大爷学问渊博，他也很仗义，从自己城堡里的 DNS 数据包生产车间造出了 DNS 响应包，包里也是我这些字节兄弟们，它们拿着重要的资料数据—— <a href="http://www.zhihu.com" target="_blank" rel="noopener">www.zhihu.com</a> 对应的 ip, 坐上了另一趟返程的 IP 列车，而列车的终点就是我现在所在的地方。当然了，他们是由另一辆 UDP 敞篷车载着他们回来的。</p>
+<p>Chorme 老大哥在车间接见了这些兄弟，非常感动。因为他们带回了 <a href="http://www.zhihu.com" target="_blank" rel="noopener">www.zhihu.com</a> 对应的 ip. 那些兄弟争先恐后的报告自己知道的东西，有些兄弟报告 1, 有些兄弟报告 0, Chorme 老大哥非常有经验，它把这些消息合并起来了，最终得到了它想要的 ip: 118.89.204.192.</p>
+<p>Chorme 老大哥拿着这个 ip 来到了我所在的列车前面，我激动地要叫起来了：终于我要出发了！它熟练地把 118.89.204.192 贴到了列车的前面，马上列车就开动了，我上路了。</p>
+<p>IP 列车的列车长在掌管着车头的方向，决定着我们的命运走向。路网非常复杂，而车头上只有一个 ip 地址，根本没告诉列车长应该走哪条路。这不难，富有经验的列车长根据车头的 ip 地址查到了下一个大站（路由器）的地址，之后再根据这个大站地址查到（ARP 协议）途经的下一个小站（交换机或集线器）应该走的轨道。在每个小站，对照这个大站地址，列车长就知道该走哪条路。搞定！</p>
+<p>经过了很多的小站，我们终于到了下一个大站了。站点的工作人员看着我们车头前的 ip 地址，查了下表（路由表）告诉我们下一个大站的地址，并且告诉我们途径的下一个小站应该走哪条轨道。列车长就这样，一路拿这张表，顺利地把我们带到了终点： 118.89.204.192.</p>
+<p>不过，刚刚就在到终点的前一刻，列车被拦住了，一群荷枪实弹的警卫冲上来了，一些胆小的字节兄弟们都哭了，我也是屏气凝声。他们先是查看了车头的 ip 地址，再查看了列车长手里的表，还看了下我们的 TCP 专车的车牌。很快就放行了，虚惊一场！</p>
+<p><strong>3、新生</strong></p>
+<p>到了终点站后，列车首先停下接受工作人员的检查。列车长出示了他手里的表，对了一下表上标注的下一站地址确实是：知乎。接着又看了下列车头部标注的 ip 地址，就算检查通过了，第一关很轻松。</p>
+<p>接下来，我们坐的 TCP 专车开下列车了。进了一个 TCP 车牌检查站，工作人员看了下车牌号 80, 也挥手示意我们通过。</p>
+<p>接着我们都下车走进了 主页车间，进去后，我们先按我们身上的标号排好了位置，工作人员将我们每个人所代表的信息进行了聚拢。得到了各种关于主人的信息，比如他所用的浏览器的版本，cookie 等等信息，我知道，我们的使命完成了。果然，一道光闪过，我们都消失了，完成了我们光荣的一生。</p>
+<p>主页车间领导马上下达生产命令：1 组去仓库拉取最新话题，2 组去商业中心获取今天的广告主信息……</p>
+<p>很快，各组都完成了任务，车间在一阵轰鸣过后，新的一批字节兄弟诞生了，他们带着这些话题、广告信息，和我们当年出生的时候一样，熙熙攘攘。但是我知道，我获得了新生。</p>
+<p><strong>4、归家</strong></p>
+<p>像我们当年一样，这些新出生的字节兄弟依次坐上了 TCP 专车， IP 列车一路跋涉，去往我出发的地方，那是我梦开始的地方。</p>
+<p>我所经历的，他们未曾少过一分。</p>
+<p><strong>5、定格</strong></p>
+<p>Chrome 老大哥终于等来了这些字节兄弟，在他们排好队后，老大哥看清了字节兄弟们代表的内容：话题2020魔幻剧连载，川建国变形记，切尔诺贝利再现危机，全球化面临的挑战，植发广告……</p>
+<p>这些是 Chrome 老大哥最擅长的事情，分分钟将他们显示在了网页上。字节兄弟们终于完成了使命，定格在了 retina 屏幕上。</p>
+<p>我的主人点开第一话题后，看了一会儿。然后瞅到了植发广告，他偷偷地开启了隐身模式，仔细地研究了起来……</p>
+]]></content>
+      <categories>
+        <category>开发</category>
+      </categories>
+      <tags>
+        <tag>有趣的</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机科学与技术是什么</title>
+    <url>/2020/04/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E6%98%AF%E4%BB%80%E4%B9%88/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>什么是计算机科学与技术？</p>
+<p>百度百科：</p>
+<blockquote>
+<p>计算机科学与技术是研究计算机的设计与制造，并利用计算机进行有关的信息表示、收发、存储、处理、控制等的理论方法和技术的学科。</p>
+</blockquote>
+<a id="more"></a>
+
+<p>维基百科：</p>
+<blockquote>
+<p>Computer science is the theory, experimentation, and engineering that form the basis for the design and use of computers. It involves the study of algorithms that process, store, and communicate digital information. A computer scientist specializes in the theory of computation and the design of computational systems.</p>
+</blockquote>
+<p>总结来说，计算机科学与技术是设计和使用计算机的理论和实践基础，包括处理、存储和传输数字信息的算法学习。</p>
+<p><strong>计算机科学与技术可以分为科学与技术两部分</strong>，像计算机组成原理、计算机网络、操作系统、数据结构与算法等课程都是在阐述科学的部分，而像 C 语言程序设计、Java 面向对象编程、WEB 网页设计等课程则是在阐述技术部分。</p>
+<p>那么如何学好呢？</p>
+<p>借鉴柏拉图在《理想国》中阐述的教育理念，划分四个学习阶段。</p>
+<p><strong>第一阶段学习一门编程语言以及基础的数据结构与算法知识</strong>。编程语言选择主流的即可，比如 C、Java、Python 都是可以的。编程语言不需要学习的有多么地深入，比如 Java 基本数据类型以及基本的操作、条件分支语句、循环语句、类与对象即可；C 语言或 Python 语言类似。在此阶段不需要把编程语言学习的面面俱到，最重要的是为后面的数据结构与算法的学习打下一定的基础。</p>
+<p>之后，就可以开始学习基础的数据结构与算法知识。在学习此阶段时一定要利用前面所学的编程语言，将学习到的数据结构、算法等实现一遍，这样不仅能够对编程语言有更深入地理解，同时能够对数据结构与算法有更深入地理解。</p>
+<p>经过此阶段的学习，已经具备解决一些算法题目的能力了，可以尝试去一些算法网站去刷题。注意解决刷算法题是一个长期的学习任务，第一阶段结束后就可以尝试每周去刷一道有难度的题目，可以到欧拉计划 (Project Euler) 上找，也可以到 LeetCode 上找，养成用程序的思维来解决问题的习惯。</p>
+<p><strong>第二阶段学习操作系统相关的知识。</strong>这里的操作系统不仅指要学习的计算机操作系统专业课程，同时还要学习并发编程相关的知识。学习计算机操作系统时重点学习操作系统的内存管理、进程线程管理等理论知识，同时结合自己所学习的编程语言来进行相关实践，比如可以同步学习 Java 并发编程、JVM 等知识。</p>
+<p>此阶段的学习至关重要，为以后的学习工作打下扎实的理论和实践基础。</p>
+<p><strong>第三阶段学习计算机网络相关的知识。</strong>同操作系统知识的学习一样，不仅要学习计算机网络专业课，同时还要理论结合实践，去学习 HttpClient 等网络框架技术来进行理论和实践的结合。</p>
+<p>在此阶段的学习过程中，如果时间充裕的话，可以尝试去学习一些微服务、分布式等相关的知识，也可以去学习 WEB 开发、gRPC、Netty、Thrift 等相关知识，这些都和并发编程、网络有密不可分的关系。</p>
+<p>此阶段的学习具备网络开发的能力，可以试着开发一些网络应用。</p>
+<p><strong>第四阶段学习数据库相关知识，同时补充学习一些其他编程知识</strong>，比如汇编语言等。数据库的学习以 MySQL 为主，学习基本的 SQL 操作、SQL 优化以及 InnoDB 存储引擎。</p>
+<p>以上的学习内容是非常充实的学习之旅，当然由于学习的内容比较多，且比较深入，对大家的自学能力有比较高的要求。不过，无论怎样，如果大家能够坚持学习下来，肯定会有很大的收获。</p>
+]]></content>
+      <categories>
+        <category>开发</category>
+      </categories>
+      <tags>
+        <tag>学科概念</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>故宫博物馆</title>
+    <url>/2020/04/11/%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%A6%86/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>一款线上的故宫博物馆全景。<a id="more"></a></p>
+<p><a href=" http://t.cn/RXnGc1e " rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">传送门</a></p>
+]]></content>
+      <categories>
+        <category>博物馆</category>
+      </categories>
+      <tags>
+        <tag>虚拟体验</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>电脑博物馆</title>
+    <url>/2020/04/11/%E7%94%B5%E8%84%91%E5%8D%9A%E7%89%A9%E9%A6%86/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>当你用着最新的电脑，有没有想着感受一下上古时代的电脑，去体验一下那即将改变人类生活方式的10101000古董级电脑。<a id="more"></a></p>
+<p>现在推荐的一个网站是配合知乎专栏,古董电脑室建设的在线电脑模拟器网站，希望能够以一种更直观的方式展示历史上著名的电脑平台的特性。针对中文读者还加入了许多中国市场上独有的硬件和软件平台，包括 UCDOS、文曲星电子词典、小霸王学习机、中华学习机等。</p>
+<p>快去体验一下吧。</p>
+<p><a href="http://www.dnbwg.com/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">传送门</a></p>
+]]></content>
+      <categories>
+        <category>博物馆</category>
+      </categories>
+      <tags>
+        <tag>有趣的</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>自由钢琴</title>
+    <url>/2020/04/11/%E8%87%AA%E7%94%B1%E9%92%A2%E7%90%B4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>浏览互联网的过程中，往往都是思维肆意飘荡的时刻，此时某处微小的声音也会激起你内心深处音乐细胞的复苏，相信拥有非凡音乐灵感的你一定想将此情感表达出来。<a id="more"></a></p>
+<p>巧合的是你目前并没有乐器在手，不用慌乱，进入这款在线音乐网站，可能就会帮助到你实现你的情感表达。</p>
+<p><a href=" https://www.autopiano.cn/ " rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">传送门</a></p>
+]]></content>
+      <categories>
+        <category>音乐</category>
+      </categories>
+      <tags>
+        <tag>有趣的</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>编程到底难在哪里</title>
+    <url>/2020/04/10/%E7%BC%96%E7%A8%8B%E5%88%B0%E5%BA%95%E9%9A%BE%E5%9C%A8%E5%93%AA%E9%87%8C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>知乎上有个问题：编程到底难在哪里？知乎网友 DJ Hitori 的回答获赞无数。<a id="more"></a></p>
+<p>这篇回答并不是讲述在生活中程序员如何买苹果，而是以买苹果为例说明程序员如何解决问题。程序员需要对问题进行透彻的分析，理清其涉及的所有细节，预测可能发生的所有意外与非意外的情况，列出解决方案的所有步骤，以及对解决方案进行尽量全面的测试。而这些正是编程难的地方。任何一点遗漏都会成为 bug，轻则导致挨骂，重则导致经济损失甚至危害安全。</p>
+<h3 id="高赞回答"><a href="#高赞回答" class="headerlink" title="高赞回答"></a>高赞回答</h3><p><strong>普通人：</strong></p>
+<p>我今天要买一斤苹果。</p>
+<p><strong>程序员：</strong></p>
+<p>我今天要买一斤苹果。</p>
+<p>因为我只喜欢红富士苹果，所以我只买红富士苹果。</p>
+<p>我能接受的最高价格是 10 元 / 斤。</p>
+<p>正常情况下一斤苹果用一个袋子能装下，但是为防万一，我会带两个袋子。</p>
+<p>我知道附近的 3 家水果店，所以我会依次访问这 3 家水果店。</p>
+<p>根据上述条件，我设计出以下的买苹果的流程：</p>
+<p><img src="https://i.loli.net/2020/04/10/yTUwouKFQqsnYGc.jpg" alt="1.jpg"></p>
+<p>这个流程怎么样？我来设计一些测试样例，测试一下这个流程。</p>
+<p>测试发现一个问题：</p>
+<p>如果水果店 0 和水果店 1 都有红富士苹果并且价格都低于 10 元 / 斤，而且水果店 1 的价格比水果店 0 更低，那么我希望买水果店 1 的苹果，但我设计的流程会让我买水果店 0 的苹果。</p>
+<p>为了解决这个问题，我应该先询问所有水果店的价格，然后去价格最低的那一家买苹果。</p>
+<p>经过修改，我重新设计出以下的买苹果的流程：</p>
+<p><img src="https://i.loli.net/2020/04/10/DlUaVeLhJBAW5fv.jpg" alt="2.jpg"></p>
+<p>现在这个流程是不是完美了呢？不是，我还能发现很多问题。</p>
+<p>如果 3 家水果店都有红富士苹果但都不到一斤，但是三家店加起来能达到一斤，那么我不应该结束流程回家，而是应该把三家店的红富士苹果都买下来。</p>
+<p>如果我向水果店询问价格的时候这家店还有红富士苹果，但我询问完所有水果店的价格后这家店的红富士苹果卖完了，那么我的流程会让我试图处理不存在的红富士苹果。</p>
+<p>我走路的过程中可能会遇到突发事件，比如发现了新的水果店，比如袋子破掉了苹果掉一地，对于这些情况我的流程都无法进行处理。</p>
+<p>啊问题太多了我懒得再改流程了。我还是去 X 宝买吧。<br>那么接下来我要设计一个在 X 宝买红富士苹果的流程……</p>
+<p>文章来源：<a href="https://www.zhihu.com/answer/141334678" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">传送门</a></p>
+]]></content>
+      <categories>
+        <category>开发</category>
+      </categories>
+      <tags>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>window使用问题解决方案</title>
+    <url>/2020/04/10/window%E4%BD%BF%E7%94%A8%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="一、护眼模式的开启和关闭"><a href="#一、护眼模式的开启和关闭" class="headerlink" title="一、护眼模式的开启和关闭"></a>一、护眼模式的开启和关闭</h3><p>﻿1.使用 <strong>Win + R</strong> 组合快捷键，打开“运行”，然后键入打开注册表命令<strong>regedit</strong>，按回车键确认打开。<a id="more"></a></p>
+<p>2.打开Win10注册表之后，依次在左侧树状菜单中展开：<code>HKEY_CURRENT_USER\Control Panel\Colors</code>，然后再右侧找到Windows值，并双击打开。</p>
+<p>3.双击Windows，打开编辑字符串窗口，将的<strong>255 255 255</strong>(默认是白色背景)三组颜色数值改成<strong>202 234 206</strong>(淡绿色)，完成后，点击下方的“确定”保存。</p>
+<p>4.继续找到注册表的路径：<code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\</code></p>
+<p><code>CurrentVersion\Themes\DefaultColors\Standard</code>。</p>
+<p>5.同样再在右侧找到Windows双击打开，将默认的数据值 <strong>ffffff</strong> 改成 <strong>caeace</strong> 完成后，点击下方的确定保存。之后重启就会变成淡绿色的护眼状态。</p>
+<blockquote>
+<p>备注：想要恢复怎么办呢。其实很简单。将你修改的202 234 206变为255 255 255。然后将caeace 改为ffffff。重启一下，就可以变成原来的白色背景了。</p>
+</blockquote>
+<h3 id="二、端口被占用"><a href="#二、端口被占用" class="headerlink" title="二、端口被占用"></a>二、端口被占用</h3><p>1.开始–&gt;运行–&gt;cmd；或者是window+R组合键，调出命令窗口 </p>
+<p>2.输入命令：netstat -ano， 列出所有端口已占用的情况</p>
+<p>3.输入命令：netstat -aon|findstr “1001”，查看被占用端口1001对应的PID4</p>
+<p>4.输入命令：tasklist|findstr “4”，回车，查看是哪个进程或者程序占用了1001端口，结果是：svchost.exe ；或者打开任务管理器，切换到进程选项卡，在PID一列查看4对应的进程</p>
+<blockquote>
+<p>如果看不到PID这一列，右键点击选择列，勾选pid，点击确定</p>
+</blockquote>
+<p>5.输入命令： taskkill /f /t /im tasklist.exe ；或者在任务管理器结束pid为4的进程</p>
+<h3 id="三、删除文件提示正在被另一程序占用"><a href="#三、删除文件提示正在被另一程序占用" class="headerlink" title="三、删除文件提示正在被另一程序占用"></a>三、删除文件提示正在被另一程序占用</h3><p>1.打开任务管理器，切换到性能选项卡，点击“打开资源监视器”</p>
+<p>2.在cpu选项卡下找到关联的句柄搜索框</p>
+<p>3.输入要删除文件的文件名，看到新出现的程序，右键点击”结束进程”</p>
+<p>4.重新删除文件</p>
+<h3 id="四、生成文件夹树目录"><a href="#四、生成文件夹树目录" class="headerlink" title="四、生成文件夹树目录"></a>四、生成文件夹树目录</h3><ul>
+<li><p>命令窗口模式</p>
+<ul>
+<li><p>进入文件夹，打开命令窗口</p>
+</li>
+<li><p>输入命令： tree  /f &gt;tree.txt 生成包含当前文件夹及子文件夹目录的文件tree.txt</p>
+<blockquote>
+<p>“.txt”也可以写成”.docx”,”.doc”,”.xlsx”,”.xls”,”.md”结尾生成对应的文件</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>bat脚本模式</p>
+<ul>
+<li>新建文本文档，输入tree  /f &gt;tree.txt </li>
+<li>修改后缀名为.bat</li>
+<li>将修改后的文件拖入需要生成目录的文件夹下，双击运行脚本</li>
+</ul>
+</li>
+</ul>
+<h3 id="五、命令行窗口打开方式"><a href="#五、命令行窗口打开方式" class="headerlink" title="五、命令行窗口打开方式"></a>五、命令行窗口打开方式</h3><ul>
+<li>全局<ul>
+<li><code>Win</code> + <code>R</code>打开运行，输入<code>cmd</code>，然后按下回车键即可。</li>
+<li><code>Win</code> + <code>R</code>打开运行，输入<code>powershell</code>，然后按下回车键即可。</li>
+<li><code>Win</code> + <code>X</code>或开始菜单按钮右键打开 <code>Windows PowerShell</code></li>
+</ul>
+</li>
+<li>指定目录<ul>
+<li>通过 <code>cd</code> 命令进入指定目录。</li>
+<li>资源管理器打开目录，在地址栏输入 <code>cmd</code> 回车键即可</li>
+<li>按下 <code>Shift</code> 键的同时鼠标右键该目录空白处可选择打开 <code>Windows PowerShell</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="六、IE浏览器打不开网页原因与解决方案"><a href="#六、IE浏览器打不开网页原因与解决方案" class="headerlink" title="六、IE浏览器打不开网页原因与解决方案"></a>六、IE浏览器打不开网页原因与解决方案</h3><ul>
+<li>原因<ul>
+<li>设置问题</li>
+<li>浏览器程序中个别程序被误删</li>
+</ul>
+</li>
+<li>解决方案<ul>
+<li>打开控制面板</li>
+<li>点击网络和Internet</li>
+<li>点击管理浏览器加载项</li>
+<li>点击高级，在重置Internet Explorer设置后面点击重置</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>开发</category>
+      </categories>
+      <tags>
+        <tag>开发环境</tag>
       </tags>
   </entry>
 </search>
