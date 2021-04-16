@@ -102,7 +102,7 @@ show_runtime();
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.5k</span>
+            <span class="post-count">1.7k</span>
         </span>
     </span>
 
@@ -111,7 +111,7 @@ show_runtime();
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">5 分钟</span>
+            <span class="post-count">6 分钟</span>
         </span>
     </span>
 </div>
@@ -213,11 +213,15 @@ show_runtime();
 </li>
 <li><p>解决方案</p>
 <ul>
-<li>手动检查</li>
+<li><p>手动检查</p>
+<ul>
+<li>选择报错盘右键点击属性，选择工具，手动选择检查驱动器中当前文件系统的错误</li>
 </ul>
 </li>
-<li><p>选择报错盘右键点击属性，选择工具，手动选择检查驱动器中当前文件系统的错误</p>
+</ul>
 </li>
+</ul>
+<ul>
 <li><p>以管理员身份实现禁止磁盘自检和实现命令行系统扫描，检查问题，并自动修复</p>
 <ul>
 <li><p>开始 - 运行 - 输入<code>cmd</code>进入命令行窗口 <code>chkntfs /x</code> 后面加盘符, 比如禁止E盘开机自检就输入 <code>chkntfs /x e: chkntfs /t:0</code></p>
@@ -226,6 +230,8 @@ show_runtime();
 <blockquote>
 <p>注：chkntfs 的具体用法，可执行 chkntfs /？</p>
 </blockquote>
+</li>
+</ul>
 </li>
 <li><p>使用命令行实现系统扫描，命令行：<code>sfc /scannow</code></p>
 </li>
@@ -240,8 +246,9 @@ show_runtime();
 </ul>
 </li>
 </ul>
-</li>
-</ul>
+<h3 id="八、删除服务"><a href="#八、删除服务" class="headerlink" title="八、删除服务"></a>八、删除服务</h3><p>有时候软件被安装成了服务，但是如何删除无效的服务，这时候就不是普通用户就能删除了，这属于操作系统管理级别了，需要使用管理命令了。</p>
+<p>1.打开的系统服务窗口，找到需要删除的服务的名称</p>
+<p>2.用管理员的身份运行 cmd，打开 cmd 窗口，输入 sc delete MySQL3 命令</p>
 <h3 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">explorer.exe ::&#123;20D04FE0-3AEA-1069-A2D8-08002B30309D&#125;	//我的电脑</span><br><span class="line">explorer.exe ::&#123;208D2C60-3AEA-1069-A2D7-08002B30309D&#125;	//网上邻居</span><br><span class="line">explorer.exe ::&#123;645FF040-5081-101B-9F08-00AA002F954E&#125;	//回收站</span><br></pre></td></tr></table></figure>
 
 <h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Win+A	&#x2F;&#x2F;打开通知</span><br><span class="line">Win+B	&#x2F;&#x2F;悬浮显示隐藏的图标</span><br><span class="line">Win+C	&#x2F;&#x2F;打开Cortana</span><br><span class="line">Win+D   &#x2F;&#x2F;显示桌面，第二次键击恢复桌面</span><br><span class="line">Win+E	&#x2F;&#x2F;打开我的电脑、资源管理器</span><br><span class="line">Win+F	&#x2F;&#x2F;打开反馈中心</span><br><span class="line">Win+G	&#x2F;&#x2F;打开屏幕录制</span><br><span class="line">Win+H	&#x2F;&#x2F;打开听写辅助输入</span><br><span class="line">Win+I	&#x2F;&#x2F;打开windows设置栏</span><br><span class="line">Win+J</span><br><span class="line">Win+K	&#x2F;&#x2F;打开连接</span><br><span class="line">Win+L	&#x2F;&#x2F;锁住电脑或切换用户</span><br><span class="line">Win+M	&#x2F;&#x2F;最小化所有窗口</span><br><span class="line">Win+N</span><br><span class="line">Win+O	&#x2F;&#x2F;禁用屏幕翻转</span><br><span class="line">Win+P	&#x2F;&#x2F;投影设置</span><br><span class="line">Win+Q	&#x2F;&#x2F;打开搜索栏</span><br><span class="line">Win+R 	&#x2F;&#x2F;打开“运行”对话框</span><br><span class="line">Win+S	&#x2F;&#x2F;&#x2F;&#x2F;打开搜索栏</span><br><span class="line">Win+T	&#x2F;&#x2F;切换任务栏上的程序</span><br><span class="line">Win+U	&#x2F;&#x2F;打开轻松使用中心</span><br><span class="line">Win+V	&#x2F;&#x2F;打开剪切板</span><br><span class="line">Win+W	&#x2F;&#x2F;打开Whiteborad和全屏截图</span><br><span class="line">Win+X	&#x2F;&#x2F;打开快捷菜单</span><br><span class="line">win+Y</span><br><span class="line">win+Y</span><br></pre></td></tr></table></figure>
