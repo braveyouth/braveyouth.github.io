@@ -102,7 +102,7 @@ show_runtime();
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">1.7k</span>
+            <span class="post-count">2.1k</span>
         </span>
     </span>
 
@@ -111,7 +111,7 @@ show_runtime();
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">6 分钟</span>
+            <span class="post-count">8 分钟</span>
         </span>
     </span>
 </div>
@@ -248,10 +248,20 @@ show_runtime();
 </ul>
 <h3 id="八、删除服务"><a href="#八、删除服务" class="headerlink" title="八、删除服务"></a>八、删除服务</h3><p>有时候软件被安装成了服务，但是如何删除无效的服务，这时候就不是普通用户就能删除了，这属于操作系统管理级别了，需要使用管理命令了。</p>
 <p>1.打开的系统服务窗口，找到需要删除的服务的名称</p>
-<p>2.用管理员的身份运行 cmd，打开 cmd 窗口，输入 sc delete MySQL3 命令</p>
+<p>2.用管理员的身份运行 cmd，打开 cmd 窗口，输入 sc delete MySQL命令，提示删除服务成功</p>
+<p>3.再次在系统服务窗口确认服务是否删除，发现已经删除</p>
+<h3 id="九、windows-上拔掉-U-盘或移动硬盘时，弹出：该设备正在使用中，请关闭可能使用该设备的所有程序或窗口，然后重试。"><a href="#九、windows-上拔掉-U-盘或移动硬盘时，弹出：该设备正在使用中，请关闭可能使用该设备的所有程序或窗口，然后重试。" class="headerlink" title="九、windows 上拔掉 U 盘或移动硬盘时，弹出：该设备正在使用中，请关闭可能使用该设备的所有程序或窗口，然后重试。"></a>九、windows 上拔掉 U 盘或移动硬盘时，弹出：该设备正在使用中，请关闭可能使用该设备的所有程序或窗口，然后重试。</h3><p>一般从电脑上取下硬盘或U盘需要两步：1.先在电脑上点弹出 Device，2.弹出 Device 提示成功后，在物理插拔硬盘或 U 盘设备即可。</p>
+<p>但是有时在点弹出 Device时，提示：该设备正在使用中，请关闭可能使用该设备的所有程序或窗口，然后重试。你感觉已经关闭了和挂在移动硬盘或U盘所有的相关程序，如何才能安装的取下硬盘或U盘，强行拔也不是不可以，但很容易导致：1.硬盘或U盘的数据丢失；2.硬盘或U盘因为强行插拔导致设备损坏。</p>
+<p>使用HotSwap软件，该软件很小，只有几百 KB。<a href="https://www.appinn.com/hotswap-for-windows/" target="_blank" rel="noopener">HotSwap</a> 的作用和在 Windows 设备管理器中删除设备是一样的，但它有一个核心功能：在设备热插拔之前，确保将所有数据都完整的写入到磁盘上。然后，强制弹出设备。</p>
+<p>具体使用步骤如下：</p>
+<p>1.下载安装 HostSwap 软件，在显示隐藏的图标里会发现图标<a href="http://mt-naka.com/hotswap/index_enu.htm" target="_blank" rel="noopener">官网下载</a></p>
+<p>2.在该图标上鼠标右键，然后在设备类型选项卡处，把：可移动磁盘设备和安全移动设备勾选上</p>
+<p>3.此时鼠标左键改图标，然后鼠标点击：<code>安全热插拔 \ Device\...</code>，提示：安全移除热插拔设备</p>
+<p>4、此时再点击弹出 Device，就会提示：安全地移除硬件</p>
+<p>5、最后就可以大胆放心的插拔你的移动硬盘或U盘设备了</p>
 <h3 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">explorer.exe ::&#123;20D04FE0-3AEA-1069-A2D8-08002B30309D&#125;	//我的电脑</span><br><span class="line">explorer.exe ::&#123;208D2C60-3AEA-1069-A2D7-08002B30309D&#125;	//网上邻居</span><br><span class="line">explorer.exe ::&#123;645FF040-5081-101B-9F08-00AA002F954E&#125;	//回收站</span><br></pre></td></tr></table></figure>
 
-<h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Win+A	&#x2F;&#x2F;打开通知</span><br><span class="line">Win+B	&#x2F;&#x2F;悬浮显示隐藏的图标</span><br><span class="line">Win+C	&#x2F;&#x2F;打开Cortana</span><br><span class="line">Win+D   &#x2F;&#x2F;显示桌面，第二次键击恢复桌面</span><br><span class="line">Win+E	&#x2F;&#x2F;打开我的电脑、资源管理器</span><br><span class="line">Win+F	&#x2F;&#x2F;打开反馈中心</span><br><span class="line">Win+G	&#x2F;&#x2F;打开屏幕录制</span><br><span class="line">Win+H	&#x2F;&#x2F;打开听写辅助输入</span><br><span class="line">Win+I	&#x2F;&#x2F;打开windows设置栏</span><br><span class="line">Win+J</span><br><span class="line">Win+K	&#x2F;&#x2F;打开连接</span><br><span class="line">Win+L	&#x2F;&#x2F;锁住电脑或切换用户</span><br><span class="line">Win+M	&#x2F;&#x2F;最小化所有窗口</span><br><span class="line">Win+N</span><br><span class="line">Win+O	&#x2F;&#x2F;禁用屏幕翻转</span><br><span class="line">Win+P	&#x2F;&#x2F;投影设置</span><br><span class="line">Win+Q	&#x2F;&#x2F;打开搜索栏</span><br><span class="line">Win+R 	&#x2F;&#x2F;打开“运行”对话框</span><br><span class="line">Win+S	&#x2F;&#x2F;&#x2F;&#x2F;打开搜索栏</span><br><span class="line">Win+T	&#x2F;&#x2F;切换任务栏上的程序</span><br><span class="line">Win+U	&#x2F;&#x2F;打开轻松使用中心</span><br><span class="line">Win+V	&#x2F;&#x2F;打开剪切板</span><br><span class="line">Win+W	&#x2F;&#x2F;打开Whiteborad和全屏截图</span><br><span class="line">Win+X	&#x2F;&#x2F;打开快捷菜单</span><br><span class="line">win+Y</span><br><span class="line">win+Y</span><br></pre></td></tr></table></figure>
+<h3 id="快捷键-win10系统"><a href="#快捷键-win10系统" class="headerlink" title="快捷键(win10系统)"></a>快捷键(win10系统)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Win+A	&#x2F;&#x2F;打开通知</span><br><span class="line">Win+B	&#x2F;&#x2F;悬浮显示隐藏的图标</span><br><span class="line">Win+C	&#x2F;&#x2F;打开Cortana</span><br><span class="line">Win+D   &#x2F;&#x2F;显示桌面，第二次键击恢复桌面</span><br><span class="line">Win+E	&#x2F;&#x2F;打开我的电脑、资源管理器</span><br><span class="line">Win+F	&#x2F;&#x2F;打开反馈中心</span><br><span class="line">Win+G	&#x2F;&#x2F;打开屏幕录制</span><br><span class="line">Win+H	&#x2F;&#x2F;打开听写辅助输入</span><br><span class="line">Win+I	&#x2F;&#x2F;打开windows设置栏</span><br><span class="line">Win+J</span><br><span class="line">Win+K	&#x2F;&#x2F;打开连接</span><br><span class="line">Win+L	&#x2F;&#x2F;锁住电脑或切换用户</span><br><span class="line">Win+M	&#x2F;&#x2F;最小化所有窗口</span><br><span class="line">Win+N</span><br><span class="line">Win+O	&#x2F;&#x2F;禁用屏幕翻转</span><br><span class="line">Win+P	&#x2F;&#x2F;投影设置</span><br><span class="line">Win+Q	&#x2F;&#x2F;打开搜索栏</span><br><span class="line">Win+R 	&#x2F;&#x2F;打开“运行”对话框</span><br><span class="line">Win+S	&#x2F;&#x2F;&#x2F;&#x2F;打开搜索栏</span><br><span class="line">Win+T	&#x2F;&#x2F;切换任务栏上的程序</span><br><span class="line">Win+U	&#x2F;&#x2F;打开轻松使用中心</span><br><span class="line">Win+V	&#x2F;&#x2F;打开剪切板</span><br><span class="line">Win+W	&#x2F;&#x2F;打开Whiteborad和全屏截图</span><br><span class="line">Win+X	&#x2F;&#x2F;打开快捷菜单</span><br><span class="line">win+Y</span><br><span class="line">win+Y</span><br></pre></td></tr></table></figure>
 
 
       
