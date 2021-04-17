@@ -85,6 +85,21 @@
       </tags>
   </entry>
   <entry>
+    <title>电脑博物馆</title>
+    <url>/2020/04/11/%E7%94%B5%E8%84%91%E5%8D%9A%E7%89%A9%E9%A6%86/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>当你用着最新的电脑，有没有想着感受一下上古时代的电脑，去体验一下那即将改变人类生活方式的10101000古董级电脑。<a id="more"></a></p>
+<p>现在推荐的一个网站是配合知乎专栏,古董电脑室建设的在线电脑模拟器网站，希望能够以一种更直观的方式展示历史上著名的电脑平台的特性。针对中文读者还加入了许多中国市场上独有的硬件和软件平台，包括 UCDOS、文曲星电子词典、小霸王学习机、中华学习机等。</p>
+<p>快去体验一下吧。</p>
+<p><a href="http://www.dnbwg.com/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">传送门</a></p>
+]]></content>
+      <categories>
+        <category>博物馆</category>
+      </categories>
+      <tags>
+        <tag>有趣的</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>故宫博物馆</title>
     <url>/2020/04/11/%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%A6%86/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>一款线上的故宫博物馆全景。<a id="more"></a></p>
@@ -106,57 +121,6 @@
 ]]></content>
       <categories>
         <category>音乐</category>
-      </categories>
-      <tags>
-        <tag>有趣的</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机科学与技术是什么</title>
-    <url>/2020/04/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E6%98%AF%E4%BB%80%E4%B9%88/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>什么是计算机科学与技术？</p>
-<p>百度百科：</p>
-<blockquote>
-<p>计算机科学与技术是研究计算机的设计与制造，并利用计算机进行有关的信息表示、收发、存储、处理、控制等的理论方法和技术的学科。</p>
-</blockquote>
-<a id="more"></a>
-
-<p>维基百科：</p>
-<blockquote>
-<p>Computer science is the theory, experimentation, and engineering that form the basis for the design and use of computers. It involves the study of algorithms that process, store, and communicate digital information. A computer scientist specializes in the theory of computation and the design of computational systems.</p>
-</blockquote>
-<p>总结来说，计算机科学与技术是设计和使用计算机的理论和实践基础，包括处理、存储和传输数字信息的算法学习。</p>
-<p><strong>计算机科学与技术可以分为科学与技术两部分</strong>，像计算机组成原理、计算机网络、操作系统、数据结构与算法等课程都是在阐述科学的部分，而像 C 语言程序设计、Java 面向对象编程、WEB 网页设计等课程则是在阐述技术部分。</p>
-<p>那么如何学好呢？</p>
-<p>借鉴柏拉图在《理想国》中阐述的教育理念，划分四个学习阶段。</p>
-<p><strong>第一阶段学习一门编程语言以及基础的数据结构与算法知识</strong>。编程语言选择主流的即可，比如 C、Java、Python 都是可以的。编程语言不需要学习的有多么地深入，比如 Java 基本数据类型以及基本的操作、条件分支语句、循环语句、类与对象即可；C 语言或 Python 语言类似。在此阶段不需要把编程语言学习的面面俱到，最重要的是为后面的数据结构与算法的学习打下一定的基础。</p>
-<p>之后，就可以开始学习基础的数据结构与算法知识。在学习此阶段时一定要利用前面所学的编程语言，将学习到的数据结构、算法等实现一遍，这样不仅能够对编程语言有更深入地理解，同时能够对数据结构与算法有更深入地理解。</p>
-<p>经过此阶段的学习，已经具备解决一些算法题目的能力了，可以尝试去一些算法网站去刷题。注意解决刷算法题是一个长期的学习任务，第一阶段结束后就可以尝试每周去刷一道有难度的题目，可以到欧拉计划 (Project Euler) 上找，也可以到 LeetCode 上找，养成用程序的思维来解决问题的习惯。</p>
-<p><strong>第二阶段学习操作系统相关的知识。</strong>这里的操作系统不仅指要学习的计算机操作系统专业课程，同时还要学习并发编程相关的知识。学习计算机操作系统时重点学习操作系统的内存管理、进程线程管理等理论知识，同时结合自己所学习的编程语言来进行相关实践，比如可以同步学习 Java 并发编程、JVM 等知识。</p>
-<p>此阶段的学习至关重要，为以后的学习工作打下扎实的理论和实践基础。</p>
-<p><strong>第三阶段学习计算机网络相关的知识。</strong>同操作系统知识的学习一样，不仅要学习计算机网络专业课，同时还要理论结合实践，去学习 HttpClient 等网络框架技术来进行理论和实践的结合。</p>
-<p>在此阶段的学习过程中，如果时间充裕的话，可以尝试去学习一些微服务、分布式等相关的知识，也可以去学习 WEB 开发、gRPC、Netty、Thrift 等相关知识，这些都和并发编程、网络有密不可分的关系。</p>
-<p>此阶段的学习具备网络开发的能力，可以试着开发一些网络应用。</p>
-<p><strong>第四阶段学习数据库相关知识，同时补充学习一些其他编程知识</strong>，比如汇编语言等。数据库的学习以 MySQL 为主，学习基本的 SQL 操作、SQL 优化以及 InnoDB 存储引擎。</p>
-<p>以上的学习内容是非常充实的学习之旅，当然由于学习的内容比较多，且比较深入，对大家的自学能力有比较高的要求。不过，无论怎样，如果大家能够坚持学习下来，肯定会有很大的收获。</p>
-]]></content>
-      <categories>
-        <category>开发</category>
-      </categories>
-      <tags>
-        <tag>学科概念</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>电脑博物馆</title>
-    <url>/2020/04/11/%E7%94%B5%E8%84%91%E5%8D%9A%E7%89%A9%E9%A6%86/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>当你用着最新的电脑，有没有想着感受一下上古时代的电脑，去体验一下那即将改变人类生活方式的10101000古董级电脑。<a id="more"></a></p>
-<p>现在推荐的一个网站是配合知乎专栏,古董电脑室建设的在线电脑模拟器网站，希望能够以一种更直观的方式展示历史上著名的电脑平台的特性。针对中文读者还加入了许多中国市场上独有的硬件和软件平台，包括 UCDOS、文曲星电子词典、小霸王学习机、中华学习机等。</p>
-<p>快去体验一下吧。</p>
-<p><a href="http://www.dnbwg.com/" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">传送门</a></p>
-]]></content>
-      <categories>
-        <category>博物馆</category>
       </categories>
       <tags>
         <tag>有趣的</tag>
@@ -266,6 +230,42 @@
       </tags>
   </entry>
   <entry>
+    <title>计算机科学与技术是什么</title>
+    <url>/2020/04/14/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E6%98%AF%E4%BB%80%E4%B9%88/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>什么是计算机科学与技术？</p>
+<p>百度百科：</p>
+<blockquote>
+<p>计算机科学与技术是研究计算机的设计与制造，并利用计算机进行有关的信息表示、收发、存储、处理、控制等的理论方法和技术的学科。</p>
+</blockquote>
+<a id="more"></a>
+
+<p>维基百科：</p>
+<blockquote>
+<p>Computer science is the theory, experimentation, and engineering that form the basis for the design and use of computers. It involves the study of algorithms that process, store, and communicate digital information. A computer scientist specializes in the theory of computation and the design of computational systems.</p>
+</blockquote>
+<p>总结来说，计算机科学与技术是设计和使用计算机的理论和实践基础，包括处理、存储和传输数字信息的算法学习。</p>
+<p><strong>计算机科学与技术可以分为科学与技术两部分</strong>，像计算机组成原理、计算机网络、操作系统、数据结构与算法等课程都是在阐述科学的部分，而像 C 语言程序设计、Java 面向对象编程、WEB 网页设计等课程则是在阐述技术部分。</p>
+<p>那么如何学好呢？</p>
+<p>借鉴柏拉图在《理想国》中阐述的教育理念，划分四个学习阶段。</p>
+<p><strong>第一阶段学习一门编程语言以及基础的数据结构与算法知识</strong>。编程语言选择主流的即可，比如 C、Java、Python 都是可以的。编程语言不需要学习的有多么地深入，比如 Java 基本数据类型以及基本的操作、条件分支语句、循环语句、类与对象即可；C 语言或 Python 语言类似。在此阶段不需要把编程语言学习的面面俱到，最重要的是为后面的数据结构与算法的学习打下一定的基础。</p>
+<p>之后，就可以开始学习基础的数据结构与算法知识。在学习此阶段时一定要利用前面所学的编程语言，将学习到的数据结构、算法等实现一遍，这样不仅能够对编程语言有更深入地理解，同时能够对数据结构与算法有更深入地理解。</p>
+<p>经过此阶段的学习，已经具备解决一些算法题目的能力了，可以尝试去一些算法网站去刷题。注意解决刷算法题是一个长期的学习任务，第一阶段结束后就可以尝试每周去刷一道有难度的题目，可以到欧拉计划 (Project Euler) 上找，也可以到 LeetCode 上找，养成用程序的思维来解决问题的习惯。</p>
+<p><strong>第二阶段学习操作系统相关的知识。</strong>这里的操作系统不仅指要学习的计算机操作系统专业课程，同时还要学习并发编程相关的知识。学习计算机操作系统时重点学习操作系统的内存管理、进程线程管理等理论知识，同时结合自己所学习的编程语言来进行相关实践，比如可以同步学习 Java 并发编程、JVM 等知识。</p>
+<p>此阶段的学习至关重要，为以后的学习工作打下扎实的理论和实践基础。</p>
+<p><strong>第三阶段学习计算机网络相关的知识。</strong>同操作系统知识的学习一样，不仅要学习计算机网络专业课，同时还要理论结合实践，去学习 HttpClient 等网络框架技术来进行理论和实践的结合。</p>
+<p>在此阶段的学习过程中，如果时间充裕的话，可以尝试去学习一些微服务、分布式等相关的知识，也可以去学习 WEB 开发、gRPC、Netty、Thrift 等相关知识，这些都和并发编程、网络有密不可分的关系。</p>
+<p>此阶段的学习具备网络开发的能力，可以试着开发一些网络应用。</p>
+<p><strong>第四阶段学习数据库相关知识，同时补充学习一些其他编程知识</strong>，比如汇编语言等。数据库的学习以 MySQL 为主，学习基本的 SQL 操作、SQL 优化以及 InnoDB 存储引擎。</p>
+<p>以上的学习内容是非常充实的学习之旅，当然由于学习的内容比较多，且比较深入，对大家的自学能力有比较高的要求。不过，无论怎样，如果大家能够坚持学习下来，肯定会有很大的收获。</p>
+]]></content>
+      <categories>
+        <category>开发</category>
+      </categories>
+      <tags>
+        <tag>学科概念</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>健康的作息时间表</title>
     <url>/2020/05/02/%E5%85%A8%E7%90%83%E5%85%AC%E8%AE%A4%E6%9C%80%E5%81%A5%E5%BA%B7%E7%9A%84%E4%BD%9C%E6%81%AF%E6%97%B6%E9%97%B4%E8%A1%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>下面是全球公认最健康的作息时间表，你值得拥有！</p>
@@ -317,6 +317,38 @@
       </tags>
   </entry>
   <entry>
+    <title>支付宝不完全指南</title>
+    <url>/2020/07/04/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="一、免费下载全网论文"><a href="#一、免费下载全网论文" class="headerlink" title="一、免费下载全网论文"></a>一、免费下载全网论文</h3><p>不是在校大学生需要使用论文资料，如何下载论文呢？:sob:</p>
+<a id="more"></a>
+
+<h4 id="1-使用支付宝办理浙江图书馆读者证"><a href="#1-使用支付宝办理浙江图书馆读者证" class="headerlink" title="1.使用支付宝办理浙江图书馆读者证"></a>1.使用支付宝办理浙江图书馆读者证</h4><ul>
+<li><p>在支付宝首页搜索<strong>浙江图书馆</strong>，关注该生活号； </p>
+</li>
+<li><p>在生活号菜单界面点击<strong>服务</strong>–&gt;点击<strong>服务大厅</strong>，在服务大厅点击<strong>新用户注册</strong>，进入读者服务协议界面，点击<strong>同意</strong>，进入注册开通借阅服务界面，填写相关信息，确认无误后点击<strong>确定</strong>。( 芝麻信用达到 550 分就可以免费办理,相信大家早就达到了吧。)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/%E6%B5%99%E6%B1%9F%E5%9B%BE%E4%B9%A6%E9%A6%86%E6%B3%A8%E5%86%8C.jpg" alt=""></p>
+</li>
+<li><p>当然，接下来就不可避免的需要授予权限了，在服务授权界面点击<strong>确认授权</strong>，授权之后就可以得知你是否办证成功了，此时你需要记住你的读者证号，然后点击<strong>立即领取浙江图书馆读者证</strong>，下一个页面看完读者须知后同样点击<strong>立即领取浙江图书馆读者证</strong>，现在去卡包中查看，就有新添加的读者证了。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/%E6%B5%99%E6%B1%9F%E5%9B%BE%E4%B9%A6%E9%A6%86%E8%AF%BB%E8%80%85%E8%AF%81.jpg" alt=""></p>
+</li>
+</ul>
+<h4 id="2-用读者证账号密码免费下载论文"><a href="#2-用读者证账号密码免费下载论文" class="headerlink" title="2.用读者证账号密码免费下载论文"></a>2.用读者证账号密码免费下载论文</h4><ul>
+<li><p>浏览器搜索<strong>浙江图书馆</strong>，进入官网首页，点击<strong>您好，请登录!</strong>。读者证号输入你刚刚需要记住的读者证号，密码输入刚设置的密码，即可登录。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/%E6%B5%99%E6%B1%9F%E5%9B%BE%E4%B9%A6%E9%A6%86%E9%A6%96%E9%A1%B5.png" alt=""> </p>
+</li>
+<li><p>点击资源栏中的<strong>数字资源</strong>，再选择要检索的数字资源库。以知网为例，给大家讲下选择具体资源库的方法。直接点击首字母<strong>Z</strong>就可找到知网相关资源，点击进入即可。 </p>
+<p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/%E6%B5%99%E6%B1%9F%E5%9B%BE%E4%B9%A6%E9%A6%86%E5%AF%BC%E8%88%AA%E6%A0%8F.png" alt=""></p>
+<p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/%E8%B5%84%E6%BA%90%E5%BA%93%E9%80%89%E6%8B%A9.png" alt=""></p>
+</li>
+<li><p>进入知网后，在<strong>快速检索</strong>中输入关键词，如<strong>计算机</strong>，点击左侧<strong>保存</strong>按钮就可以秒下文献了！ (当然你还可以点击这篇文章链接进去下载)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD.png" alt=""></p>
+</li>
+</ul>
+<h3 id="二、支付宝积分兑换免费课程"><a href="#二、支付宝积分兑换免费课程" class="headerlink" title="二、支付宝积分兑换免费课程"></a>二、支付宝积分兑换免费课程</h3><p>在支付宝搜索 “ <strong>淘宝好学</strong> ”，选择<strong>积分兑好课</strong>，就能看到仅用积分就能兑换课程啦:smile:</p>
+<p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/%E6%B7%98%E5%AE%9D%E5%A5%BD%E5%AD%A6.jpg" alt=""></p>
+]]></content>
+  </entry>
+  <entry>
     <title>studio 3T 两种破解教程</title>
     <url>/2020/05/15/studio-3T-%E4%B8%A4%E7%A7%8D%E7%A0%B4%E8%A7%A3%E6%95%99%E7%A8%8B/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="解决studio-3T时间到期的两种方法"><a href="#解决studio-3T时间到期的两种方法" class="headerlink" title="解决studio 3T时间到期的两种方法"></a>解决studio 3T时间到期的两种方法</h2><blockquote>
@@ -354,6 +386,29 @@
       </categories>
       <tags>
         <tag>开发软件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Alpha、Beta、RC、GA 版本的区别</title>
+    <url>/2021/02/21/Alpha%E3%80%81Beta%E3%80%81RC%E3%80%81GA-%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><a id="more"></a>
+
+<p>Alpha：是内部测试版, 一般不向外部发布, 会有很多 Bug. 一般只有测试人员使用。</p>
+<p>Beta：也是测试版，这个阶段的版本会一直加入新的功能。在 Alpha 版之后推出。</p>
+<p>RC：(Release　Candidate) 顾名思义么 ! 用在软件上就是候选版本。系统平台上就是发行候选版本。RC 版不会再加入新的功能了，主要着重于除错。</p>
+<p>GA:General Availability, 正式发布的版本，在国外都是用 GA 来说明 release 版本的。</p>
+<p>RTM：(Release to Manufacture) 是给工厂大量压片的版本，内容跟正式版是一样的，不过 RTM 版也有出限制、评估版的。但是和正式版本的主要程序代码都是一样的。</p>
+<p>OEM：是给计算机厂商随着计算机贩卖的，也就是随机版。只能随机器出货，不能零售。只能全新安装，不能从旧有操作系统升级。包装不像零售版精美，通常只有一面 CD 和说明书 (授权书)。</p>
+<p>RVL：号称是正式版，其实 RVL 根本不是版本的名称。它是中文版 / 英文版文档破解出来的。</p>
+<p>EVAL：而流通在网络上的 EVAL 版，与 “评估版” 类似，功能上和零售版没有区别。</p>
+<p>RTL：Retail(零售版) 是真正的正式版，正式上架零售版。在安装盘的 i386 文件夹里有一个 eula.txt，最后有一行 EULAID，就是你的版本。比如简体中文正式版是 EULAID:WX.4_PRO_RTL_CN，繁体中文正式版是 WX.4_PRO_RTL_TW。其中：如果是 WX. 开头是正式版，WB. 开头是测试版。_PRE，代表家庭版；_PRO，代表专业版。</p>
+<p>α、β、λ常用来表示软件测试过程中的三个阶段，α是第一阶段，一般只供内部测试使用；β是第二个阶段，已经消除了软件中大部分的不完善之处，但仍有可能还存在缺陷和漏洞，一般只提供给特定的用户群来测试使用；λ是第三个阶段，此时产品已经相当成熟，只需在个别地方再做进一步的优化处理即可上市发行。</p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>版本区别</tag>
       </tags>
   </entry>
   <entry>
@@ -515,61 +570,6 @@
       </categories>
       <tags>
         <tag>观剧记录</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>支付宝不完全指南</title>
-    <url>/2020/07/04/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h3 id="一、免费下载全网论文"><a href="#一、免费下载全网论文" class="headerlink" title="一、免费下载全网论文"></a>一、免费下载全网论文</h3><p>不是在校大学生需要使用论文资料，如何下载论文呢？:sob:</p>
-<a id="more"></a>
-
-<h4 id="1-使用支付宝办理浙江图书馆读者证"><a href="#1-使用支付宝办理浙江图书馆读者证" class="headerlink" title="1.使用支付宝办理浙江图书馆读者证"></a>1.使用支付宝办理浙江图书馆读者证</h4><ul>
-<li><p>在支付宝首页搜索<strong>浙江图书馆</strong>，关注该生活号； </p>
-</li>
-<li><p>在生活号菜单界面点击<strong>服务</strong>–&gt;点击<strong>服务大厅</strong>，在服务大厅点击<strong>新用户注册</strong>，进入读者服务协议界面，点击<strong>同意</strong>，进入注册开通借阅服务界面，填写相关信息，确认无误后点击<strong>确定</strong>。( 芝麻信用达到 550 分就可以免费办理,相信大家早就达到了吧。)</p>
-<p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/%E6%B5%99%E6%B1%9F%E5%9B%BE%E4%B9%A6%E9%A6%86%E6%B3%A8%E5%86%8C.jpg" alt=""></p>
-</li>
-<li><p>当然，接下来就不可避免的需要授予权限了，在服务授权界面点击<strong>确认授权</strong>，授权之后就可以得知你是否办证成功了，此时你需要记住你的读者证号，然后点击<strong>立即领取浙江图书馆读者证</strong>，下一个页面看完读者须知后同样点击<strong>立即领取浙江图书馆读者证</strong>，现在去卡包中查看，就有新添加的读者证了。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/%E6%B5%99%E6%B1%9F%E5%9B%BE%E4%B9%A6%E9%A6%86%E8%AF%BB%E8%80%85%E8%AF%81.jpg" alt=""></p>
-</li>
-</ul>
-<h4 id="2-用读者证账号密码免费下载论文"><a href="#2-用读者证账号密码免费下载论文" class="headerlink" title="2.用读者证账号密码免费下载论文"></a>2.用读者证账号密码免费下载论文</h4><ul>
-<li><p>浏览器搜索<strong>浙江图书馆</strong>，进入官网首页，点击<strong>您好，请登录!</strong>。读者证号输入你刚刚需要记住的读者证号，密码输入刚设置的密码，即可登录。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/%E6%B5%99%E6%B1%9F%E5%9B%BE%E4%B9%A6%E9%A6%86%E9%A6%96%E9%A1%B5.png" alt=""> </p>
-</li>
-<li><p>点击资源栏中的<strong>数字资源</strong>，再选择要检索的数字资源库。以知网为例，给大家讲下选择具体资源库的方法。直接点击首字母<strong>Z</strong>就可找到知网相关资源，点击进入即可。 </p>
-<p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/%E6%B5%99%E6%B1%9F%E5%9B%BE%E4%B9%A6%E9%A6%86%E5%AF%BC%E8%88%AA%E6%A0%8F.png" alt=""></p>
-<p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/%E8%B5%84%E6%BA%90%E5%BA%93%E9%80%89%E6%8B%A9.png" alt=""></p>
-</li>
-<li><p>进入知网后，在<strong>快速检索</strong>中输入关键词，如<strong>计算机</strong>，点击左侧<strong>保存</strong>按钮就可以秒下文献了！ (当然你还可以点击这篇文章链接进去下载)</p>
-<p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/%E8%B5%84%E6%BA%90%E4%B8%8B%E8%BD%BD.png" alt=""></p>
-</li>
-</ul>
-<h3 id="二、支付宝积分兑换免费课程"><a href="#二、支付宝积分兑换免费课程" class="headerlink" title="二、支付宝积分兑换免费课程"></a>二、支付宝积分兑换免费课程</h3><p>在支付宝搜索 “ <strong>淘宝好学</strong> ”，选择<strong>积分兑好课</strong>，就能看到仅用积分就能兑换课程啦:smile:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/%E6%94%AF%E4%BB%98%E5%AE%9D%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/%E6%B7%98%E5%AE%9D%E5%A5%BD%E5%AD%A6.jpg" alt=""></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Alpha、Beta、RC、GA 版本的区别</title>
-    <url>/2021/02/21/Alpha%E3%80%81Beta%E3%80%81RC%E3%80%81GA-%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><a id="more"></a>
-
-<p>Alpha：是内部测试版, 一般不向外部发布, 会有很多 Bug. 一般只有测试人员使用。</p>
-<p>Beta：也是测试版，这个阶段的版本会一直加入新的功能。在 Alpha 版之后推出。</p>
-<p>RC：(Release　Candidate) 顾名思义么 ! 用在软件上就是候选版本。系统平台上就是发行候选版本。RC 版不会再加入新的功能了，主要着重于除错。</p>
-<p>GA:General Availability, 正式发布的版本，在国外都是用 GA 来说明 release 版本的。</p>
-<p>RTM：(Release to Manufacture) 是给工厂大量压片的版本，内容跟正式版是一样的，不过 RTM 版也有出限制、评估版的。但是和正式版本的主要程序代码都是一样的。</p>
-<p>OEM：是给计算机厂商随着计算机贩卖的，也就是随机版。只能随机器出货，不能零售。只能全新安装，不能从旧有操作系统升级。包装不像零售版精美，通常只有一面 CD 和说明书 (授权书)。</p>
-<p>RVL：号称是正式版，其实 RVL 根本不是版本的名称。它是中文版 / 英文版文档破解出来的。</p>
-<p>EVAL：而流通在网络上的 EVAL 版，与 “评估版” 类似，功能上和零售版没有区别。</p>
-<p>RTL：Retail(零售版) 是真正的正式版，正式上架零售版。在安装盘的 i386 文件夹里有一个 eula.txt，最后有一行 EULAID，就是你的版本。比如简体中文正式版是 EULAID:WX.4_PRO_RTL_CN，繁体中文正式版是 WX.4_PRO_RTL_TW。其中：如果是 WX. 开头是正式版，WB. 开头是测试版。_PRE，代表家庭版；_PRO，代表专业版。</p>
-<p>α、β、λ常用来表示软件测试过程中的三个阶段，α是第一阶段，一般只供内部测试使用；β是第二个阶段，已经消除了软件中大部分的不完善之处，但仍有可能还存在缺陷和漏洞，一般只提供给特定的用户群来测试使用；λ是第三个阶段，此时产品已经相当成熟，只需在个别地方再做进一步的优化处理即可上市发行。</p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-      </categories>
-      <tags>
-        <tag>版本区别</tag>
       </tags>
   </entry>
   <entry>
