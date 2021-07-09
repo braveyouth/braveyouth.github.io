@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" >
+
+
+<head>
+  <meta charset="utf-8" />
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>
+    docx4使用方案 |  奔跑的阳光
+  </title>
+  <meta name="generator" content="hexo-theme-yilia-plus">
+  
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  
+<link rel="stylesheet" href="/dist/main.css">
+
+  
+<link rel="stylesheet" href="/css/custom.css">
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+  
+  
+
+  
+<script>
+var _hmt = _hmt || [];
+(function() {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?4b544f82a71bc509d614a70665c6cad9";
+	var s = document.getElementsByTagName("script")[0]; 
+	s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<link rel="alternate" href="/atom.xml" title="奔跑的阳光" type="application/atom+xml">
+</head>
+<!-- 封面标闪烁 -->
+<link rel="stylesheet" href="/css/zhangy.css">
+
+<!--底部运行时间-->
+<script>
+function show_runtime() {
+    window.setTimeout("show_runtime()", 1000);
+    X = new Date("01/01/2020 00:00:00");
+    Y = new Date();
+    T = (Y.getTime() - X.getTime());
+    M = 24 * 60 * 60 * 1000;
+    a = T / M;
+    A = Math.floor(a);
+    b = (a - A) * 24;
+    B = Math.floor(b);
+    c = (b - B) * 60;
+    C = Math.floor((b - B) * 60);
+    D = Math.floor((c - C) * 60);
+    runtime_span.innerHTML = "小站在各种崩坏中坚持了: " + A + "天" + B + "小时" + C + "分" + D + "秒"
+}
+show_runtime();
+</script>
+
+<script src="https://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+</html>
+
+<body>
+  <div id="app">
+    <main class="content on">
+      <section class="outer">
+  <article id="post-docx4使用方案" class="article article-type-post" itemscope
+  itemprop="blogPost" data-scroll-reveal>
+
+  <div class="article-inner">
+    
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  docx4使用方案
+</h1>
+ 
+
+    </header>
+    
+
+    
+    <div class="article-meta">
+      <a href="/2021/07/09/docx4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%A1%88/" class="article-date">
+  <time datetime="2021-07-09T12:28:29.000Z" itemprop="datePublished">2021-07-09</time>
+</a>
+      
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%BC%80%E5%8F%91/">开发</a>
+  </div>
+
+      
+      
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">2.6k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">13 分钟</span>
+        </span>
+    </span>
+</div>
+
+      
+    </div>
+    
+
+    
+    
+    <div class="tocbot"></div>
+
+
+
+
+
+    
+
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+
+      
+      <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>docx4j 是一个开源（ASLv2）Java 库，<strong>用于创建和处理 Microsoft Open XML（Word docx，Powerpoint pptx 和 Excel xlsx）文件</strong>。</p>
+<p>docx4j 的官网：<a href="https://www.docx4java.org/trac/docx4j" target="_blank" rel="noopener">https://www.docx4java.org/trac/docx4j</a>                                                                                          docx4j 示例代码 gitHub 地址：[<a href="https://github.com/plutext/docx4j]" target="_blank" rel="noopener">https://github.com/plutext/docx4j]</a>(</p>
+<a id="more"></a>
+
+<h1 id="二、理解docx文件"><a href="#二、理解docx文件" class="headerlink" title="二、理解docx文件"></a>二、理解docx文件</h1><h2 id="1-认识-Open-XML"><a href="#1-认识-Open-XML" class="headerlink" title="1.认识 Open XML"></a>1.认识 <strong>Open XML</strong></h2><p>docx4j 主要是针对 docx 文件进行操作，操作的对象的 <strong>Microsoft Open XML 文件。</strong></p>
+<p>Office Open XML，也称为 OpenXML 或 OOXML，是 Office 文档的基础 XML 的格式，应用于 word，execl，ppt，图表等。该规范由 Microsoft 开发，被 ISO 和 IEC 采纳。现在是所有 Microsoft Office 文档（.docx，.xlsx 和. pptx）的默认格式。</p>
+<p>Microsoft Open XML官网：<a href="http://officeopenxml.com/anatomyofOOXML" target="_blank" rel="noopener">http://officeopenxml.com/anatomyofOOXML</a></p>
+<h2 id="2-docx-文件的结构"><a href="#2-docx-文件的结构" class="headerlink" title="2.docx 文件的结构"></a>2.docx 文件的结构</h2><p>docx 我们可以理解为一个前端项目的压缩包，里面有样式文件，dom 格式的 xml 文件，我们解压一个 docx 的文件看一下它的目录结构：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/docx4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%A1%88/up-32246fe8bfe87773aadb8848c378bf9e3b8.png" alt="排序算法分类"></p>
+<p>我们先看根目录下的 [Content_Types] .xml 文件，这个是整个 docx 文件的内容组件的配置文件，整个压缩包中用到的文件都在里面配置，可以简单理解为，我们写前端时 html 文件的 head 部分关于 js,css 引用的部分，但这样理解有点不明确，想象一下，jsp 文件 include 各部分的总页面，有点类似。</p>
+<p>_rels 这个目录是配置定义各部分间的关系，了解就行，</p>
+<p>看里面的<strong>核心 word 目录</strong>，可以看到，这个目录结构跟我们前端项目的 html、css 结构很相似，</p>
+<p>media 目录下放多媒体元素，图片之类的，了解就行</p>
+<p>theme 目录，顾名思义，word 的主题，了解就行</p>
+<p>word 目录下最重要的是里面的 <strong>document.xml</strong> 文件</p>
+<p>其他的 word 部分文件，settings.xml 和 styles.xml 是 docx 文件都有的配置和样式文件，footTable 是字体表，footnotes 是词汇表，其他的还有 foot 开头的脚表，head 开头的是页眉文件之类的文件</p>
+<h2 id="3-docx-的核心-OpenXML-文件格式"><a href="#3-docx-的核心-OpenXML-文件格式" class="headerlink" title="3.docx 的核心 OpenXML 文件格式"></a>3.docx 的核心 OpenXML 文件格式</h2><p>我们主要看 <strong>document.xml</strong> 文件，这个文件是整个 docx 的骨架，类似于前端页面的 html 文件，是最基础、也是最重要的文件。</p>
+<p>理解 <strong>document.xml</strong> 的文本结构，这个文本结构类似 html 格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot; standalone&#x3D;&quot;yes&quot;?&gt;</span><br><span class="line">&lt;w:document&gt;</span><br><span class="line">    &lt;w:body&gt;</span><br><span class="line">        &lt;w:p&gt;&lt;&#x2F;w:p&gt;</span><br><span class="line">        &lt;w:tbl&gt;&lt;&#x2F;w:tbl&gt;</span><br><span class="line">        &lt;w:sectPr&gt;&lt;&#x2F;w:sectPr&gt;</span><br><span class="line">    &lt;&#x2F;w:body&gt;</span><br><span class="line">&lt;&#x2F;w:document&gt;</span><br></pre></td></tr></table></figure>
+
+<h1 id="三、使用docx4j"><a href="#三、使用docx4j" class="headerlink" title="三、使用docx4j"></a>三、使用docx4j</h1><h2 id="1-maven-导入"><a href="#1-maven-导入" class="headerlink" title="1.maven 导入"></a>1.maven 导入</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.docx4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>docx4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>6.1.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-简单使用"><a href="#2-简单使用" class="headerlink" title="2.简单使用"></a>2.简单使用</h2><h3 id="2-1-基础创建"><a href="#2-1-基础创建" class="headerlink" title="2.1 基础创建"></a>2.1 基础创建</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 基础创建:创建一个新的docx文档</span></span><br><span class="line"><span class="comment">     * 获取文档可操作对象</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/createDocx"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">createDocx</span><span class="params">()</span></span>&#123;</span><br><span class="line">        WordprocessingMLPackage wordMLPackage = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span>(!StringUtils.isEmpty(docxPath)) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                wordMLPackage =  WordprocessingMLPackage.createPackage();</span><br><span class="line">                wordMLPackage.save(<span class="keyword">new</span> File(docxPath));</span><br><span class="line"><span class="comment">//                Docx4J.save(wordMLPackage, new File(docxPath));</span></span><br><span class="line">            &#125; <span class="keyword">catch</span> (InvalidFormatException e) &#123;</span><br><span class="line">                logger.error(e.getMessage());</span><br><span class="line">            &#125;<span class="keyword">catch</span> (Docx4JException e)&#123;</span><br><span class="line">                logger.error(e.getMessage());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"基础创建成功"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-追加文档内容"><a href="#2-2-追加文档内容" class="headerlink" title="2.2 追加文档内容"></a>2.2 追加文档内容</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 追加文档内容</span></span><br><span class="line"><span class="comment">     * 向文档中追加内容(默认支持中文)</span></span><br><span class="line"><span class="comment">     * 先清空,再生成,防重复</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"/addParagraph"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">addParagraph</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        WordprocessingMLPackage wordprocessingMLPackage = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">//先加载word文档</span></span><br><span class="line">            wordprocessingMLPackage = WordprocessingMLPackage.load(<span class="keyword">new</span> File(docxPath));</span><br><span class="line"><span class="comment">//            wordprocessingMLPackage = Docx4J.load(new File(docxPath));</span></span><br><span class="line"></span><br><span class="line">            <span class="comment">//增加内容</span></span><br><span class="line">            wordprocessingMLPackage.getMainDocumentPart().addParagraphOfText(<span class="string">"你好!"</span>);</span><br><span class="line">            wordprocessingMLPackage.getMainDocumentPart().addStyledParagraphOfText(<span class="string">"Title"</span>, <span class="string">"这是标题!"</span>);</span><br><span class="line">            wordprocessingMLPackage.getMainDocumentPart().addStyledParagraphOfText(<span class="string">"Subtitle"</span>, <span class="string">" 这是二级标题!"</span>);</span><br><span class="line"></span><br><span class="line">            wordprocessingMLPackage.getMainDocumentPart().addStyledParagraphOfText(<span class="string">"Subject"</span>, <span class="string">"试一试"</span>);</span><br><span class="line">            <span class="comment">//保存文档</span></span><br><span class="line">            wordprocessingMLPackage.save(<span class="keyword">new</span> File(docxPath));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Docx4JException e) &#123;</span><br><span class="line">            logger.error(<span class="string">"addParagraph to docx error: Docx4JException"</span>, e);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"追加文档内容成功"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-图片"><a href="#2-3-图片" class="headerlink" title="2.3 图片"></a>2.3 图片</h3><h4 id="2-3-1-图片工具类"><a href="#2-3-1-图片工具类" class="headerlink" title="2.3.1 图片工具类"></a>2.3.1 图片工具类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DocImageHandler</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将图片加入到包中</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> wordMLPackage</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> bytes</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addImageToPackage</span><span class="params">(WordprocessingMLPackage wordMLPackage, <span class="keyword">byte</span>[] bytes)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        BinaryPartAbstractImage imagePart = BinaryPartAbstractImage.createImagePart(wordMLPackage, bytes);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> docPrId = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> cNvPrId = <span class="number">2</span>;</span><br><span class="line">        Inline inline = imagePart.createImageInline(<span class="string">"Filename hint"</span>,</span><br><span class="line">                <span class="string">"Alternative text"</span>, docPrId, cNvPrId, <span class="keyword">false</span>);</span><br><span class="line"></span><br><span class="line">        P paragraph = addInlineImageToParagraph(inline);</span><br><span class="line"></span><br><span class="line">        wordMLPackage.getMainDocumentPart().addObject(paragraph);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将图片加入到 段落中去</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> inline</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> P <span class="title">addInlineImageToParagraph</span><span class="params">(Inline inline)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 添加内联对象到一个段落中</span></span><br><span class="line">        ObjectFactory factory = <span class="keyword">new</span> ObjectFactory();</span><br><span class="line">        P paragraph = factory.createP();</span><br><span class="line">        R run = factory.createR();</span><br><span class="line">        paragraph.getContent().add(run);</span><br><span class="line">        Drawing drawing = factory.createDrawing();</span><br><span class="line">        run.getContent().add(drawing);</span><br><span class="line">        drawing.getAnchorOrInline().add(inline);</span><br><span class="line">        <span class="keyword">return</span> paragraph;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 将图片从文件对象转换为字节数组</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> file 将要转换的文件</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> 包含图片字节数据的字节数组</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> FileNotFoundException</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> IOException</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">byte</span>[] convertImageToByteArray(File file) <span class="keyword">throws</span> FileNotFoundException, IOException &#123;</span><br><span class="line">        InputStream is = <span class="keyword">new</span> FileInputStream(file);</span><br><span class="line">        <span class="keyword">long</span> length = file.length();</span><br><span class="line">        <span class="comment">// 不能使用long类型创建数组, 需要用int类型.</span></span><br><span class="line">        <span class="keyword">if</span> (length &gt; Integer.MAX_VALUE) &#123;</span><br><span class="line">            System.out.println(<span class="string">"File too large!!"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[(<span class="keyword">int</span>) length];</span><br><span class="line">        <span class="keyword">int</span> offset = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> numRead = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (offset &lt; bytes.length &amp;&amp; (numRead = is.read(bytes, offset, bytes.length - offset)) &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            offset += numRead;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 确认所有的字节都没读取</span></span><br><span class="line">        <span class="keyword">if</span> (offset &lt; bytes.length) &#123;</span><br><span class="line">            System.out.println(<span class="string">"Could not completely read file "</span> + file.getName());</span><br><span class="line">        &#125;</span><br><span class="line">        is.close();</span><br><span class="line">        <span class="keyword">return</span> bytes;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-3-2-插入图片"><a href="#2-3-2-插入图片" class="headerlink" title="2.3.2 插入图片"></a>2.3.2 插入图片</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 插入图片</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="meta">@GetMapping</span>(<span class="string">"/wordInsertImage"</span>)</span><br><span class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">wordInsertImage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       WordprocessingMLPackage wordprocessingMLPackage = <span class="keyword">null</span>;</span><br><span class="line">       File file = <span class="keyword">new</span> File(picPath);</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           wordprocessingMLPackage = WordprocessingMLPackage.load(<span class="keyword">new</span> File(docxPath));</span><br><span class="line">           <span class="keyword">byte</span>[] bytes = DocImageHandler.convertImageToByteArray(file);</span><br><span class="line">           DocImageHandler.addImageToPackage(wordprocessingMLPackage, bytes);</span><br><span class="line">           wordprocessingMLPackage.save(<span class="keyword">new</span> File(docxPath));</span><br><span class="line">       &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">           logger.error(e.getMessage());</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">return</span> <span class="string">"插入图片成功"</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-4-创建表格"><a href="#2-4-创建表格" class="headerlink" title="2.4 创建表格"></a>2.4 创建表格</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建表格</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@GetMapping</span>(<span class="string">"addTable"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">addTable</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            wordMLPackage = WordprocessingMLPackage.load(<span class="keyword">new</span> File(docxPath));</span><br><span class="line">            MainDocumentPart mainDocumentPart = wordMLPackage.getMainDocumentPart();</span><br><span class="line"></span><br><span class="line">            factory = Context.getWmlObjectFactory();</span><br><span class="line">            <span class="comment">// 1 创建表格元素</span></span><br><span class="line">            Tbl table = factory.createTbl();</span><br><span class="line">            <span class="comment">//2 显示表格的边框</span></span><br><span class="line">            addBorders(table);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//3 添加表格内容(创建行和列)</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">                Tr tr = factory.createTr();</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">3</span>; j++) &#123;</span><br><span class="line">                    Tc tc = factory.createTc();</span><br><span class="line"></span><br><span class="line">                    <span class="comment">//3.1</span></span><br><span class="line"><span class="comment">//                    P p = mainDocumentPart.createParagraphOfText("---row" + i + "---column" + j + "---");</span></span><br><span class="line"></span><br><span class="line">                    <span class="comment">//3.2 第二种创建P并设置样式的方法</span></span><br><span class="line">                    P p = factory.createP();</span><br><span class="line">                    R r = factory.createR();</span><br><span class="line">                    Text text = factory.createText();</span><br><span class="line">                    text.setValue(<span class="string">"---row"</span> + i + <span class="string">"---column"</span> + j + <span class="string">"---"</span>);</span><br><span class="line">                    r.getContent().add(text);</span><br><span class="line">                    p.getContent().add(r);</span><br><span class="line">                    <span class="comment">//3.2.1 通过R设置字体加粗等属性</span></span><br><span class="line">                    setRStyle(r);</span><br><span class="line">                    <span class="comment">//3.2.2 设置列宽</span></span><br><span class="line">                    <span class="keyword">if</span> (j == <span class="number">1</span>) &#123;</span><br><span class="line">                        setCellWidth(tc, <span class="number">1250</span>);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        setCellWidth(tc, <span class="number">2500</span>);</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    tc.getContent().add(p);</span><br><span class="line">                    tr.getContent().add(tc);</span><br><span class="line">                &#125;</span><br><span class="line">                table.getContent().add(tr);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">//4 将新增表格加到主要内容中</span></span><br><span class="line">            mainDocumentPart.addObject(table);</span><br><span class="line">            wordMLPackage.save(<span class="keyword">new</span> File(docxPath));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Docx4JException e) &#123;</span><br><span class="line">            logger.error(<span class="string">"createDocx error: Docx4JException"</span>, e);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"创建表格成功"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置边框样式</span></span><br><span class="line"><span class="comment">     * 需要设置表格边框的单元格</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> table</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">addBorders</span><span class="params">(Tbl table)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 必须设置一个TblPr，否则最后会报空指针异常</span></span><br><span class="line">        table.setTblPr(<span class="keyword">new</span> TblPr());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建一个默认颜色（黑色）、粗细尺寸为4、间距为0的单线边框的边框组件（Border component）</span></span><br><span class="line">        CTBorder border = <span class="keyword">new</span> CTBorder();</span><br><span class="line">        border.setColor(<span class="string">"auto"</span>);</span><br><span class="line">        border.setSz(<span class="keyword">new</span> BigInteger(<span class="string">"4"</span>));</span><br><span class="line">        border.setSpace(<span class="keyword">new</span> BigInteger(<span class="string">"0"</span>));</span><br><span class="line">        border.setVal(STBorder.SINGLE);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 边框组件被应用到表格的四周以及表格内部水平和垂直的边框</span></span><br><span class="line">        TblBorders borders = <span class="keyword">new</span> TblBorders();</span><br><span class="line">        borders.setBottom(border);</span><br><span class="line">        borders.setLeft(border);</span><br><span class="line">        borders.setRight(border);</span><br><span class="line">        borders.setTop(border);</span><br><span class="line">        borders.setInsideH(border);</span><br><span class="line">        borders.setInsideV(border);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 获取其内部的TblPr属性设置属性,边框应用到表格</span></span><br><span class="line">        table.getTblPr().setTblBorders(borders);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 通过设置R设置表格中属性字体加粗，大小为25</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span></span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setRStyle</span><span class="params">(R r)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1.创建一个RPr</span></span><br><span class="line">        RPr rpr = <span class="keyword">new</span> RPr();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2.设置RPr</span></span><br><span class="line">        <span class="comment">// 2.1设置字体大小</span></span><br><span class="line">        HpsMeasure size = <span class="keyword">new</span> HpsMeasure();</span><br><span class="line">        size.setVal(<span class="keyword">new</span> BigInteger(<span class="string">"25"</span>));</span><br><span class="line">        rpr.setSz(size);</span><br><span class="line">        <span class="comment">// 2.2设置加粗</span></span><br><span class="line">        BooleanDefaultTrue bold = <span class="keyword">new</span> BooleanDefaultTrue();</span><br><span class="line">        bold.setVal(<span class="keyword">true</span>);</span><br><span class="line">        rpr.setB(bold);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 3.将RPr设置为R的属性</span></span><br><span class="line">        r.setRPr(rpr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 设置列宽</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> tc</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> width</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">setCellWidth</span><span class="params">(Tc tc, <span class="keyword">int</span> width)</span> </span>&#123;</span><br><span class="line">        TcPr tableCellProperties = <span class="keyword">new</span> TcPr();</span><br><span class="line">        TblWidth tableWidth = <span class="keyword">new</span> TblWidth();</span><br><span class="line">        tableWidth.setW(BigInteger.valueOf(width));</span><br><span class="line">        tableCellProperties.setTcW(tableWidth);</span><br><span class="line"></span><br><span class="line">        tc.setTcPr(tableCellProperties);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-5-读取表格内容"><a href="#2-5-读取表格内容" class="headerlink" title="2.5 读取表格内容"></a>2.5 读取表格内容</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 读取表格内容</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="meta">@GetMapping</span>(<span class="string">"readTable"</span>)</span><br><span class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">readTable</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           wordMLPackage = WordprocessingMLPackage.load(<span class="keyword">new</span> File(docxPath));</span><br><span class="line">           MainDocumentPart documentPart = wordMLPackage.getMainDocumentPart();</span><br><span class="line"></span><br><span class="line">           <span class="comment">// 1. ClassFinder构造类型查询器获取指定元素</span></span><br><span class="line">           ClassFinder find = <span class="keyword">new</span> ClassFinder(Tbl<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">           <span class="keyword">new</span> TraversalUtil(documentPart.getContent(), find);</span><br><span class="line"></span><br><span class="line">           <span class="comment">// 获取到第一个表格元素</span></span><br><span class="line">           Tbl table = (Tbl) find.results.get(<span class="number">0</span>);</span><br><span class="line">           List&lt;Object&gt; trs = table.getContent();</span><br><span class="line">           logger.info(<span class="string">"&#123;&#125;"</span>, trs);</span><br><span class="line"></span><br><span class="line">           System.out.println(<span class="string">"====================="</span>);</span><br><span class="line"></span><br><span class="line">           <span class="keyword">for</span> (Object obj : trs) &#123;</span><br><span class="line">               Tr tr = (Tr) obj;<span class="comment">// 获取到tr</span></span><br><span class="line">               List&lt;Object&gt; content = tr.getContent();</span><br><span class="line">               logger.info(<span class="string">"&#123;&#125;"</span>, content);</span><br><span class="line">               List&lt;Object&gt; objList = getAllElementFromObject(tr, Tc<span class="class">.<span class="keyword">class</span>)</span>;<span class="comment">// 获取所有的Tc元素</span></span><br><span class="line">               <span class="keyword">for</span> (Object obj1 : objList) &#123;</span><br><span class="line">                   Tc tc = (Tc) obj1;</span><br><span class="line">                   logger.info(<span class="string">"&#123;&#125;"</span>, tc.getContent());</span><br><span class="line">               &#125;</span><br><span class="line">               System.out.println(<span class="string">"==============="</span>);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125; <span class="keyword">catch</span> (Docx4JException e) &#123;</span><br><span class="line">           logger.error(e.getMessage());</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">"读取表格内容"</span>;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> List&lt;Object&gt; <span class="title">getAllElementFromObject</span><span class="params">(Object obj, Class&lt;?&gt; toSearch)</span> </span>&#123;</span><br><span class="line">       List&lt;Object&gt; result = <span class="keyword">new</span> ArrayList&lt;Object&gt;();</span><br><span class="line">       <span class="keyword">if</span> (obj <span class="keyword">instanceof</span> JAXBElement)</span><br><span class="line">           obj = ((JAXBElement&lt;?&gt;) obj).getValue();</span><br><span class="line">       <span class="keyword">if</span> (obj.getClass().equals(toSearch))</span><br><span class="line">           result.add(obj);</span><br><span class="line">       <span class="keyword">else</span> <span class="keyword">if</span> (obj <span class="keyword">instanceof</span> ContentAccessor) &#123;</span><br><span class="line">           List&lt;?&gt; children = ((ContentAccessor) obj).getContent();</span><br><span class="line">           <span class="keyword">for</span> (Object child : children) &#123;</span><br><span class="line">               result.addAll(getAllElementFromObject(child, toSearch));</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> result;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-6-读取docx文件"><a href="#2-6-读取docx文件" class="headerlink" title="2.6 读取docx文件"></a>2.6 读取docx文件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 读取docx文件(这里不支持doc文件)</span></span><br><span class="line"><span class="comment">    * 读取word文件，这里没有区分 word中的样式格式</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="meta">@GetMapping</span>(<span class="string">"readParagraph"</span>)</span><br><span class="line">   <span class="function"><span class="keyword">public</span> String <span class="title">readParagraph</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       List&lt;Object&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">       WordprocessingMLPackage wordprocessingMLPackage = <span class="keyword">null</span>;</span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           wordprocessingMLPackage = WordprocessingMLPackage.load(<span class="keyword">new</span> File(docxPath));</span><br><span class="line"></span><br><span class="line">           String contentType = wordprocessingMLPackage.getContentType();</span><br><span class="line">           logger.info(<span class="string">"contentType:"</span>+contentType);</span><br><span class="line">           MainDocumentPart part = wordprocessingMLPackage.getMainDocumentPart();</span><br><span class="line">           logger.info(<span class="string">"content -&gt; body -&gt; "</span>+part.getContents().getBody().toString());</span><br><span class="line">           list = part.getContent();</span><br><span class="line">           <span class="keyword">for</span>(Object o :list) &#123;</span><br><span class="line">               logger.info(<span class="string">"info:"</span>+o);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;<span class="keyword">catch</span>(Exception e) &#123;</span><br><span class="line">           logger.error(e.getMessage());</span><br><span class="line">       &#125;</span><br><span class="line">       String jsonString = JSON.toJSONString(list);</span><br><span class="line">       <span class="keyword">return</span> jsonString;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-7-docx转html文件"><a href="#2-7-docx转html文件" class="headerlink" title="2.7 docx转html文件"></a>2.7 docx转html文件</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">   * docx转html文件</span></span><br><span class="line"><span class="comment">   * 样式表可以自行修改</span></span><br><span class="line"><span class="comment">   * 转xls,再转html</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="meta">@GetMapping</span>(<span class="string">"/wordToHtml"</span>)</span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">wordToHtml</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">boolean</span> nestLists = <span class="keyword">true</span>;</span><br><span class="line">      <span class="keyword">boolean</span> save = <span class="keyword">true</span>;</span><br><span class="line">      WordprocessingMLPackage wordprocessingMLPackage = <span class="keyword">null</span>;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">          wordprocessingMLPackage = WordprocessingMLPackage.load(<span class="keyword">new</span> File(docxPath));</span><br><span class="line">      &#125; <span class="keyword">catch</span> (Docx4JException e) &#123;</span><br><span class="line">         logger.error(e.getMessage());</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      HTMLSettings html = Docx4J.createHTMLSettings();</span><br><span class="line">      <span class="comment">//设置图片的目录地址</span></span><br><span class="line">      html.setImageDirPath(docxPath + <span class="string">"_files"</span>);</span><br><span class="line">      html.setImageTargetUri(docxPath.substring(docxPath.lastIndexOf(<span class="string">"/"</span>) + <span class="number">1</span> ) + <span class="string">"_files"</span>);</span><br><span class="line">      html.setWmlPackage(wordprocessingMLPackage);</span><br><span class="line">      String userCSS = <span class="keyword">null</span>;</span><br><span class="line">      <span class="keyword">if</span> (nestLists) &#123;</span><br><span class="line">          userCSS = <span class="string">"html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img,  table, caption, tbody, tfoot, thead, tr, th, td "</span></span><br><span class="line">                  + <span class="string">"&#123; margin: 0; padding: 0; border: 0;&#125;"</span> + <span class="string">"body &#123;line-height: 1;&#125; "</span>;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          userCSS = <span class="string">"html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, img,  ol, ul, li, table, caption, tbody, tfoot, thead, tr, th, td "</span></span><br><span class="line">                  + <span class="string">"&#123; margin: 0; padding: 0; border: 0;&#125;"</span> + <span class="string">"body &#123;line-height: 1;&#125; "</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      html.setUserCSS(userCSS);</span><br><span class="line">      OutputStream os = <span class="keyword">null</span>;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">          <span class="keyword">if</span> (save) &#123;</span><br><span class="line">              os = <span class="keyword">new</span> FileOutputStream(docxPath + <span class="string">".html"</span>);</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              os = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">          &#125;</span><br><span class="line">          <span class="comment">//设置输出</span></span><br><span class="line">          Docx4jProperties.setProperty(<span class="string">"docx4j.Convert.Out.HTML.OutputMethodXML"</span>, <span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">          Docx4J.toHTML(html, os, Docx4J.FLAG_EXPORT_PREFER_XSL);</span><br><span class="line">      &#125;<span class="keyword">catch</span>(Exception e) &#123;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (save) &#123;</span><br><span class="line">          System.out.println(<span class="string">"Saved: "</span> + docxPath + <span class="string">".html "</span>);</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          System.out.println(((ByteArrayOutputStream) os).toString());</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">if</span> (wordprocessingMLPackage.getMainDocumentPart().getFontTablePart() != <span class="keyword">null</span>) &#123;</span><br><span class="line">          wordprocessingMLPackage.getMainDocumentPart().getFontTablePart().deleteEmbeddedFontTempFiles();</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"docx转html文件成功"</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-8-按指定变量替换docx中的内容-var-替换"><a href="#2-8-按指定变量替换docx中的内容-var-替换" class="headerlink" title="2.8 按指定变量替换docx中的内容  ${var}替换"></a>2.8 按指定变量替换docx中的内容  ${var}替换</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 按指定变量替换docx中的内容  $&#123;var&#125;替换</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">	<span class="meta">@GetMapping</span>(<span class="string">"replaceTableByVariable"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">replaceTableByVariable</span><span class="params">()</span></span>&#123;</span><br><span class="line">        factory = Context.getWmlObjectFactory();</span><br><span class="line">        <span class="keyword">boolean</span> save = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            wordMLPackage = WordprocessingMLPackage.load(<span class="keyword">new</span> File(docxPath));</span><br><span class="line">            VariablePrepare.prepare(wordMLPackage);</span><br><span class="line">            MainDocumentPart documentPart = wordMLPackage.getMainDocumentPart();</span><br><span class="line"></span><br><span class="line">            <span class="comment">//需要替换的map</span></span><br><span class="line">            HashMap&lt;String, String&gt; mappings = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">            mappings.put(<span class="string">"name"</span>, <span class="string">"张三"</span>);</span><br><span class="line">            mappings.put(<span class="string">"age"</span>, <span class="string">"25"</span>);</span><br><span class="line">            mappings.put(<span class="string">"sex"</span>, <span class="string">"男"</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">long</span> start = System.currentTimeMillis();</span><br><span class="line">            documentPart.variableReplace(mappings);</span><br><span class="line"><span class="comment">//            // unmarshallFromTemplate requires string input</span></span><br><span class="line"><span class="comment">//            String xml = XmlUtils.marshaltoString(documentPart.getJaxbElement(), true);</span></span><br><span class="line"><span class="comment">//            // Do it...</span></span><br><span class="line"><span class="comment">//            Object obj = XmlUtils.unmarshallFromTemplate(xml, mappings);</span></span><br><span class="line"><span class="comment">//            // Inject result into docx</span></span><br><span class="line"><span class="comment">//            documentPart.setJaxbElement((Document) obj);</span></span><br><span class="line">            <span class="keyword">long</span> end = System.currentTimeMillis();</span><br><span class="line">            <span class="keyword">long</span> total = end - start;</span><br><span class="line">            System.out.println(<span class="string">"Time: "</span> + total);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Save it</span></span><br><span class="line">            <span class="keyword">if</span> (save) &#123;</span><br><span class="line">                SaveToZipFile saver = <span class="keyword">new</span> SaveToZipFile(wordMLPackage);</span><br><span class="line">                saver.save(<span class="string">"/home/person-project/helloworld_1.docx"</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.println(XmlUtils.marshaltoString(documentPart.getJaxbElement(), <span class="keyword">true</span>, <span class="keyword">true</span>));</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            logger.error(e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"按指定变量替换docx中的内容成功"</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+      <!-- reward -->
+      
+      <div id="reward-btn">
+        打赏
+      </div>
+      
+    </div>
+    
+    
+      <!-- copyright -->
+      
+        <div class="declare">
+          <ul class="post-copyright">
+            <li>
+              <i class="ri-copyright-line"></i>
+              <strong>版权声明： </strong>
+              著作权归作者所有，商业转载请联系作者获得授权，非商业转载请注明出处!
+            </li>
+          </ul>
+        </div>
+        
+    <footer class="article-footer">
+      
+          
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://yoursite.com/2021/07/09/docx4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%A1%88/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Microsoft-Open-XML/" rel="tag">Microsoft Open XML</a></li></ul>
+
+
+    </footer>
+
+  </div>
+
+  
+  
+  <nav class="article-nav">
+    
+    
+      <a href="/2021/02/21/Alpha%E3%80%81Beta%E3%80%81RC%E3%80%81GA-%E7%89%88%E6%9C%AC%E7%9A%84%E5%8C%BA%E5%88%AB/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">Alpha、Beta、RC、GA 版本的区别</div>
+      </a>
+    
+  </nav>
+
+
+  
+
+  
+  
+<!-- valine评论 -->
+<div id="vcomments-box">
+    <div id="vcomments">
+    </div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js'></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        app_id: 'VqCd1x4IRFv3hSlLPhBYK7pC-gzGzoHsz',
+        app_key: '8fT5IOGgvDtA4tgtV01oiJf3',
+        path: window.location.pathname,
+        notify: 'false',
+        verify: 'false',
+        avatar: 'monsterid',
+        placeholder: '给我的文章加点评论吧~',
+        recordIP: true
+    });
+    const infoEle = document.querySelector('#vcomments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+        infoEle.childNodes.forEach(function (item) {
+            item.parentNode.removeChild(item);
+        });
+    }
+</script>
+<style>
+    #vcomments-box {
+        padding: 5px 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        #vcomments-box {
+            padding: 5px 0px;
+        }
+    }
+
+    #vcomments-box #vcomments {
+        background-color: #fff;
+    }
+
+    .v .vlist .vcard .vh {
+        padding-right: 20px;
+    }
+
+    .v .vlist .vcard {
+        padding-left: 10px;
+    }
+</style>
+
+  
+
+  
+  
+  
+
+</article>
+</section>
+      <footer class="footer">
+  <div class="outer">
+	<!-- 运行天数 -->
+    <ul>
+        <li><span id="runtime_span"></span></li>
+    </ul>
+    <ul class="list-inline">
+      <li>
+        &copy;
+        2020-2021
+        zhangy 保留所有权利
+      </li>
+      <!--<li>
+        
+        Powered by
+        
+        
+        <a href="https://hexo.io" target="_blank">Hexo</a> Theme <a href="https://github.com/Shen-Yu/hexo-theme-ayer" target="_blank">Ayer</a>
+        
+      </li>-->
+    </ul>
+    <ul class="list-inline">
+      <li>
+        
+        
+        <span>
+  <i>PV:<span id="busuanzi_value_page_pv"></span></i>
+  <i>UV:<span id="busuanzi_value_site_uv"></span></i>
+</span>
+        
+      </li>
+      
+      <li>
+        <a href="http://www.beian.miit.gov.cn/" target="_black">鄂ICP备19028791号-1 </a>
+      </li>
+      
+      <li>
+        <!-- cnzz统计
+        
+        <script type="text/javascript" src='https://s9.cnzz.com/z_stat.php?id=1278069914&amp;web_id=1278069914'></script>
+         -->
+      </li>
+    </ul>
+  </div>
+</footer>
+      <div class="float_btns">
+        <div class="totop" id="totop">
+  <i class="ri-arrow-up-line"></i>
+</div>
+
+      </div>
+    </main>
+    <aside class="sidebar on">
+      <button class="navbar-toggle"></button>
+<nav class="navbar">
+  
+  <div class="logo">
+    <a href="/"><img src="/images/ayer-side.svg" alt="奔跑的阳光"></a>
+  </div>
+  
+  <ul class="nav nav-main">
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/">主页</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/archives">归档</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/categories">分类</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/tags">标签</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/shuoshuo">说说</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/videos">视频</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/music">音乐</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/game">游戏</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/friendlink">友链</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="https://patient-snowflake-fe83.zhangy.workers.dev/" target="_blank" rel="noopener">网盘</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-item-link" href="/about">关于</a>
+    </li>
+    
+  </ul>
+</nav>
+<nav class="navbar navbar-bottom">
+  <ul class="nav">
+    <li class="nav-item">
+      
+      <a class="nav-item-link nav-item-search"  title="搜索">
+        <i class="ri-search-line"></i>
+      </a>
+      
+      
+      <a class="nav-item-link" target="_blank" href="/atom.xml" title="RSS Feed">
+        <i class="ri-rss-line"></i>
+      </a>
+      
+    </li>
+  </ul>
+</nav>
+<div class="search-form-wrap">
+  <div class="local-search local-search-plugin">
+  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
+  <div id="local-search-result" class="local-search-result"></div>
+</div>
+</div>
+    </aside>
+    <script>
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        document.querySelector('.content').classList.remove('on');
+        document.querySelector('.sidebar').classList.remove('on');
+      }
+    </script>
+    <div id="mask"></div>
+
+<!-- #reward -->
+<div id="reward">
+  <span class="close"><i class="ri-close-line"></i></span>
+  <p class="reward-p"><i class="ri-cup-line"></i>请我喝杯咖啡吧~</p>
+  <div class="reward-box">
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/alipay.jpg">
+      <span class="reward-type">支付宝</span>
+    </div>
+    
+    
+    <div class="reward-item">
+      <img class="reward-img" src="/images/wechat.jpg">
+      <span class="reward-type">微信</span>
+    </div>
+    
+  </div>
+</div>
+    
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+<script src="/js/lazyload.min.js"></script>
+
+
+<script>
+  try {
+    var typed = new Typed("#subtitle", {
+      strings: ['面朝大海，春暖花开', '愿你一生努力，一生被爱', '想要的都拥有，得不到的都释怀'],
+      startDelay: 0,
+      typeSpeed: 200,
+      loop: true,
+      backSpeed: 100,
+      showCursor: true
+    });
+  } catch (err) {
+  }
+
+</script>
+
+
+
+
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  // Tocbot_v4.7.0  http://tscanlin.github.io/tocbot/
+  tocbot.init({
+    tocSelector: '.tocbot',
+    contentSelector: '.article-entry',
+    headingSelector: 'h1, h2, h3, h4, h5, h6',
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: 'main',
+    positionFixedSelector: '.tocbot',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto'
+  });
+</script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.css">
+<script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js"></script>
+
+<script src="/dist/main.js"></script>
+
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css">
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<script>
+    function viewer_init() {
+        let pswpElement = document.querySelectorAll('.pswp')[0];
+        let $imgArr = document.querySelectorAll(('.article-entry img:not(.reward-img)'))
+
+        $imgArr.forEach(($em, i) => {
+            $em.onclick = () => {
+                // slider展开状态
+                // todo: 这样不好，后面改成状态
+                if (document.querySelector('.left-col.show')) return
+                let items = []
+                $imgArr.forEach(($em2, i2) => {
+                    let img = $em2.getAttribute('data-idx', i2)
+                    let src = $em2.getAttribute('data-target') || $em2.getAttribute('src')
+                    let title = $em2.getAttribute('alt')
+                    // 获得原图尺寸
+                    const image = new Image()
+                    image.src = src
+                    items.push({
+                        src: src,
+                        w: image.width || $em2.width,
+                        h: image.height || $em2.height,
+                        title: title
+                    })
+                })
+                var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, {
+                    index: parseInt(i)
+                });
+                gallery.init()
+            }
+        })
+    }
+    viewer_init()
+</script>
+
+
+
+
+
+<script src="/js/busuanzi-2.3.pure.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://js.users.51.la/20544303.js"></script>
+
+
+    
+    <div id="music">
+    
+    
+    
+    <iframe frameborder="no" border="1" marginwidth="0" marginheight="0" width="200" height="52"
+        src="//music.163.com/outchain/player?type=2&id=29561063&auto=0&height=32"></iframe>
+</div>
+
+<style>
+    #music {
+        position: fixed;
+        right: 15px;
+        bottom: 0;
+        z-index: 998;
+    }
+</style>
+    
+  </div>
+  <!-- 三角彩带背景 -->
+  <canvas id="evanyou-canvas" style="opacity: 0.3; position: fixed; top: 0px; left: 0px; z-index: -1; width: 100%; height: 100%; pointer-events: none;"></canvas>
+  <script src="https://cdn.jsdelivr.net/gh/XXXZhy/Blog_Image/js/evanyou_canvas.js"></script>
+</body>
+
+</html>
