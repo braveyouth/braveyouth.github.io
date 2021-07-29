@@ -143,7 +143,7 @@ show_runtime();
 
 <h1 id="二、理解docx文件"><a href="#二、理解docx文件" class="headerlink" title="二、理解docx文件"></a>二、理解docx文件</h1><h2 id="1-认识-Open-XML"><a href="#1-认识-Open-XML" class="headerlink" title="1.认识 Open XML"></a>1.认识 <strong>Open XML</strong></h2><p>docx4j 主要是针对 docx 文件进行操作，操作的对象的 <strong>Microsoft Open XML 文件。</strong></p>
 <p>Office Open XML，也称为 OpenXML 或 OOXML，是 Office 文档的基础 XML 的格式，应用于 word，execl，ppt，图表等。该规范由 Microsoft 开发，被 ISO 和 IEC 采纳。现在是所有 Microsoft Office 文档（.docx，.xlsx 和. pptx）的默认格式。</p>
-<p>Microsoft Open XML官网：<a href="http://officeopenxml.com/anatomyofOOXML" target="_blank" rel="noopener">http://officeopenxml.com/anatomyofOOXML</a></p>
+<p>Microsoft Open XML官网：<a href="http://officeopenxml.com/anatomyofOOXML" rel="external nofollow noopener noreferrer"  style="text-decoration:none;" target="_blank">传送门</a> </p>
 <h2 id="2-docx-文件的结构"><a href="#2-docx-文件的结构" class="headerlink" title="2.docx 文件的结构"></a>2.docx 文件的结构</h2><p>docx 我们可以理解为一个前端项目的压缩包，里面有样式文件，dom 格式的 xml 文件，我们解压一个 docx 的文件看一下它的目录结构：</p>
 <p><img src="https://cdn.jsdelivr.net/gh/braveyouth/figurebed/docx4%E4%BD%BF%E7%94%A8%E6%96%B9%E6%A1%88/up-32246fe8bfe87773aadb8848c378bf9e3b8.png" alt="排序算法分类"></p>
 <p>我们先看根目录下的 [Content_Types] .xml 文件，这个是整个 docx 文件的内容组件的配置文件，整个压缩包中用到的文件都在里面配置，可以简单理解为，我们写前端时 html 文件的 head 部分关于 js,css 引用的部分，但这样理解有点不明确，想象一下，jsp 文件 include 各部分的总页面，有点类似。</p>
